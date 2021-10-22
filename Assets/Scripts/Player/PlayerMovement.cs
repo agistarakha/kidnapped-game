@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            playerRb.gravityScale = 10;
+            playerRb.gravityScale = 4;
         }
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         playerAnimator.SetFloat("verticalInput", Mathf.Abs(verticalInput));

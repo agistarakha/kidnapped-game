@@ -13,15 +13,10 @@ public class LadderObject : InteractiveObject
         {
             Player.currentState = Player.PlayerState.CLIMBING;
         }
-        else if (!playerInRange)
-        {
-            Player.currentState = Player.PlayerState.WANDER;
-
-        }
     }
-
-    void OpenDoor()
+    public override void Feedback()
     {
-        Player.currentState = Player.PlayerState.CLIMBING;
+        Player.currentState = Player.PlayerState.WANDER;
     }
+
 }
