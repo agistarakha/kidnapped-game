@@ -29,7 +29,14 @@ public class InteractiveObject : MonoBehaviour
         if (other.tag == "Player")
         {
             playerInRange = false;
+            Feedback();
             promptManager.HidePrompt();
         }
     }
+
+    public virtual void Feedback ()
+    {
+
+    }
+        
 }

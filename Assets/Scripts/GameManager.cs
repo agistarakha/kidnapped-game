@@ -29,10 +29,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Vector3 spawnPos = (Player.currentState == Player.PlayerState.EXAMINE) ?
-        Player.lastPos
-        :
-        GameObject.Find(DoorData.doorSpawnLocation).transform.position
-        ;
+        Player.lastPos:
+        GameObject.Find(DoorData.doorSpawnLocation).transform.position;
+        Debug.Log(Player.currentState == Player.PlayerState.EXAMINE);
         GameObject player = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
         Player.currentState = Player.PlayerState.WANDER;
         vCam.Follow = player.transform;
@@ -43,6 +42,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Debug.Log(Player.currentState);
     }
 }

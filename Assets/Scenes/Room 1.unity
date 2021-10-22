@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 422132099}
   - component: {fileID: 422132100}
   m_Layer: 0
-  m_Name: env_4
+  m_Name: Pigura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
