@@ -25,17 +25,34 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         lastInput = (direction.x == 0) ? lastInput : direction.x;
-        float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = 0;
         float verticalInput = 0;
         if (Player.currentState == Player.PlayerState.CLIMBING)
         {
             playerRb.gravityScale = 0;
             verticalInput = Input.GetAxis("Vertical");
+            if (Player.isJumpPointReached)
+            {
+                Jump(5);
+            }
         }
-        else
+        else if (Player.currentState == Player.PlayerState.WANDER)
         {
-            playerRb.gravityScale = 4;
+            playerRb.gravityScale = 1;
+            horizontalInput = Input.GetAxis("Horizontal");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump(playerRb.velocity.x);
+            }
         }
+        // else if (Player.currentState == Player.PlayerState.ONAIR)
+        // {
+        //     // playerRb.gravityScale = 1;
+        //     horizontalInput = Input.GetAxis("Horizontal");
+
+        // }
+
+
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         playerAnimator.SetFloat("verticalInput", Mathf.Abs(verticalInput));
         playerSprite.flipX = (lastInput < 0) ? true : false;
@@ -45,13 +62,38 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Move(direction);
+        if (Mathf.Abs(direction.x) > 0)
+        {
+            Move();
+
+        }
+        else if (Mathf.Abs(direction.y) > 0)
+        {
+            playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
+
+        }
     }
 
-    void Move(Vector2 direction)
+    void Move()
     {
-        playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
+        // playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
+        playerRb.velocity = new Vector2(speed * direction.x, playerRb.velocity.y);
 
+    }
+
+    void Jump(float xDir)
+    {
+        playerRb.velocity = new Vector2(xDir, speed * 2);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            Player.currentState = Player.PlayerState.WANDER;
+            Debug.Log("Grounded");
+        }
     }
 
 }

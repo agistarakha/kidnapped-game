@@ -9,7 +9,11 @@ public static class Player
     {
         EXAMINE,
         WANDER,
-        CLIMBING
+        CLIMBING,
+        ONAIR
     }
+    public static bool isJumpPointReached = false;
+    public static bool isGrounded = true;
+    public static bool isOnAir = false;
     public static PlayerState currentState = PlayerState.WANDER;
 }
