@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
+    public float jumpSpeedY = 2.0f;
+    public float jumpSpeedX = 2.0f;
 
 
     private Rigidbody2D playerRb;
@@ -29,20 +31,26 @@ public class PlayerMovement : MonoBehaviour
         float verticalInput = 0;
         if (Player.currentState == Player.PlayerState.CLIMBING)
         {
+            playerAnimator.SetBool("IsClimbing", true);
+            playerAnimator.SetBool("IsStanding", false);
             playerRb.gravityScale = 0;
             verticalInput = Input.GetAxis("Vertical");
             if (Player.isJumpPointReached)
             {
-                Jump(5);
+                // Jump(5);
             }
         }
         else if (Player.currentState == Player.PlayerState.WANDER)
         {
+            playerAnimator.SetBool("IsClimbing", false);
+            playerAnimator.SetBool("IsStanding", true);
+
             playerRb.gravityScale = 1;
             horizontalInput = Input.GetAxis("Horizontal");
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && Player.isGrounded)
             {
                 Jump(playerRb.velocity.x);
+                Player.isGrounded = false;
             }
         }
         // else if (Player.currentState == Player.PlayerState.ONAIR)
@@ -83,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump(float xDir)
     {
-        playerRb.velocity = new Vector2(xDir, speed * 2);
+        playerRb.velocity = new Vector2(xDir, playerRb.velocity.y + jumpSpeedY * 2);
 
     }
 
@@ -92,7 +100,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             Player.currentState = Player.PlayerState.WANDER;
-            Debug.Log("Grounded");
+            // Debug.Log("Grounded");
+            Player.isGrounded = true;
         }
     }
 

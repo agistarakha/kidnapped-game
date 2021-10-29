@@ -9,7 +9,7 @@ public class LadderObject : InteractiveObject
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && playerInRange)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow)) && playerInRange)
         {
             Player.currentState = Player.PlayerState.CLIMBING;
         }
