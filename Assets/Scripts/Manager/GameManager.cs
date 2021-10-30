@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
@@ -29,7 +28,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Vector3 spawnPos = (Player.currentState == Player.PlayerState.EXAMINE) ?
-        Player.lastPos:
+        Player.lastPos :
         GameObject.Find(DoorData.doorSpawnLocation).transform.position;
         Debug.Log(Player.currentState == Player.PlayerState.EXAMINE);
         GameObject player = Instantiate(playerPrefab, spawnPos, Quaternion.identity);

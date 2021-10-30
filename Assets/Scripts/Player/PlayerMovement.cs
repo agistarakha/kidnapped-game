@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
     public float jumpSpeedY = 2.0f;
-    public float jumpSpeedX = 2.0f;
 
 
     private Rigidbody2D playerRb;
@@ -35,10 +33,7 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("IsStanding", false);
             playerRb.gravityScale = 0;
             verticalInput = Input.GetAxis("Vertical");
-            if (Player.isJumpPointReached)
-            {
-                // Jump(5);
-            }
+
         }
         else if (Player.currentState == Player.PlayerState.WANDER)
         {
@@ -53,13 +48,7 @@ public class PlayerMovement : MonoBehaviour
                 Player.isGrounded = false;
             }
         }
-        // else if (Player.currentState == Player.PlayerState.ONAIR)
-        // {
-        //     // playerRb.gravityScale = 1;
-        //     horizontalInput = Input.GetAxis("Horizontal");
-
-        // }
-
+        CastToFloor();
 
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         playerAnimator.SetFloat("verticalInput", Mathf.Abs(verticalInput));
@@ -77,8 +66,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Mathf.Abs(direction.y) > 0)
         {
-            playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
-
+            Climb();
         }
     }
 
@@ -89,20 +77,33 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    void Climb()
+    {
+        playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
+
+    }
     void Jump(float xDir)
     {
         playerRb.velocity = new Vector2(xDir, playerRb.velocity.y + jumpSpeedY * 2);
 
+
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    void CastToFloor()
     {
-        if (other.gameObject.tag == "Ground")
+        RaycastHit2D hit = Physics2D.Raycast(this.gameObject.transform.position, Vector2.down, 0.00001f, LayerMask.GetMask("Floor"));
+
+        //If something was hit.
+        if (hit)
         {
+
             Player.currentState = Player.PlayerState.WANDER;
-            // Debug.Log("Grounded");
             Player.isGrounded = true;
+
         }
+
     }
+
+
 
 }

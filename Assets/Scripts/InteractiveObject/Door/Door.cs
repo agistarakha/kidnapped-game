@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Door : InteractiveObject
 {
     public string connectedSceneName = "Room 2";
-    public string connectedDoor = "D-1_R-2";
+    public string connectedDoor = "D-1";
 
 
 

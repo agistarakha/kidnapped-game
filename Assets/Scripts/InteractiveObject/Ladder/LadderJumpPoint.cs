@@ -9,7 +9,7 @@ public class LadderJumpPoint : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Player.isJumpPointReached = true;
+            Player.currentState = Player.PlayerState.WANDER;
         }
     }
 
