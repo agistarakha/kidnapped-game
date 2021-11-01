@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InteractiveObject : MonoBehaviour
 {
     public string promptText;
-    private PromptManager promptManager;
+    public PromptManager promptManager;
     protected bool playerInRange = false;
     // Start is called before the first frame update
     void Start()
@@ -29,14 +27,19 @@ public class InteractiveObject : MonoBehaviour
         if (other.tag == "Player")
         {
             playerInRange = false;
-            Feedback();
+            PlayerExitFeedback();
             promptManager.HidePrompt();
         }
     }
 
-    public virtual void Feedback ()
+    public virtual void PlayerEnterFeedback()
     {
 
     }
-        
+
+    public virtual void PlayerExitFeedback()
+    {
+
+    }
+
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
-    public float jumpSpeedY = 2.0f;
+    public float jumpVelocity = 2.0f;
 
 
     private Rigidbody2D playerRb;
@@ -29,10 +29,12 @@ public class PlayerMovement : MonoBehaviour
         float verticalInput = 0;
         if (Player.currentState == Player.PlayerState.CLIMBING)
         {
+            playerRb.velocity = Vector2.zero;
             playerAnimator.SetBool("IsClimbing", true);
             playerAnimator.SetBool("IsStanding", false);
             playerRb.gravityScale = 0;
             verticalInput = Input.GetAxis("Vertical");
+
 
         }
         else if (Player.currentState == Player.PlayerState.WANDER)
@@ -41,19 +43,22 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("IsStanding", true);
 
             playerRb.gravityScale = 1;
-            horizontalInput = Input.GetAxis("Horizontal");
-            if (Input.GetKeyDown(KeyCode.Space) && Player.isGrounded)
+            if (IsGrounded())
             {
-                Jump(playerRb.velocity.x);
-                Player.isGrounded = false;
+                horizontalInput = Input.GetAxis("Horizontal");
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Jump();
+                }
             }
         }
-        CastToFloor();
 
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         playerAnimator.SetFloat("verticalInput", Mathf.Abs(verticalInput));
         playerSprite.flipX = (lastInput < 0) ? true : false;
         direction = new Vector2(horizontalInput, verticalInput);
+        Debug.Log(playerRb.velocity.x);
     }
 
     // Update is called once per frame
@@ -68,39 +73,51 @@ public class PlayerMovement : MonoBehaviour
         {
             Climb();
         }
+        else
+        {
+            if (IsGrounded())
+            {
+                playerRb.velocity = Vector2.zero;
+            }
+        }
+
     }
 
     void Move()
     {
         // playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
         playerRb.velocity = new Vector2(speed * direction.x, playerRb.velocity.y);
+        // playerRb.velocity = Vector2.right * Mathf.Ceil(direction.x) * speed;
 
     }
 
     void Climb()
     {
-        playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
+        // playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
+        playerRb.velocity = Vector2.up * direction * 2.0f;
 
     }
-    void Jump(float xDir)
+    void Jump()
     {
-        playerRb.velocity = new Vector2(xDir, playerRb.velocity.y + jumpSpeedY * 2);
+        playerRb.velocity = Vector2.up * jumpVelocity;
 
 
     }
 
-    void CastToFloor()
+    bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(this.gameObject.transform.position, Vector2.down, 0.00001f, LayerMask.GetMask("Floor"));
+        RaycastHit2D hit = Physics2D.Raycast(playerRb.position, Vector2.down, 0.1f, LayerMask.GetMask("Floor"));
 
         //If something was hit.
         if (hit)
         {
 
             Player.currentState = Player.PlayerState.WANDER;
-            Player.isGrounded = true;
+            return true;
 
         }
+
+        return false;
 
     }
 

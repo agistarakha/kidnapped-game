@@ -12,7 +12,7 @@ public class Door : InteractiveObject
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
             OpenDoor();
         }
