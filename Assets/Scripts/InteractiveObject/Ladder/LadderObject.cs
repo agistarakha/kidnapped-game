@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LadderObject : InteractiveObject
@@ -9,12 +7,13 @@ public class LadderObject : InteractiveObject
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow)) && playerInRange)
+        if (Mathf.Abs(Input.GetAxis("Vertical")) == 1 && playerInRange && Player.currentState != Player.PlayerState.CLIMBING)
         {
+            promptManager.HidePrompt();
             Player.currentState = Player.PlayerState.CLIMBING;
         }
     }
-    public override void Feedback()
+    public override void PlayerExitFeedback()
     {
         Player.currentState = Player.PlayerState.WANDER;
     }

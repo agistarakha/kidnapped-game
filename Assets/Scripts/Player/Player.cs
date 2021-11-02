@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public static class Player
@@ -16,4 +14,5 @@ public static class Player
     public static bool isGrounded = true;
     public static bool isOnAir = false;
     public static PlayerState currentState = PlayerState.WANDER;
+    public static PlayerState sceneState = PlayerState.WANDER;
 }

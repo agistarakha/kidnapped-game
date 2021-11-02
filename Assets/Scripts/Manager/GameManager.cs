@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
@@ -28,12 +27,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 spawnPos = (Player.currentState == Player.PlayerState.EXAMINE) ?
-        Player.lastPos:
+        Vector3 spawnPos = (Player.sceneState == Player.PlayerState.EXAMINE) ?
+        Player.lastPos :
         GameObject.Find(DoorData.doorSpawnLocation).transform.position;
         Debug.Log(Player.currentState == Player.PlayerState.EXAMINE);
         GameObject player = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
         Player.currentState = Player.PlayerState.WANDER;
+        Player.sceneState = Player.PlayerState.WANDER;
         vCam.Follow = player.transform;
         roomInfo.text = SceneManager.GetActiveScene().name;
 
@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(Player.currentState);
+        // Debug.Log(Player.currentState);
+        // Debug.Log()
     }
 }

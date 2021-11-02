@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 803809166174194129}
   - component: {fileID: 3775605980687508910}
   m_Layer: 0
-  m_Name: env_0
+  m_Name: Ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &803809166174194135
 Transform:
@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jump Point
       objectReference: {fileID: 0}
+    - target: {fileID: 3407888105990671400, guid: c40bfd5fb911bc0418fc2dbb1a56ad16, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3407888105990671401, guid: c40bfd5fb911bc0418fc2dbb1a56ad16, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -178,6 +182,14 @@ PrefabInstance:
     - target: {fileID: 3407888105990671401, guid: c40bfd5fb911bc0418fc2dbb1a56ad16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407888105990671407, guid: c40bfd5fb911bc0418fc2dbb1a56ad16, type: 3}
+      propertyPath: m_Size.y
+      value: 0.061858177
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407888105990671407, guid: c40bfd5fb911bc0418fc2dbb1a56ad16, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4690709
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c40bfd5fb911bc0418fc2dbb1a56ad16, type: 3}
