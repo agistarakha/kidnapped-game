@@ -20,6 +20,7 @@ public class Door : InteractiveObject
     {
         DoorData.lastVisitedScene = connectedSceneName;
         DoorData.doorSpawnLocation = connectedDoor;
+        Player.lastPos = Vector3.zero;
         SceneManager.LoadScene(connectedSceneName);
     }
 }
