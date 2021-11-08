@@ -29,6 +29,7 @@ public static class GameDataManager
             // Player.lastPos = gameData
             DoorData.lastVisitedScene = playerData.lastVisitedScene;
             Player.lastPos = playerData.lastPos;
+            Player.obtainedKeys = playerData.obtainedKeys;
             return true;
         }
         return false;
@@ -43,6 +44,7 @@ public static class GameDataManager
         playerData.lastPos = playerGameObject.GetComponent<Rigidbody2D>().transform
         .position;
         playerData.lastVisitedScene = DoorData.lastVisitedScene;
+        playerData.obtainedKeys = Player.obtainedKeys;
         // Serialize the object into JSON and save string.
         string jsonString = JsonUtility.ToJson(playerData);
 

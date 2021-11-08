@@ -1,22 +1,16 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Door : InteractiveObject
+public class RoomAccessPoint : InteractiveObject
 {
     public string connectedSceneName = "Room 2";
     public string connectedDoor = "D-1";
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
-        {
-            OpenDoor();
-        }
-    }
 
-    void OpenDoor()
+
+    protected void LoadConnectedScene()
     {
         DoorData.lastVisitedScene = connectedSceneName;
         DoorData.doorSpawnLocation = connectedDoor;

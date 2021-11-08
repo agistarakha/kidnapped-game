@@ -18,10 +18,10 @@ public class InteractiveObject : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            PlayerEnterFeedback();
             player = other.gameObject;
             promptManager.ShowPromt(promptText);
             playerInRange = true;
-            PlayerEnterFeedback();
 
         }
     }
