@@ -24,13 +24,28 @@ public class GameManager : MonoBehaviour
     public CinemachineVirtualCamera vCam;
     public Text roomInfo;
 
+    void Awake()
+    {
+
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 spawnPos = (Player.sceneState == Player.PlayerState.EXAMINE) ?
-        Player.lastPos :
-        GameObject.Find(DoorData.doorSpawnLocation).transform.position;
-        Debug.Log(Player.currentState == Player.PlayerState.EXAMINE);
+        Vector3 spawnPos;
+        if (Player.lastPos.Equals(Vector3.zero))
+        {
+            spawnPos = GameObject.Find(DoorData.doorSpawnLocation).transform.position;
+        }
+        else
+        {
+            spawnPos = Player.lastPos;
+        }
+        // Vector3 spawnPos = (Player.sceneState == Player.PlayerState.EXAMINE) ?
+        // Player.lastPos :
+        // GameObject.Find(DoorData.doorSpawnLocation).transform.position;
+        // Debug.Log(Player.currentState == Player.PlayerState.EXAMINE);
         GameObject player = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
         Player.currentState = Player.PlayerState.WANDER;
         Player.sceneState = Player.PlayerState.WANDER;
