@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class InteractiveObject : MonoBehaviour
 {
@@ -21,6 +21,8 @@ public class InteractiveObject : MonoBehaviour
             player = other.gameObject;
             promptManager.ShowPromt(promptText);
             playerInRange = true;
+            PlayerEnterFeedback();
+
         }
     }
 

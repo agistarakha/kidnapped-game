@@ -9,6 +9,8 @@ public class SavePointObject : InteractiveObject
         if (playerInRange && Input.GetKey(KeyCode.E))
         {
             GameDataManager.SaveFile(player);
+            promptManager.ShowPromt("Game Saved");
+
         }
     }
 }
