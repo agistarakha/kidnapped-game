@@ -10,6 +10,8 @@ public class GameData
     {
         public Vector3 lastPos;
         public string lastVisitedScene;
+        public List<Key.typeKey> obtainedKeys;
     }
+
 }
 
