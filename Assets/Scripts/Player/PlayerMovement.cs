@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetFloat("verticalInput", Mathf.Abs(verticalInput));
         playerSprite.flipX = (lastInput < 0) ? true : false;
         direction = new Vector2(horizontalInput, verticalInput);
-        Debug.Log(playerRb.velocity.x);
+        // Debug.Log(playerRb.velocity.x);
     }
 
     // Update is called once per frame

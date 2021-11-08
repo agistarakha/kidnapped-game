@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class InteractiveObject : MonoBehaviour
 {
     public string promptText;
     public PromptManager promptManager;
     protected bool playerInRange = false;
+    protected GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +18,11 @@ public class InteractiveObject : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            player = other.gameObject;
             promptManager.ShowPromt(promptText);
             playerInRange = true;
+            PlayerEnterFeedback();
+
         }
     }
 

@@ -8,20 +8,21 @@ public class warp : InteractiveObject
     public string connectedSceneName = "Room 2";
     public string connectedDoor = "D-1";
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            promptManager.ShowPromt(promptText);
-            playerInRange = true;
-            warpArea();
-        }
-    }
+
 
     void warpArea()
     {
         DoorData.lastVisitedScene = connectedSceneName;
         DoorData.doorSpawnLocation = connectedDoor;
+        Player.lastPos = Vector3.zero;
         SceneManager.LoadScene(connectedSceneName);
     }
+
+
+    public override void PlayerEnterFeedback()
+    {
+        base.PlayerEnterFeedback();
+        warpArea();
+    }
+
 }
