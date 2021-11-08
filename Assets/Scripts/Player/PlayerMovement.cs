@@ -24,6 +24,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (Player.gameState == Player.GameState.MENU)
+        {
+            playerRb.velocity = Vector2.zero;
+            playerAnimator.Play("IdleAnimation");
+            return;
+        }
         lastInput = (direction.x == 0) ? lastInput : direction.x;
         float horizontalInput = 0;
         float verticalInput = 0;
@@ -64,6 +70,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Player.gameState == Player.GameState.MENU)
+        {
+            playerRb.velocity = Vector2.zero;
+            playerAnimator.Play("IdleAnimation");
+
+            return;
+        }
+
         if (Mathf.Abs(direction.x) > 0)
         {
             Move();

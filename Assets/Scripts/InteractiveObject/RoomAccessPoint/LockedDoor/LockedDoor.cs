@@ -18,10 +18,9 @@ public class LockedDoor : RoomAccessPoint
 
     public override void PlayerEnterFeedback()
     {
-        base.PlayerEnterFeedback();
         if (!Player.obtainedKeys.Contains(requiredKey))
         {
-            promptText = "Unlocked";
+            promptText = "Locked";
             keyIsObtained = false;
         }
         else
@@ -29,5 +28,11 @@ public class LockedDoor : RoomAccessPoint
             promptText = "Open";
             keyIsObtained = true;
         }
+    }
+
+    public override void PlayerExitFeedback()
+    {
+        promptText = "Locked";
+        keyIsObtained = false;
     }
 }
