@@ -10,7 +10,14 @@ public static class Player
         WANDER,
         CLIMBING,
     }
+
+    public enum GameState
+    {
+        MENU,
+        GAMEPLAY
+    }
     public static PlayerState currentState = PlayerState.WANDER;
     public static PlayerState sceneState = PlayerState.WANDER;
+    public static GameState gameState = GameState.GAMEPLAY;
     public static List<Key.typeKey> obtainedKeys = new List<Key.typeKey>();
 }
