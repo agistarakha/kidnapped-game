@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
             playerRb.velocity = Vector2.zero;
             playerAnimator.SetBool("IsClimbing", true);
             playerAnimator.SetBool("IsStanding", false);
+
             playerRb.gravityScale = 0;
             verticalInput = Input.GetAxis("Vertical");
 
@@ -52,14 +53,14 @@ public class PlayerMovement : MonoBehaviour
             if (IsGrounded())
             {
                 horizontalInput = Input.GetAxis("Horizontal");
-
-                if (Input.GetKeyDown(KeyCode.Space))
+                playerAnimator.SetBool("IsJumping", false);
+                if (Input.GetKey(KeyCode.Space))
                 {
                     Jump();
                 }
             }
         }
-
+        playerAnimator.SetFloat("YVelo", Mathf.Abs(playerRb.velocity.y));
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         playerAnimator.SetFloat("verticalInput", Mathf.Abs(verticalInput));
         playerSprite.flipX = (lastInput < 0) ? true : false;
@@ -100,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         // playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
+        playerAnimator.SetBool("IsStanding", false);
         playerRb.velocity = new Vector2(speed * direction.x, playerRb.velocity.y);
         // playerRb.velocity = Vector2.right * Mathf.Ceil(direction.x) * speed;
 
@@ -114,19 +116,20 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         playerRb.velocity = Vector2.up * jumpVelocity;
-
-
+        playerAnimator.SetBool("IsStanding", false);
+        playerAnimator.SetBool("IsJumping", true);
     }
 
     bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(playerRb.position, Vector2.down, 0.1f, LayerMask.GetMask("Floor"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f, LayerMask.GetMask("Floor"));
 
         //If something was hit.
         if (hit)
         {
 
             Player.currentState = Player.PlayerState.WANDER;
+            
             return true;
 
         }
