@@ -6,6 +6,7 @@ TagManager:
   tags:
   - wal
   - Ground
+  - pushAble
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Floor
-  - 
+  - PushAbleObject
   - 
   - 
   - 
