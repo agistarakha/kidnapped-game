@@ -8,6 +8,16 @@ public class PlayerPush : MonoBehaviour
     public LayerMask objectMask;
 
     private GameObject box;
+    private Animator playerAnimator;
+    private Rigidbody2D playerRb;
+    private SpriteRenderer playerSprite;
+
+    private void Start()
+    {
+        playerRb = GetComponent<Rigidbody2D>();
+        playerSprite = GetComponent<SpriteRenderer>();
+        playerAnimator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -17,6 +27,7 @@ public class PlayerPush : MonoBehaviour
             Vector2.right*distance*Input.GetAxisRaw("Horizontal"), distance, objectMask);
         if(hit.collider != null && hit.collider.gameObject.tag=="pushAble" && Input.GetKeyDown(KeyCode.R))
         {
+            playerAnimator.SetBool("IsPush", true);
             box = hit.collider.gameObject;
 
             box.GetComponent<FixedJoint2D>().enabled = true;
@@ -24,8 +35,9 @@ public class PlayerPush : MonoBehaviour
 
         }
         else if (Input.GetKeyUp(KeyCode.R))
-        {
+        {         
             box.GetComponent<FixedJoint2D>().enabled = false;
+            playerAnimator.SetBool("IsPush", false);
             //box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
         }
     }
