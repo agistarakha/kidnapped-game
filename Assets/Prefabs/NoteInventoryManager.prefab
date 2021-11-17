@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37759b57f609be94bb482ab12100859e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteMenu: {fileID: 0}
+  noteMenuPrefab: {fileID: 5288756261510432911, guid: 74012ccd98d5aa549878016d33fe784b, type: 3}
   itemContainer: {fileID: 0}
   noteItem: {fileID: 5009767446236561213, guid: c984ad600895652419477201428ad55d, type: 3}

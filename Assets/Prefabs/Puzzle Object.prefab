@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptText: Technically I'm Lever
   promptManager: {fileID: 0}
-  puzzleObject: {fileID: 0}
+  puzzlePrefab: {fileID: 7584282945238946919, guid: 6a2744825607d5d4496e299d5f89213f, type: 3}
 --- !u!61 &2224771263475391202
 BoxCollider2D:
   m_ObjectHideFlags: 0

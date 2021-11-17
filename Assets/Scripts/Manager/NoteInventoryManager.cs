@@ -19,7 +19,7 @@ public class NoteInventoryManager : MonoBehaviour
     }
 
 
-    public Image noteMenu;
+    public GameObject noteMenuPrefab;
     public GameObject itemContainer;
     public Image noteItem;
 
@@ -34,9 +34,9 @@ public class NoteInventoryManager : MonoBehaviour
             //     GameObject noteItemGameobject = Instantiate(noteItem.gameObject, noteItem.transform.position, Quaternion.identity, itemContainer.transform);
             //     noteItemGameobject.GetComponentInChildren<NoteItem>().title = note.Key;
             // }
-            Player.gameState = Player.GameState.MENU;
+            PopUpUIManager.Instance.ActivateUI(noteMenuPrefab.name);
+            // noteMenu.gameObject.SetActive(true);
 
-            noteMenu.gameObject.SetActive(true);
         }
     }
 
@@ -46,9 +46,5 @@ public class NoteInventoryManager : MonoBehaviour
         noteItemGameobject.GetComponentInChildren<NoteItem>().title = title;
     }
 
-    public void Hide()
-    {
-        Player.gameState = Player.GameState.GAMEPLAY;
-        noteMenu.gameObject.SetActive(false);
-    }
+
 }

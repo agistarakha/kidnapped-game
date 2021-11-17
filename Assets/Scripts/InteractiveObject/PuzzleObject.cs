@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class PuzzleObject : InteractiveObject
 {
-    public GameObject puzzleObject;
-    // Start is called before the first frame update
-
+    public GameObject puzzlePrefab;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
-            Player.gameState = Player.GameState.MENU;
-            puzzleObject.SetActive(true);
+            PopUpUIManager.Instance.ActivateUI(puzzlePrefab.name);
+
         }
     }
 }
