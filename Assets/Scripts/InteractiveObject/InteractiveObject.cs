@@ -9,6 +9,7 @@ public class InteractiveObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartFunExtension();
         playerInRange = false;
         promptManager = FindObjectOfType<PromptManager>();
     }
@@ -42,6 +43,11 @@ public class InteractiveObject : MonoBehaviour
     }
 
     public virtual void PlayerExitFeedback()
+    {
+
+    }
+
+    public virtual void StartFunExtension()
     {
 
     }

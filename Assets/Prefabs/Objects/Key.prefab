@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3689273218406986357}
   - component: {fileID: 3689273218406986358}
   - component: {fileID: 3689273218406986355}
-  - component: {fileID: 3689273218406986356}
+  - component: {fileID: 7959650244541498243}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_Offset: {x: -0.061905272, y: -0.006528122}
   serializedVersion: 2
   m_Radius: 0.42246696
---- !u!114 &3689273218406986356
+--- !u!114 &7959650244541498243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,7 +109,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3689273218406986359}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7558d3930fa99594e86410bf723405f7, type: 3}
+  m_Script: {fileID: 11500000, guid: e464aa6ade1596343927e5201ad5e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promptText: Ambil Kunci
+  promptManager: {fileID: 0}
   type: 0

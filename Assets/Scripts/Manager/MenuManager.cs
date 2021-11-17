@@ -6,29 +6,23 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject pauseManuObject;
+    public GameObject pauseManuPrefab;
+    private bool isPaused;
     // Start is called before the first frame update
     void Start()
     {
-
+        isPaused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && Player.gameState == Player.GameState.GAMEPLAY)
         {
-            pauseManuObject.SetActive(true);
-            Player.gameState = Player.GameState.MENU;
+            PopUpUIManager.Instance.ActivateUI(pauseManuPrefab.name);
         }
     }
 
-    public void ResumeGame()
-    {
-        pauseManuObject.SetActive(false);
-        Player.gameState = Player.GameState.GAMEPLAY;
-
-    }
 
     public void ExitGame()
     {

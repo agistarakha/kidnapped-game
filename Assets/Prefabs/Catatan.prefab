@@ -112,7 +112,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e0e9b9309669a46b1a5bdf0e0109e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Take
+  promptText: Read
   promptManager: {fileID: 0}
+  popUpUIName: Note
   title: Fizi's Note
-  description: Listen kid, I don't have much time\n The meaning of Aegir is....
+  description: 'Listen kid, I don''t have much time.
+
+
+    The meaning of Aegir is....
+
+
+
+    ....'

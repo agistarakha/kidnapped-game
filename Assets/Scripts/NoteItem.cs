@@ -19,7 +19,7 @@ public class NoteItem : MonoBehaviour
 
     }
 
-    void Awake()
+    void OnEnable()
     {
         GetComponentInChildren<Text>().text = title;
     }
