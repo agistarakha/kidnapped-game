@@ -20,4 +20,6 @@ public static class Player
     public static PlayerState sceneState = PlayerState.WANDER;
     public static GameState gameState = GameState.GAMEPLAY;
     public static List<Key.typeKey> obtainedKeys = new List<Key.typeKey>();
+    public static Dictionary<string, string> obtainedNotes = new Dictionary<string, string>();
+    public static List<string> unlockedDoors = new List<string>();
 }

@@ -2,20 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour
+public class KeyObject : InteractiveObject
 {
     [SerializeField]
-    private typeKey type;
+    private Key.typeKey type;
 
-    public enum typeKey
-    {
-        Red,
-        Blue,
-        Green,
-        Lever
-    }
 
-    public typeKey GetKeyType()
+    public Key.typeKey GetKeyType()
     {
         return type;
     }
@@ -28,9 +21,9 @@ public class Key : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    void Update()
     {
-        if (other.CompareTag("Player"))
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
             Player.obtainedKeys.Add(GetKeyType());
             gameObject.SetActive(false);
