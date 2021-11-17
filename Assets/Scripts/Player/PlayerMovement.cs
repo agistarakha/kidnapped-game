@@ -60,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-        // playerAnimator.SetFloat("YVelo", Mathf.Abs(playerRb.velocity.y));
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         playerAnimator.SetFloat("verticalInput", Mathf.Abs(verticalInput));
         playerSprite.flipX = (lastInput < 0) ? true : false;
