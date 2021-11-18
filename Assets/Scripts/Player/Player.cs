@@ -14,7 +14,8 @@ public static class Player
     public enum GameState
     {
         MENU,
-        GAMEPLAY
+        GAMEPLAY,
+        DIALOG
     }
     public static PlayerState currentState = PlayerState.WANDER;
     public static PlayerState sceneState = PlayerState.WANDER;
