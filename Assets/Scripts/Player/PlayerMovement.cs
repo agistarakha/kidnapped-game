@@ -4,14 +4,17 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
+    public float crouchSpeed = 0.5f;
     public float jumpVelocity = 2.0f;
-
+    [SerializeField] Collider2D standingCollider;
 
     private Rigidbody2D playerRb;
     private SpriteRenderer playerSprite;
     private Animator playerAnimator;
     private Vector2 direction;
     private float lastInput = 0;
+
+    [SerializeField]bool IsCrouch;
 
     // Start is called before the first frame update
     void Start()
@@ -41,8 +44,6 @@ public class PlayerMovement : MonoBehaviour
 
             playerRb.gravityScale = 0;
             verticalInput = Input.GetAxis("Vertical");
-
-
         }
         else if (Player.currentState == Player.PlayerState.WANDER)
         {
@@ -57,6 +58,15 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKey(KeyCode.Space))
                 {
                     Jump();
+                }
+
+                if (Input.GetButtonDown("Crouch"))
+                {
+                    IsCrouch = true;
+                }
+                else if (Input.GetButtonUp("Crouch"))
+                {
+                    IsCrouch = false;
                 }
             }
         }
@@ -92,11 +102,12 @@ public class PlayerMovement : MonoBehaviour
             if (IsGrounded())
             {
                 playerRb.velocity = Vector2.zero;
+                Crouch(IsCrouch);
             }
         }
 
     }
-
+    #region Movement
     void Move()
     {
         // playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
@@ -114,10 +125,26 @@ public class PlayerMovement : MonoBehaviour
     }
     void Jump()
     {
-        playerRb.velocity = Vector2.up * jumpVelocity;
         playerAnimator.SetBool("IsStanding", false);
         playerAnimator.SetBool("IsJumping", true);
+        playerRb.velocity = Vector2.up * jumpVelocity;
     }
+    void Crouch(bool crouchFlag)
+    {
+        RaycastHit2D hitr = Physics2D.Raycast(transform.position+Vector3.right, Vector2.up, 3f, LayerMask.GetMask("Floor"));
+        RaycastHit2D hitl = Physics2D.Raycast(transform.position+Vector3.left, Vector2.up, 3f, LayerMask.GetMask("Floor"));
+        if (hitr)
+        {
+            crouchFlag = true;
+        }
+        else if (hitl)
+        {
+            crouchFlag = true;
+        }
+        standingCollider.enabled = !crouchFlag;
+    }
+
+    #endregion
 
     bool IsGrounded()
     {
