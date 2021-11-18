@@ -97,6 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: Examine
+  promptManager: {fileID: 0}
+  dialogText: "[mengambil kunci] Tertulis \u201CRuang Generator\u201D,\r\napa masih
+    ada ruangan yang belum ku masuki?\r\nBanyak sekali ruagan di sini, kapan GW bisa
+    keluar dari sini?"
 --- !u!61 &3617540371822662701
 BoxCollider2D:
   m_ObjectHideFlags: 0

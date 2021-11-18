@@ -84,6 +84,7 @@ public class PopUpUIManager : MonoBehaviour
             backBtn.gameObject.SetActive(true);
             currentActiveObject = null;
             Player.gameState = Player.GameState.GAMEPLAY;
+            // DialogManager.Instance.ShowDialogUI("Blabla");
 
         }
     }

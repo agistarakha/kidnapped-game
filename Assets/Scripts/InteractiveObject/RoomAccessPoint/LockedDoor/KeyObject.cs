@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KeyObject : InteractiveObject
 {
@@ -12,6 +13,8 @@ public class KeyObject : InteractiveObject
     {
         return type;
     }
+
+    public string dialogText;
 
 
     void Awake()
@@ -25,6 +28,8 @@ public class KeyObject : InteractiveObject
     {
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
+            // PopUpUIManager.Instance.backdrop.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
+            DialogManager.Instance.ShowDialogUI(dialogText);
             Player.obtainedKeys.Add(GetKeyType());
             gameObject.SetActive(false);
         }

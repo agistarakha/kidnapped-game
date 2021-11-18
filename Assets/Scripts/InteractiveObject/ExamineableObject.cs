@@ -1,22 +1,19 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ExamineableObject : InteractiveObject
 {
-
+    [TextArea(5, 100)]
+    public string dialogText;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
-            ShowObjectDetail();
+            GameObject fotoUI = PopUpUIManager.Instance.ActivateUI("Foto");
+            fotoUI.transform.parent.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
         }
     }
 
-    void ShowObjectDetail()
-    {
-        Player.sceneState = Player.PlayerState.EXAMINE;
-        Player.lastPos = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
-        SceneManager.LoadScene("Figura");
-    }
+
 }
