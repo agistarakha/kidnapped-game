@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2922143613898503826}
   - component: {fileID: 2922143613898503852}
   - component: {fileID: 4512454267022913076}
+  - component: {fileID: 293152994969109949}
+  - component: {fileID: 441115049733577245}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -121,7 +123,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  crouchSpeed: 1
   jumpVelocity: 5
+  standingCollider: {fileID: 293152994969109949}
+  IsCrouch: 0
 --- !u!95 &2922143613898503826
 Animator:
   serializedVersion: 3
@@ -148,7 +153,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2922143613898503848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 629ca01d72f62e144a4d83d5a308980f, type: 2}
   m_IsTrigger: 0
@@ -183,3 +188,35 @@ MonoBehaviour:
   objectMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!70 &293152994969109949
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922143613898503848}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 629ca01d72f62e144a4d83d5a308980f, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 5.07}
+  m_Size: {x: 2.71, y: 10.14}
+  m_Direction: 0
+--- !u!70 &441115049733577245
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922143613898503848}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 629ca01d72f62e144a4d83d5a308980f, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.7030942}
+  m_Size: {x: 2.71, y: 3.4061885}
+  m_Direction: 0
