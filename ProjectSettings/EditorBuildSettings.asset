@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Rooms/MainMenu.unity
+    path: Assets/Scenes/Stage 1/MainMenu.unity
     guid: 5d0d9a7a2fe7fc442b45b83cd0b1d515
   - enabled: 1
     path: Assets/Scenes/Rooms/Room 1.unity
@@ -27,6 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Rooms/Room 5.unity
     guid: 476b683c4e19d944491c3c830a1df50d
   - enabled: 1
-    path: Assets/Scenes/Rooms/GameOver.unity
+    path: Assets/Scenes/Stage 1/GameOver.unity
     guid: ecf9d5484582ddc4eaaaab2c0ef903bd
   m_configObjects: {}
