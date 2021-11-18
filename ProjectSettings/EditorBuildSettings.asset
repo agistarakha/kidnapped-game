@@ -6,12 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Room 1.unity
+    path: Assets/Scenes/Stage 1/MainMenu.unity
+    guid: 5d0d9a7a2fe7fc442b45b83cd0b1d515
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Room 2.unity
-    guid: 9c0d7e7e6318b2541ac6bf080c34497b
-  - enabled: 1
-    path: Assets/Scenes/Figura.unity
+    path: Assets/Scenes/ExamineableObjects/Figura.unity
     guid: 289a1d12eb9f93e498328ef11802ea98
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room 2.unity
+    guid: 62572aafdad08144899cef4a98481261
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room 3.unity
+    guid: eb5fa5302dfc31b499ecf5dbd562427a
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room 4.unity
+    guid: d778bc53da981f94a97d5a8035fd10a6
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room 5.unity
+    guid: 476b683c4e19d944491c3c830a1df50d
+  - enabled: 1
+    path: Assets/Scenes/Stage 1/GameOver.unity
+    guid: ecf9d5484582ddc4eaaaab2c0ef903bd
   m_configObjects: {}

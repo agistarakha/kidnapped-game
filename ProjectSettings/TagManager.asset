@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - wal
+  - Ground
+  - NoteDetails
+  - pushAble
   layers:
   - Default
   - TransparentFX
@@ -12,8 +15,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Floor
+  - PushAbleObject
   - 
   - 
   - 
