@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 direction;
     private float lastInput = 0;
 
-    [SerializeField]bool IsCrouch;
+    [SerializeField] bool crouchFlag;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Player.gameState == Player.GameState.MENU)
+        if (Player.gameState == Player.GameState.MENU || Player.gameState == Player.GameState.DIALOG)
         {
             playerRb.velocity = Vector2.zero;
             playerAnimator.Play("IdleAnimation");
@@ -59,15 +59,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     Jump();
                 }
-
-                if (Input.GetButtonDown("Crouch"))
-                {
-                    IsCrouch = true;
-                }
-                else if (Input.GetButtonUp("Crouch"))
-                {
-                    IsCrouch = false;
-                }
+                Crouch();
             }
         }
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
@@ -102,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
             if (IsGrounded())
             {
                 playerRb.velocity = Vector2.zero;
-                Crouch(IsCrouch);
+
             }
         }
 
@@ -129,17 +121,19 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetBool("IsJumping", true);
         playerRb.velocity = Vector2.up * jumpVelocity;
     }
-    void Crouch(bool crouchFlag)
+    void Crouch()
     {
-        RaycastHit2D hitr = Physics2D.Raycast(transform.position+Vector3.right, Vector2.up, 3f, LayerMask.GetMask("Floor"));
-        RaycastHit2D hitl = Physics2D.Raycast(transform.position+Vector3.left, Vector2.up, 3f, LayerMask.GetMask("Floor"));
-        if (hitr)
+        RaycastHit2D hitr = Physics2D.Raycast(transform.position + Vector3.right, Vector2.up, 3f, LayerMask.GetMask("Floor"));
+        RaycastHit2D hitl = Physics2D.Raycast(transform.position + Vector3.left, Vector2.up, 3f, LayerMask.GetMask("Floor"));
+        if (Input.GetButtonDown("Crouch") || hitr || hitl)
         {
             crouchFlag = true;
+            speed = 1f;
         }
-        else if (hitl)
+        else if (Input.GetButtonUp("Crouch") && (!hitr || !hitl))
         {
-            crouchFlag = true;
+            crouchFlag = false;
+            speed = 3f;
         }
         standingCollider.enabled = !crouchFlag;
     }
