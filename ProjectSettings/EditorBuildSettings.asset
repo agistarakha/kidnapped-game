@@ -9,23 +9,29 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage 1/MainMenu.unity
     guid: 5d0d9a7a2fe7fc442b45b83cd0b1d515
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Stage 1/Room-1_3.unity
+    guid: a554d88c95311054db0b6c8e31c6648a
   - enabled: 1
-    path: Assets/Scenes/ExamineableObjects/Figura.unity
-    guid: 289a1d12eb9f93e498328ef11802ea98
+    path: Assets/Scenes/Stage 1/Room-4.unity
+    guid: 42d7aabd5caeab4408cf4ff18d08bd0c
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 2.unity
-    guid: 62572aafdad08144899cef4a98481261
+    path: Assets/Scenes/Stage 1/Room-5.unity
+    guid: d2e2829817bff74488ff009b56e62218
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 3.unity
-    guid: eb5fa5302dfc31b499ecf5dbd562427a
+    path: Assets/Scenes/Stage 1/Room-6_8.unity
+    guid: 1b60db65a7e97e94ca2856eb38654cf1
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 4.unity
-    guid: d778bc53da981f94a97d5a8035fd10a6
+    path: Assets/Scenes/Stage 1/Room-A.unity
+    guid: 08762f56411286644b0357d9dd480b1a
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room 5.unity
-    guid: 476b683c4e19d944491c3c830a1df50d
+    path: Assets/Scenes/Stage 1/Room-B.unity
+    guid: 1853bf431da86a74bb016e2b2297574b
+  - enabled: 1
+    path: Assets/Scenes/Stage 1/Room-C.unity
+    guid: eedf544395e32654a8402c76f37209c1
+  - enabled: 1
+    path: Assets/Scenes/Stage 1/Room-D.unity
+    guid: 9e72fc8368f51a94bb4c1b655292d094
   - enabled: 1
     path: Assets/Scenes/Stage 1/GameOver.unity
     guid: ecf9d5484582ddc4eaaaab2c0ef903bd
