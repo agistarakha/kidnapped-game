@@ -4,7 +4,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
-    public float crouchSpeed = 0.5f;
     public float jumpVelocity = 2.0f;
     [SerializeField] Collider2D standingCollider;
 
@@ -14,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 direction;
     private float lastInput = 0;
 
-    [SerializeField]bool IsCrouch;
+    [SerializeField] bool crouchFlag;
 
     // Start is called before the first frame update
     void Start()
@@ -54,20 +53,11 @@ public class PlayerMovement : MonoBehaviour
             if (IsGrounded())
             {
                 horizontalInput = Input.GetAxis("Horizontal");
-                playerAnimator.SetBool("IsJumping", false);
                 if (Input.GetKey(KeyCode.Space))
                 {
                     Jump();
                 }
-
-                if (Input.GetButtonDown("Crouch"))
-                {
-                    IsCrouch = true;
-                }
-                else if (Input.GetButtonUp("Crouch"))
-                {
-                    IsCrouch = false;
-                }
+                Crouch();
             }
         }
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
@@ -102,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
             if (IsGrounded())
             {
                 playerRb.velocity = Vector2.zero;
-                Crouch(IsCrouch);
+
             }
         }
 
@@ -129,17 +119,23 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetBool("IsJumping", true);
         playerRb.velocity = Vector2.up * jumpVelocity;
     }
-    void Crouch(bool crouchFlag)
+    void Crouch()
     {
-        RaycastHit2D hitr = Physics2D.Raycast(transform.position+Vector3.right, Vector2.up, 3f, LayerMask.GetMask("Floor"));
-        RaycastHit2D hitl = Physics2D.Raycast(transform.position+Vector3.left, Vector2.up, 3f, LayerMask.GetMask("Floor"));
-        if (hitr)
+        RaycastHit2D hitr = Physics2D.Raycast(transform.position + Vector3.right, Vector2.up, 3f, LayerMask.GetMask("Crouch"));
+        RaycastHit2D hitl = Physics2D.Raycast(transform.position + Vector3.left, Vector2.up, 3f, LayerMask.GetMask("Crouch"));
+        if (Input.GetButtonDown("Crouch") && (hitr || hitl))
         {
+            playerAnimator.SetBool("IsStanding", false);
+            playerAnimator.SetBool("IsCrouch", true);
             crouchFlag = true;
+            speed = 1f;
         }
-        else if (hitl)
+        else if (!hitr && !hitl)
         {
-            crouchFlag = true;
+            playerAnimator.SetBool("IsCrouch", false);
+            playerAnimator.SetBool("IsStanding", true);
+            crouchFlag = false;
+            speed = 3f;
         }
         standingCollider.enabled = !crouchFlag;
     }
@@ -155,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             Player.currentState = Player.PlayerState.WANDER;
-
+            playerAnimator.SetBool("IsJumping", false);
             return true;
 
         }
