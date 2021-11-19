@@ -126,7 +126,7 @@ MonoBehaviour:
   crouchSpeed: 1
   jumpVelocity: 5
   standingCollider: {fileID: 293152994969109949}
-  IsCrouch: 0
+  crouchFlag: 0
 --- !u!95 &2922143613898503826
 Animator:
   serializedVersion: 3
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f959244b08e6e949a4c55ca65c13864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 2
+  distance: 1.1
   objectMask:
     serializedVersion: 2
     m_Bits: 128
