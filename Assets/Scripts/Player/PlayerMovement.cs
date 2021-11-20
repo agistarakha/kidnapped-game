@@ -130,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
             crouchFlag = true;
             speed = 1f;
         }
+
         else if (!hitr && !hitl)
         {
             playerAnimator.SetBool("IsCrouch", false);
