@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public CinemachineVirtualCamera vCam;
     public Text roomInfo;
+    public Transform spawnPoint = null;
 
     void Awake()
     {
@@ -34,13 +35,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Vector3 spawnPos;
-        if (Player.lastPos.Equals(Vector3.zero))
+        if (spawnPoint == null || Player.gameIsInitiated)
         {
             spawnPos = GameObject.Find(DoorData.doorSpawnLocation).transform.position;
         }
         else
         {
-            spawnPos = Player.lastPos;
+            spawnPos = spawnPoint.position;
+            Player.gameIsInitiated = true;
         }
         // Vector3 spawnPos = (Player.sceneState == Player.PlayerState.EXAMINE) ?
         // Player.lastPos :
