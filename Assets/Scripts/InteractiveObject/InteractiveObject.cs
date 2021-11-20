@@ -22,7 +22,7 @@ public class InteractiveObject : MonoBehaviour
             PlayerEnterFeedback();
             player = other.gameObject;
             promptManager.ShowPromt(promptText);
-            playerInRange = true;
+            playerInRange = (Player.gameState == Player.GameState.GAMEPLAY) ? true : false;
 
         }
     }

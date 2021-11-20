@@ -8,7 +8,7 @@ public class NoteObject : InteractiveObject
     public string popUpUIName;
     public string title;
 
-    [TextAreaAttribute(5, 20)]
+    [TextAreaAttribute(5, 100)]
     public string description;
     // Update is called once per frame
     void Update()

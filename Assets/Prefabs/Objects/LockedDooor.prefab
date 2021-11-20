@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4fbe31d75f9b3348892599f6c5ebe3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: 
+  promptText: Locked
   promptManager: {fileID: 0}
   connectedSceneName: Room 5
   connectedDoor: D-1
