@@ -24,7 +24,7 @@ public class PopUpUIManager : MonoBehaviour
         - Fungsi tersebut dipanggil pada object masing-masing.
     */
     public GameObject backdrop;
-    private Button backBtn;
+    public Button backBtn;
     public List<GameObject> popUpObjects;
     public GameObject currentActiveObject;
 
@@ -34,8 +34,6 @@ public class PopUpUIManager : MonoBehaviour
     void Start()
     {
         currentActiveObject = null;
-        backBtn = backdrop.GetComponentInChildren<Button>();
-        backBtn.onClick.AddListener(() => DeactivateUI());
 
     }
 
@@ -58,6 +56,8 @@ public class PopUpUIManager : MonoBehaviour
             if (name == obj.name)
             {
                 backdrop.SetActive(true);
+                Button realBackBtn = Instantiate(backBtn, backBtn.transform.position, Quaternion.identity, backdrop.transform);
+                realBackBtn.onClick.AddListener(() => DeactivateUI());
                 obj.SetActive(true);
                 currentActiveObject = obj;
                 if (name == "PauseMenu")
