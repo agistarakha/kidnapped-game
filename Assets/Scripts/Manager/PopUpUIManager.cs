@@ -27,6 +27,7 @@ public class PopUpUIManager : MonoBehaviour
     public Button backBtn;
     public List<GameObject> popUpObjects;
     public GameObject currentActiveObject;
+    private Button realButton;
 
 
 
@@ -56,8 +57,8 @@ public class PopUpUIManager : MonoBehaviour
             if (name == obj.name)
             {
                 backdrop.SetActive(true);
-                Button realBackBtn = Instantiate(backBtn, backBtn.transform.position, Quaternion.identity, backdrop.transform);
-                realBackBtn.onClick.AddListener(() => DeactivateUI());
+                realButton = Instantiate(backBtn, backBtn.transform.position, Quaternion.identity, backdrop.transform);
+                realButton.onClick.AddListener(() => DeactivateUI());
                 obj.SetActive(true);
                 currentActiveObject = obj;
                 if (name == "PauseMenu")
@@ -81,7 +82,8 @@ public class PopUpUIManager : MonoBehaviour
         {
             currentActiveObject.SetActive(false);
             backdrop.SetActive(false);
-            backBtn.gameObject.SetActive(true);
+            //backBtn.gameObject.SetActive(true);
+            Destroy(realButton.gameObject);
             currentActiveObject = null;
             Player.gameState = Player.GameState.GAMEPLAY;
             // DialogManager.Instance.ShowDialogUI("Blabla");

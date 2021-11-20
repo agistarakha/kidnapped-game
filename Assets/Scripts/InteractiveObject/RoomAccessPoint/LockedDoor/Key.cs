@@ -9,9 +9,10 @@ public class Key : MonoBehaviour
 
     public enum typeKey
     {
-        Red,
-        Blue,
-        Green,
+        WineA,
+        WineC,
+        RuangKontrol,
+        PembangkitListrik,
         Lever
     }
 

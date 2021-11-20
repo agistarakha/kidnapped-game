@@ -12,7 +12,6 @@ public class PuzzleObject : InteractiveObject
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
             PopUpUIManager.Instance.ActivateUI(puzzlePrefab.name);
-
         }
     }
 }

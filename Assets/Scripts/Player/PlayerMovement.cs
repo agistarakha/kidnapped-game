@@ -136,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("IsCrouch", false);
             playerAnimator.SetBool("IsStanding", true);
             crouchFlag = false;
-            speed = 3f;
+            speed = 8f;
         }
         standingCollider.enabled = !crouchFlag;
     }

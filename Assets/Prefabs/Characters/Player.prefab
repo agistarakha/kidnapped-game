@@ -122,8 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5647d602413865b4fa410a6a82b5e1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  crouchSpeed: 1
+  speed: 8
   jumpVelocity: 5
   standingCollider: {fileID: 293152994969109949}
   crouchFlag: 0
