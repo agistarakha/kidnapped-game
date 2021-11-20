@@ -14,6 +14,7 @@ public class KeyObject : InteractiveObject
         return type;
     }
 
+    [TextArea(5, 100)]
     public string dialogText;
 
 

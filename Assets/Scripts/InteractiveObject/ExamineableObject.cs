@@ -11,7 +11,7 @@ public class ExamineableObject : InteractiveObject
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
             GameObject fotoUI = PopUpUIManager.Instance.ActivateUI("Foto");
-            fotoUI.transform.parent.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
+            fotoUI.transform.parent.GetChild(5).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
         }
     }
 
