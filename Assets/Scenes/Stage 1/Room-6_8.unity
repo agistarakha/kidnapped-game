@@ -620,7 +620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.272665, y: -2.0034132, z: -10}
+  m_LocalPosition: {x: -4.2809563, y: -2.0034132, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1826,11 +1826,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3705216240400642791, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: connectedDoor
-      value: D-W
+      value: WP2
       objectReference: {fileID: 0}
     - target: {fileID: 3705216240400642791, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: connectedSceneName
       value: Room-6_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947519061046120497, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
+      propertyPath: m_Name
+      value: WP1
       objectReference: {fileID: 0}
     - target: {fileID: 4779482525792723099, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_Name
@@ -1846,7 +1850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779482525792723102, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.0620334
+      value: -3.15
       objectReference: {fileID: 0}
     - target: {fileID: 4779482525792723102, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2130,11 +2134,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3705216240400642791, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: connectedDoor
-      value: D-W(1)
+      value: WP1
       objectReference: {fileID: 0}
     - target: {fileID: 3705216240400642791, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: connectedSceneName
       value: Room-6_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947519061046120497, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
+      propertyPath: m_Name
+      value: WP2
       objectReference: {fileID: 0}
     - target: {fileID: 4779482525792723099, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_Name
@@ -2150,7 +2158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779482525792723102, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.0620334
+      value: -3.19
       objectReference: {fileID: 0}
     - target: {fileID: 4779482525792723102, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_LocalPosition.z
