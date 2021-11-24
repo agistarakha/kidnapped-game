@@ -8,14 +8,19 @@ public class PlayerMovement : MonoBehaviour
     public Transform ledgeCheck;
     public Transform wallCheck;
     public LayerMask objectMask;
+    private Collider2D standingCollider;
 
-    [SerializeField] Collider2D standingCollider;
 
     private Rigidbody2D playerRb;
     private SpriteRenderer playerSprite;
     private Animator playerAnimator;
     private Vector2 direction;
-    private float lastInput = 0;
+    private float currentSpeed;
+    private CapsuleCollider2D playerCollider;
+
+    private float lastInput;
+    private float horizontalInput;
+    private float verticalInput;
 
     [SerializeField] bool isTouchLedge;
     [SerializeField] bool isTouchWall;
@@ -37,10 +42,15 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        standingCollider = GetComponents<CapsuleCollider2D>()[0];
         playerSprite = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
+        playerCollider = GetComponents<CapsuleCollider2D>()[0];
         direction = Vector2.zero;
-
+        lastInput = 0;
+        horizontalInput = 0;
+        verticalInput = 0;
+        currentSpeed = speed;
     }
 
     void Update()
@@ -52,8 +62,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         lastInput = (direction.x == 0) ? lastInput : direction.x;
-        float horizontalInput = 0;
-        float verticalInput = 0;
+
         if (Player.currentState == Player.PlayerState.CLIMBING)
         {
             playerRb.velocity = Vector2.zero;
@@ -71,8 +80,9 @@ public class PlayerMovement : MonoBehaviour
             playerRb.gravityScale = 1;
             if (IsGrounded())
             {
-                horizontalInput = Input.GetAxis("Horizontal");
-                if (Input.GetKey(KeyCode.Space))
+                horizontalInput = 0;
+                horizontalInput = Input.GetAxisRaw("Horizontal");
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     Jump();
                                
@@ -80,11 +90,16 @@ public class PlayerMovement : MonoBehaviour
                 Crouch();
             }
         }
+
+
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         playerAnimator.SetFloat("verticalInput", Mathf.Abs(verticalInput));
+
+
         playerSprite.flipX = (lastInput < 0) ? true : false;
+
+
         direction = new Vector2(horizontalInput, verticalInput);
-        // Debug.Log(playerRb.velocity.x);
         Ledge();
     }
 
@@ -123,22 +138,22 @@ public class PlayerMovement : MonoBehaviour
     {
         // playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
         playerAnimator.SetBool("IsStanding", false);
-        playerRb.velocity = new Vector2(speed * direction.x, playerRb.velocity.y);
-        // playerRb.velocity = Vector2.right * Mathf.Ceil(direction.x) * speed;
+        playerRb.velocity = new Vector2(currentSpeed * direction.x, playerRb.velocity.y);
+        // playerRb.velocity = Vector2.right * Mathf.Ceil(direction.x) * currentSpeed;
 
     }
 
     void Climb()
     {
-        // playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
+        // playerRb.MovePosition((Vector2)transform.position + (direction * currentSpeed) * Time.deltaTime);
         playerRb.velocity = Vector2.up * direction * 2.0f;
 
     }
     void Jump()
     {
-        playerAnimator.SetBool("IsStanding", false);
-        playerAnimator.SetBool("IsJumping", true);
-        playerRb.velocity = Vector2.up * jumpVelocity;
+        playerAnimator.SetTrigger("Jump");
+        // playerRb.velocity = Vector2.up * jumpVelocity;
+        playerRb.AddForce(new Vector2(0, jumpVelocity));
     }
     void Crouch()
     {
@@ -149,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("IsStanding", false);
             playerAnimator.SetBool("IsCrouch", true);
             crouchFlag = true;
-            speed = 1f;
+            currentSpeed = 1f;
         }
 
         else if (!hitr && !hitl)
@@ -157,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("IsCrouch", false);
             playerAnimator.SetBool("IsStanding", true);
             crouchFlag = false;
-            speed = 8f;
+            currentSpeed = speed;
         }
         standingCollider.enabled = !crouchFlag;
     }
@@ -194,7 +209,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f, LayerMask.GetMask("Floor"));
+        RaycastHit2D hit = Physics2D.Raycast(playerCollider.bounds.center, Vector2.down, playerCollider.bounds.extents.y + 0.1f, LayerMask.GetMask("Floor"));
 
         //If something was hit.
         if (hit)

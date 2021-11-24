@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 2922143613898503853}
   - component: {fileID: 2922143613898503827}
   - component: {fileID: 2922143613898503826}
-  - component: {fileID: 2922143613898503852}
   - component: {fileID: 4512454267022913076}
   - component: {fileID: 293152994969109949}
   - component: {fileID: 441115049733577245}
@@ -154,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5647d602413865b4fa410a6a82b5e1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  jumpVelocity: 5
+  speed: 3
+  jumpVelocity: 250
   ledgeCheck: {fileID: 7140947655883290352}
   wallCheck: {fileID: 4601641541637785409}
   objectMask:
@@ -189,32 +188,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &2922143613898503852
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2922143613898503848}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 629ca01d72f62e144a4d83d5a308980f, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.036247253, y: 2.1106966}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2.71, y: 10.14}
-    newSize: {x: 3.2, y: 3.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.656765, y: 4.221393}
-  m_EdgeRadius: 0
 --- !u!114 &4512454267022913076
 MonoBehaviour:
   m_ObjectHideFlags: 0
