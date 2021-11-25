@@ -5,7 +5,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
     public float jumpVelocity = 2.0f;
+    public Transform ledgeCheck;
+    public Transform wallCheck;
+    public LayerMask objectMask;
     private Collider2D standingCollider;
+
 
     private Rigidbody2D playerRb;
     private SpriteRenderer playerSprite;
@@ -17,6 +21,20 @@ public class PlayerMovement : MonoBehaviour
     private float lastInput;
     private float horizontalInput;
     private float verticalInput;
+
+    [SerializeField] bool isTouchLedge;
+    [SerializeField] bool isTouchWall;
+    private bool canClimbLedge = false;
+    private bool ledgeDetected=false;
+    private Vector2 ledgePosBot;
+    private Vector2 ledgePos1;
+    private Vector2 ledgePos2;
+
+    public float timer=1;
+    public float ledgeClimbXOffset1 = 0f;
+    public float ledgeClimbYOffset1 = 0f;
+    public float ledgeClimbXOffset2 = 0f;
+    public float ledgeClimbYOffset2 = 0f;
 
     [SerializeField] bool crouchFlag;
 
@@ -67,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     Jump();
+                               
                 }
                 Crouch();
             }
@@ -81,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         direction = new Vector2(horizontalInput, verticalInput);
+        Ledge();
     }
 
     // Update is called once per frame
@@ -157,7 +177,35 @@ public class PlayerMovement : MonoBehaviour
         standingCollider.enabled = !crouchFlag;
     }
 
+    void Ledge()
+    {
+        isTouchLedge = Physics2D.Raycast(ledgeCheck.position, transform.right*lastInput, 1f, objectMask);
+        isTouchWall = Physics2D.Raycast(wallCheck.position, transform.right*lastInput, 1f, objectMask);
+
+        if (!isTouchLedge&&isTouchWall)
+        {
+            ledgePosBot = wallCheck.position;
+            if (lastInput < 0)
+            {
+                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x - 1f) + ledgeClimbXOffset2, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
+            }
+            else if (lastInput > 0)
+            {
+                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x + 1f) + ledgeClimbXOffset1, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
+            }
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                    transform.position = ledgePos1;
+                timer = 1;
+            }
+        }     
+    }
+
+
     #endregion
+
+
 
     bool IsGrounded()
     {
