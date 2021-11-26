@@ -3,6 +3,13 @@ using UnityEngine.UI;
 
 public class ExamineableObject : InteractiveObject
 {
+    public enum ObjectTypes
+    {
+        FIGURA,
+        COMMON
+    }
+
+    public ObjectTypes objectTypes;
     [TextArea(5, 100)]
     public string dialogText;
 
@@ -10,8 +17,16 @@ public class ExamineableObject : InteractiveObject
     {
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
-            GameObject fotoUI = PopUpUIManager.Instance.ActivateUI("Foto");
-            fotoUI.transform.parent.GetChild(5).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
+            if (objectTypes == ObjectTypes.FIGURA)
+            {
+
+                GameObject fotoUI = PopUpUIManager.Instance.ActivateUI("Foto");
+                fotoUI.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
+            }
+            else
+            {
+                DialogManager.Instance.ShowDialogUI(dialogText);
+            }
         }
     }
 

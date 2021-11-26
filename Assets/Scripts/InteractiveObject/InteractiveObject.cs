@@ -6,10 +6,16 @@ public class InteractiveObject : MonoBehaviour
     public PromptManager promptManager;
     protected bool playerInRange = false;
     protected GameObject player;
+    protected SpriteRenderer objImg;
+    protected Color oriColor;
+    protected Color enterColor;
     // Start is called before the first frame update
     void Start()
     {
         StartFunExtension();
+        objImg = GetComponent<SpriteRenderer>();
+        oriColor = objImg.color;
+        enterColor = Color.grey;
         playerInRange = false;
         promptManager = FindObjectOfType<PromptManager>();
     }
@@ -20,8 +26,10 @@ public class InteractiveObject : MonoBehaviour
         if (other.tag == "Player")
         {
             PlayerEnterFeedback();
+            objImg.color = enterColor;
+
             player = other.gameObject;
-            promptManager.ShowPromt(promptText);
+            promptManager.ShowPromtBetter(promptText, gameObject.transform.position);
             playerInRange = (Player.gameState == Player.GameState.GAMEPLAY) ? true : false;
 
         }
@@ -31,6 +39,8 @@ public class InteractiveObject : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            objImg.color = oriColor;
+
             playerInRange = false;
             PlayerExitFeedback();
             promptManager.HidePrompt();

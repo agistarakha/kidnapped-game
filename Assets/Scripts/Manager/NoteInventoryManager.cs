@@ -19,11 +19,15 @@ public class NoteInventoryManager : MonoBehaviour
     }
 
 
-    public GameObject noteMenuPrefab;
-    public GameObject itemContainer;
+    private GameObject noteInventoryObj;
+    private GameObject itemContainer;
     public Image noteItem;
+    public GameObject backdrop;
 
 
+    void Start()
+    {
+    }
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +38,7 @@ public class NoteInventoryManager : MonoBehaviour
             //     GameObject noteItemGameobject = Instantiate(noteItem.gameObject, noteItem.transform.position, Quaternion.identity, itemContainer.transform);
             //     noteItemGameobject.GetComponentInChildren<NoteItem>().title = note.Key;
             // }
-            PopUpUIManager.Instance.ActivateUI(noteMenuPrefab.name);
+            noteInventoryObj = PopUpUIManager.Instance.ActivateUI("NoteInventoryUI");
             // noteMenu.gameObject.SetActive(true);
 
         }

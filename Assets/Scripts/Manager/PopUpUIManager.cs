@@ -24,10 +24,9 @@ public class PopUpUIManager : MonoBehaviour
         - Fungsi tersebut dipanggil pada object masing-masing.
     */
     public GameObject backdrop;
-    public Button backBtn;
     public List<GameObject> popUpObjects;
     public GameObject currentActiveObject;
-    private Button realButton;
+    private List<GameObject> generatedObjects;
 
 
 
@@ -35,6 +34,7 @@ public class PopUpUIManager : MonoBehaviour
     void Start()
     {
         currentActiveObject = null;
+        GenerateUI();
 
     }
 
@@ -47,28 +47,39 @@ public class PopUpUIManager : MonoBehaviour
         // }
     }
 
+    private void GenerateUI()
+    {
+        foreach (GameObject obj in popUpObjects)
+        {
+            GameObject generatedObj = Instantiate(obj, obj.transform.position, Quaternion.identity, backdrop.transform);
+            generatedObj.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        }
+    }
+
+
+
 
 
     public GameObject ActivateUI(string name)
     {
         Player.gameState = Player.GameState.MENU;
-        foreach (GameObject obj in popUpObjects)
+
+        for (int i = 0; i < popUpObjects.Count; i++)
         {
-            if (name == obj.name)
+            GameObject obj = backdrop.transform.GetChild(i).gameObject;
+            if (name + "(Clone)" == obj.name)
             {
                 backdrop.SetActive(true);
-                realButton = Instantiate(backBtn, backBtn.transform.position, Quaternion.identity, backdrop.transform);
-                realButton.onClick.AddListener(() => DeactivateUI());
                 obj.SetActive(true);
                 currentActiveObject = obj;
-                if (name == "PauseMenu")
-                {
-                    backBtn.gameObject.SetActive(false);
-                    currentActiveObject.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
-                    {
-                        DeactivateUI();
-                    });
-                }
+                // if (name == "PauseMenu")
+                // {
+                //     // backBtn.gameObject.SetActive(false);
+                //     currentActiveObject.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
+                //     {
+                //         DeactivateUI();
+                //     });
+                // }
                 return currentActiveObject;
             }
         }
@@ -80,11 +91,11 @@ public class PopUpUIManager : MonoBehaviour
     {
         if (Player.gameState == Player.GameState.MENU)
         {
-            currentActiveObject.SetActive(false);
-            backdrop.SetActive(false);
+            // currentActiveObject.SetActive(false);
+            // backdrop.SetActive(false);
             //backBtn.gameObject.SetActive(true);
-            Destroy(realButton.gameObject);
-            currentActiveObject = null;
+            // Destroy(realButton.gameObject);
+            // currentActiveObject = null;
             Player.gameState = Player.GameState.GAMEPLAY;
             // DialogManager.Instance.ShowDialogUI("Blabla");
 
