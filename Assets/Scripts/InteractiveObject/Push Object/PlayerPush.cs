@@ -38,11 +38,11 @@ public class PlayerPush : MonoBehaviour
         else
         {
              if (Input.GetButtonUp("Push"))
-            {
+             {
                 box.GetComponent<FixedJoint2D>().enabled = false;
                 playerAnimator.SetBool("IsPush", false);
                 //box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
-            }
+             }
             playerAnimator.SetBool("IsPush", false);
         }
         
