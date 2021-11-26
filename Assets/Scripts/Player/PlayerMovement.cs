@@ -7,8 +7,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpVelocity = 2.0f;
     public Transform ledgeCheck;
     public Transform wallCheck;
+    public Transform pushCheck;
     public LayerMask objectMask;
     private Collider2D standingCollider;
+
+    public float distance = 5f;
+    private GameObject box;
 
 
     private Rigidbody2D playerRb;
@@ -24,11 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] bool isTouchLedge;
     [SerializeField] bool isTouchWall;
-    private bool canClimbLedge = false;
-    private bool ledgeDetected=false;
+
     private Vector2 ledgePosBot;
     private Vector2 ledgePos1;
-    private Vector2 ledgePos2;
 
     public float timer=1;
     public float ledgeClimbXOffset1 = 0f;
@@ -37,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     public float ledgeClimbYOffset2 = 0f;
 
     [SerializeField] bool crouchFlag;
+    [SerializeField] bool pullGrab;
+    [SerializeField] bool ledgeGrab;
 
     // Start is called before the first frame update
     void Start()
@@ -85,8 +89,8 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     Jump();
-                               
                 }
+                Push();
                 Crouch();
             }
         }
@@ -95,9 +99,14 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         playerAnimator.SetFloat("verticalInput", Mathf.Abs(verticalInput));
 
-
-        playerSprite.flipX = (lastInput < 0) ? true : false;
-
+        if (pullGrab)
+        {
+            playerAnimator.SetBool("IsPush", true);
+        }
+        if (!pullGrab)
+        {
+            playerSprite.flipX = (lastInput < 0) ? true : false;
+        }
 
         direction = new Vector2(horizontalInput, verticalInput);
         Ledge();
@@ -116,8 +125,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (Mathf.Abs(direction.x) > 0)
         {
-            Move();
+            if (ledgeGrab)
+            {
 
+            }
+            else if (!ledgeGrab)
+            {
+                Move();
+            }
         }
         else if (Mathf.Abs(direction.y) > 0)
         {
@@ -147,7 +162,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // playerRb.MovePosition((Vector2)transform.position + (direction * currentSpeed) * Time.deltaTime);
         playerRb.velocity = Vector2.up * direction * 2.0f;
-
     }
     void Jump()
     {
@@ -179,11 +193,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Ledge()
     {
-        isTouchLedge = Physics2D.Raycast(ledgeCheck.position, transform.right*lastInput, 1f, objectMask);
-        isTouchWall = Physics2D.Raycast(wallCheck.position, transform.right*lastInput, 1f, objectMask);
+        isTouchLedge = Physics2D.Raycast(ledgeCheck.position, transform.right*lastInput, distance, objectMask);
+        isTouchWall = Physics2D.Raycast(wallCheck.position, transform.right*lastInput, distance, objectMask);
 
         if (!isTouchLedge&&isTouchWall)
         {
+            ledgeGrab = true;
+            playerRb.velocity = Vector2.zero;
+            playerRb.gravityScale = 0;
             ledgePosBot = wallCheck.position;
             if (lastInput < 0)
             {
@@ -196,12 +213,47 @@ public class PlayerMovement : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                    transform.position = ledgePos1;
+                transform.position = ledgePos1;
                 timer = 1;
+                ledgeGrab = false;
             }
         }     
     }
 
+    void Push()
+    {
+        Physics2D.queriesStartInColliders = false;
+        RaycastHit2D hit = Physics2D.Raycast(pushCheck.position,transform.right*lastInput, distance, objectMask);
+        RaycastHit2D hit1 = Physics2D.Raycast(pushCheck.position+Vector3.left,transform.right, 3f, objectMask);
+        if (hit.collider != null && hit.collider.gameObject.tag == "pushAble")
+        {
+            playerAnimator.SetBool("IsPush", true);
+            box = hit.collider.gameObject;
+            if (Input.GetButtonDown("Push"))
+            {
+                pullGrab = true;
+                box.GetComponent<FixedJoint2D>().enabled = true;
+                box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+            }
+            else if(Input.GetButtonUp("Push"))
+            {
+                box.GetComponent<FixedJoint2D>().enabled = false;
+                pullGrab = false;
+                playerAnimator.SetBool("IsPush", false);
+            }
+        }
+        else 
+        {
+            if (Input.GetButtonUp("Push"))
+            {
+                box.GetComponent<FixedJoint2D>().enabled = false;
+                pullGrab = false;
+                playerAnimator.SetBool("IsPush", false);
+                //box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+            }
+            playerAnimator.SetBool("IsPush", false);
+        }
+    }
 
     #endregion
 

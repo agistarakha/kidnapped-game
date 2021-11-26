@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4501348129158365942}
   - component: {fileID: 4501348129158365937}
-  - component: {fileID: 4501348129158365936}
+  - component: {fileID: 4102698294712257261}
   m_Layer: 0
   m_Name: LockDoor
   m_TagString: Untagged
@@ -60,7 +60,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.115961, y: 1.284232}
   m_EdgeRadius: 0
---- !u!114 &4501348129158365936
+--- !u!114 &4102698294712257261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,10 +69,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4501348129158365943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6da1154ca93d8184d9e449127e2794d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b642502842b0474d9882d3cae620645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeKey: 1
+  promptText: Locked
+  promptManager: {fileID: 0}
+  connectedSceneName: 
+  connectedDoor: 
+  requiredKey: 0
+  coll: {fileID: 4501348129176201426}
 --- !u!1 &4501348129176201424
 GameObject:
   m_ObjectHideFlags: 0
