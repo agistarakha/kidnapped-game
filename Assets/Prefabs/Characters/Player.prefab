@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 2922143613898503853}
   - component: {fileID: 2922143613898503827}
   - component: {fileID: 2922143613898503826}
-  - component: {fileID: 4512454267022913076}
   - component: {fileID: 293152994969109949}
   - component: {fileID: 441115049733577245}
   m_Layer: 0
@@ -66,6 +65,7 @@ Transform:
   m_Children:
   - {fileID: 7140947655883290352}
   - {fileID: 4601641541637785409}
+  - {fileID: 8747461288224768767}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -157,10 +157,11 @@ MonoBehaviour:
   jumpVelocity: 250
   ledgeCheck: {fileID: 7140947655883290352}
   wallCheck: {fileID: 4601641541637785409}
+  pushCheck: {fileID: 8747461288224768767}
   objectMask:
     serializedVersion: 2
     m_Bits: 960
-  standingCollider: {fileID: 293152994969109949}
+  distance: 1.1
   isTouchLedge: 0
   isTouchWall: 0
   timer: 1
@@ -169,6 +170,7 @@ MonoBehaviour:
   ledgeClimbXOffset2: 0.3
   ledgeClimbYOffset2: 2
   crouchFlag: 0
+  pull: 0
 --- !u!95 &2922143613898503826
 Animator:
   serializedVersion: 3
@@ -188,22 +190,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4512454267022913076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2922143613898503848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f959244b08e6e949a4c55ca65c13864, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 1.1
-  objectMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!70 &293152994969109949
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -265,4 +251,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2922143613898503854}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6114507281896775245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8747461288224768767}
+  m_Layer: 0
+  m_Name: pushCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8747461288224768767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6114507281896775245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.74, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2922143613898503854}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
