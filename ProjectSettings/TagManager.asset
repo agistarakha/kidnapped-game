@@ -52,14 +52,14 @@ TagManager:
   - name: Midground
     uniqueID: 1645953205
     locked: 0
+  - name: Wall
+    uniqueID: 603627977
+    locked: 0
   - name: Things
     uniqueID: 1707758617
     locked: 0
   - name: InteractiveObj
     uniqueID: 2954240777
-    locked: 0
-  - name: Wall
-    uniqueID: 603627977
     locked: 0
   - name: Doors
     uniqueID: 3951191089
