@@ -30,6 +30,36 @@ Transform:
   m_Father: {fileID: 2922143613898503854}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2651058568500484545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8065068523682248401}
+  m_Layer: 0
+  m_Name: boxCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8065068523682248401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2651058568500484545}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2922143613898503854}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2922143613898503848
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,6 +96,7 @@ Transform:
   - {fileID: 7140947655883290352}
   - {fileID: 4601641541637785409}
   - {fileID: 8747461288224768767}
+  - {fileID: 8065068523682248401}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -107,7 +138,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2000632049
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 91bf589552cb0fb47abf0d95d2a5a662, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -158,19 +189,23 @@ MonoBehaviour:
   ledgeCheck: {fileID: 7140947655883290352}
   wallCheck: {fileID: 4601641541637785409}
   pushCheck: {fileID: 8747461288224768767}
+  boxCheck: {fileID: 8065068523682248401}
   objectMask:
     serializedVersion: 2
     m_Bits: 960
   distance: 1.1
   isTouchLedge: 0
   isTouchWall: 0
+  isTouchBox: 0
+  isTouchPush: 0
   timer: 1
   ledgeClimbXOffset1: 0.3
   ledgeClimbYOffset1: 1
   ledgeClimbXOffset2: 0.3
   ledgeClimbYOffset2: 2
   crouchFlag: 0
-  pull: 0
+  pullGrab: 0
+  ledgeGrab: 0
 --- !u!95 &2922143613898503826
 Animator:
   serializedVersion: 3
@@ -276,7 +311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6114507281896775245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.74, z: 0}
+  m_LocalPosition: {x: 0, y: 3.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2922143613898503854}

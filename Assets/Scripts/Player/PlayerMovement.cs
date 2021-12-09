@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform ledgeCheck;
     public Transform wallCheck;
     public Transform pushCheck;
+    public Transform boxCheck;
     public LayerMask objectMask;
     private Collider2D standingCollider;
 
@@ -28,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] bool isTouchLedge;
     [SerializeField] bool isTouchWall;
+    [SerializeField] bool isTouchBox;
+    [SerializeField] bool isTouchPush;
 
     private Vector2 ledgePosBot;
     private Vector2 ledgePos1;
@@ -90,14 +93,13 @@ public class PlayerMovement : MonoBehaviour
             playerRb.gravityScale = 1;
             if (IsGrounded())
             {
-
                 horizontalInput = 0;
                 horizontalInput = Input.GetAxisRaw("Horizontal");
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     Jump();
                 }
-                // Push();
+                Push();
                 // Crouch();
             }
         }
@@ -116,7 +118,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         direction = new Vector2(horizontalInput, verticalInput);
-        // Ledge();
+        Ledge();
+        Box();
     }
 
     // Update is called once per frame
@@ -209,6 +212,35 @@ public class PlayerMovement : MonoBehaviour
             playerRb.velocity = Vector2.zero;
             playerRb.gravityScale = 0;
             ledgePosBot = wallCheck.position;
+            if (lastInput < 0)
+            {
+                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x - 1f) + ledgeClimbXOffset2, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
+            }
+            else if (lastInput > 0)
+            {
+                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x + 1f) + ledgeClimbXOffset1, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
+            }
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                transform.position = ledgePos1;
+                timer = 1;
+                ledgeGrab = false;
+            }
+        }
+    }
+
+    void Box()
+    {
+        isTouchBox = Physics2D.Raycast(boxCheck.position, transform.right * lastInput, distance, objectMask);
+        isTouchPush = Physics2D.Raycast(pushCheck.position, transform.right * lastInput, distance, objectMask);
+
+        if (!isTouchBox && isTouchPush)
+        {
+            ledgeGrab = true;
+            playerRb.velocity = Vector2.zero;
+            playerRb.gravityScale = 0;
+            ledgePosBot = boxCheck.position;
             if (lastInput < 0)
             {
                 ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x - 1f) + ledgeClimbXOffset2, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
