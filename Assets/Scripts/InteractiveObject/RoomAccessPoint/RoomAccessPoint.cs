@@ -5,8 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class RoomAccessPoint : InteractiveObject
 {
+    public enum DoorType
+    {
+        FRONT,
+        SIDE
+    }
     public string connectedSceneName = "Room 2";
     public string connectedDoor = "D-1";
+    public Sprite doorOpenSprite = null;
+    public Collider2D doorCollider = null;
+    public DoorType doorType;
+
 
     protected void LoadConnectedScene()
     {
@@ -31,4 +40,38 @@ public class RoomAccessPoint : InteractiveObject
             yield return null;
         }
     }
+
+    public IEnumerator OpenDoor()
+    {
+        objImg.color = oriColor;
+        yield return new WaitForSeconds(0.5f);
+        objImg.sprite = doorOpenSprite;
+        DoorTypeHandling();
+        yield return new WaitForSeconds(0.1f);
+        if (connectedSceneName == "")
+        {
+            doorCollider.enabled = false;
+
+        }
+        else
+        {
+            LoadConnectedScene();
+
+        }
+
+    }
+
+    private void DoorTypeHandling()
+    {
+        if (doorType == DoorType.SIDE)
+        {
+            float xOffset = 25.02f - 23.24f;
+            float yOffset = 0.34f - 1.04f;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            transform.position = new Vector3(transform.position.x - xOffset, transform.position.y - yOffset, 0);
+
+        }
+    }
+
 }
+
