@@ -6,7 +6,6 @@ public class Door : RoomAccessPoint
 {
 
 
-    public Sprite doorOpenSprite;
 
     public override void StartFunExtension()
     {
@@ -30,13 +29,5 @@ public class Door : RoomAccessPoint
         base.PlayerExitFeedback();
     }
 
-    private IEnumerator OpenDoor()
-    {
-        objImg.color = oriColor;
-        yield return new WaitForSeconds(0.5f);
-        objImg.sprite = doorOpenSprite;
-        yield return new WaitForSeconds(0.5f);
-        LoadConnectedScene();
 
-    }
 }

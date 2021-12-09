@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform ledgeCheck;
     public Transform wallCheck;
     public Transform pushCheck;
+    public Transform boxCheck;
     public LayerMask objectMask;
     private Collider2D standingCollider;
 
@@ -28,11 +29,13 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] bool isTouchLedge;
     [SerializeField] bool isTouchWall;
+    [SerializeField] bool isTouchBox;
+    [SerializeField] bool isTouchPush;
 
     private Vector2 ledgePosBot;
     private Vector2 ledgePos1;
 
-    public float timer=1;
+    public float timer = 1;
     public float ledgeClimbXOffset1 = 0f;
     public float ledgeClimbYOffset1 = 0f;
     public float ledgeClimbXOffset2 = 0f;
@@ -59,6 +62,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        horizontalInput = 0;
+        verticalInput = 0;
+        // Debug.Log(playerRb.velocity.y);
+        Debug.Log(Player.currentState);
         if (Player.gameState == Player.GameState.MENU || Player.gameState == Player.GameState.DIALOG)
         {
             playerRb.velocity = Vector2.zero;
@@ -78,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Player.currentState == Player.PlayerState.WANDER)
         {
+            // playerRb.velocity = new Vector2(playerRb.velocity.x, 0);
+            // playerRb.velocity = new Vector2(playerRb.velocity.x,0);
             playerAnimator.SetBool("IsClimbing", false);
             playerAnimator.SetBool("IsStanding", true);
 
@@ -91,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
                     Jump();
                 }
                 Push();
-                Crouch();
+                // Crouch();
             }
         }
 
@@ -110,6 +119,7 @@ public class PlayerMovement : MonoBehaviour
 
         direction = new Vector2(horizontalInput, verticalInput);
         Ledge();
+        Box();
     }
 
     // Update is called once per frame
@@ -125,14 +135,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (Mathf.Abs(direction.x) > 0)
         {
-            if (ledgeGrab)
-            {
+            // if (ledgeGrab)
+            // {
 
-            }
-            else if (!ledgeGrab)
-            {
-                Move();
-            }
+            // }
+            // else if (!ledgeGrab)
+            // {
+            Move();
+            // }
         }
         else if (Mathf.Abs(direction.y) > 0)
         {
@@ -160,8 +170,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Climb()
     {
-        // playerRb.MovePosition((Vector2)transform.position + (direction * currentSpeed) * Time.deltaTime);
-        playerRb.velocity = Vector2.up * direction * 2.0f;
+        playerRb.MovePosition((Vector2)transform.position + (direction * currentSpeed) * Time.deltaTime);
+        // playerRb.velocity = Vector2.up * direction * 2.0f;
     }
     void Jump()
     {
@@ -193,10 +203,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Ledge()
     {
-        isTouchLedge = Physics2D.Raycast(ledgeCheck.position, transform.right*lastInput, distance, objectMask);
-        isTouchWall = Physics2D.Raycast(wallCheck.position, transform.right*lastInput, distance, objectMask);
+        isTouchLedge = Physics2D.Raycast(ledgeCheck.position, transform.right * lastInput, distance, objectMask);
+        isTouchWall = Physics2D.Raycast(wallCheck.position, transform.right * lastInput, distance, objectMask);
 
-        if (!isTouchLedge&&isTouchWall)
+        if (!isTouchLedge && isTouchWall)
         {
             ledgeGrab = true;
             playerRb.velocity = Vector2.zero;
@@ -217,14 +227,43 @@ public class PlayerMovement : MonoBehaviour
                 timer = 1;
                 ledgeGrab = false;
             }
-        }     
+        }
+    }
+
+    void Box()
+    {
+        isTouchBox = Physics2D.Raycast(boxCheck.position, transform.right * lastInput, distance, objectMask);
+        isTouchPush = Physics2D.Raycast(pushCheck.position, transform.right * lastInput, distance, objectMask);
+
+        if (!isTouchBox && isTouchPush)
+        {
+            ledgeGrab = true;
+            playerRb.velocity = Vector2.zero;
+            playerRb.gravityScale = 0;
+            ledgePosBot = boxCheck.position;
+            if (lastInput < 0)
+            {
+                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x - 1f) + ledgeClimbXOffset2, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
+            }
+            else if (lastInput > 0)
+            {
+                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x + 1f) + ledgeClimbXOffset1, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
+            }
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                transform.position = ledgePos1;
+                timer = 1;
+                ledgeGrab = false;
+            }
+        }
     }
 
     void Push()
     {
         Physics2D.queriesStartInColliders = false;
-        RaycastHit2D hit = Physics2D.Raycast(pushCheck.position,transform.right*lastInput, distance, objectMask);
-        RaycastHit2D hit1 = Physics2D.Raycast(pushCheck.position+Vector3.left,transform.right, 3f, objectMask);
+        RaycastHit2D hit = Physics2D.Raycast(pushCheck.position, transform.right * lastInput, distance, objectMask);
+        RaycastHit2D hit1 = Physics2D.Raycast(pushCheck.position + Vector3.left, transform.right, 3f, objectMask);
         if (hit.collider != null && hit.collider.gameObject.tag == "pushAble")
         {
             playerAnimator.SetBool("IsPush", true);
@@ -235,14 +274,14 @@ public class PlayerMovement : MonoBehaviour
                 box.GetComponent<FixedJoint2D>().enabled = true;
                 box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
             }
-            else if(Input.GetButtonUp("Push"))
+            else if (Input.GetButtonUp("Push"))
             {
                 box.GetComponent<FixedJoint2D>().enabled = false;
                 pullGrab = false;
                 playerAnimator.SetBool("IsPush", false);
             }
         }
-        else 
+        else
         {
             if (Input.GetButtonUp("Push"))
             {

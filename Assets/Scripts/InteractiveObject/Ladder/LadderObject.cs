@@ -16,6 +16,7 @@ public class LadderObject : InteractiveObject
     public override void PlayerExitFeedback()
     {
         Player.currentState = Player.PlayerState.WANDER;
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
 }
