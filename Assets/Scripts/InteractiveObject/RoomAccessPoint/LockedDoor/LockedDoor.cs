@@ -22,7 +22,7 @@ public class LockedDoor : RoomAccessPoint
         {
             if (doorIsUnlocked)
             {
-                LoadConnectedScene();
+                StartCoroutine(OpenDoor());
 
             }
             else
