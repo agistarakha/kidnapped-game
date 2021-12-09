@@ -27,6 +27,7 @@ public class PopUpUIManager : MonoBehaviour
     public List<GameObject> popUpObjects;
     public GameObject currentActiveObject;
     private List<GameObject> generatedObjects;
+    private Sprite photoSprite;
 
 
 
@@ -70,6 +71,33 @@ public class PopUpUIManager : MonoBehaviour
             if (name + "(Clone)" == obj.name)
             {
                 backdrop.SetActive(true);
+                obj.SetActive(true);
+                currentActiveObject = obj;
+                // if (name == "PauseMenu")
+                // {
+                //     // backBtn.gameObject.SetActive(false);
+                //     currentActiveObject.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
+                //     {
+                //         DeactivateUI();
+                //     });
+                // }
+                return currentActiveObject;
+            }
+        }
+        return null;
+    }
+
+    public GameObject ActivateUI(Sprite img)
+    {
+        Player.gameState = Player.GameState.MENU;
+
+        for (int i = 0; i < popUpObjects.Count; i++)
+        {
+            GameObject obj = backdrop.transform.GetChild(i).gameObject;
+            if ("Photo(Clone)" == obj.name)
+            {
+                backdrop.SetActive(true);
+                obj.GetComponent<Image>().sprite = img;
                 obj.SetActive(true);
                 currentActiveObject = obj;
                 // if (name == "PauseMenu")
