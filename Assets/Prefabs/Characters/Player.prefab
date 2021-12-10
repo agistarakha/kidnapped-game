@@ -192,7 +192,7 @@ MonoBehaviour:
   boxCheck: {fileID: 8065068523682248401}
   objectMask:
     serializedVersion: 2
-    m_Bits: 960
+    m_Bits: 640
   distance: 1.1
   isTouchLedge: 0
   isTouchWall: 0
