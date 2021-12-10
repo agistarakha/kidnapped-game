@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - NoteDetails
   - pushAble
+  - PopUpItem
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - Floor
   - PushAbleObject
-  - 
-  - 
+  - Crouch
+  - Ledge
   - 
   - 
   - 
@@ -44,4 +45,28 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 856378965
+    locked: 0
+  - name: Midground
+    uniqueID: 1645953205
+    locked: 0
+  - name: Wall
+    uniqueID: 603627977
+    locked: 0
+  - name: Things
+    uniqueID: 1707758617
+    locked: 0
+  - name: InteractiveObj
+    uniqueID: 2954240777
+    locked: 0
+  - name: Doors
+    uniqueID: 3951191089
+    locked: 0
+  - name: Players
+    uniqueID: 2000632049
+    locked: 0
+  - name: Foreground
+    uniqueID: 1382988619
     locked: 0

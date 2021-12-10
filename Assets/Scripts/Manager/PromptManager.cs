@@ -11,6 +11,12 @@ public class PromptManager : MonoBehaviour
     {
         promptTextUI = promtPanel.gameObject.GetComponentInChildren<Text>();
     }
+    public void ShowPromtBetter(string text, Vector3 objPos)
+    {
+        promtPanel.gameObject.SetActive(true);
+        promtPanel.rectTransform.localPosition = objPos + new Vector3(0, 1, 0);
+        promptTextUI.text = text;
+    }
     public void ShowPromt(string text)
     {
         promtPanel.gameObject.SetActive(true);

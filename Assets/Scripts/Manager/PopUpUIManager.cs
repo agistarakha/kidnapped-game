@@ -24,9 +24,10 @@ public class PopUpUIManager : MonoBehaviour
         - Fungsi tersebut dipanggil pada object masing-masing.
     */
     public GameObject backdrop;
-    private Button backBtn;
     public List<GameObject> popUpObjects;
     public GameObject currentActiveObject;
+    private List<GameObject> generatedObjects;
+    private Sprite photoSprite;
 
 
 
@@ -34,8 +35,7 @@ public class PopUpUIManager : MonoBehaviour
     void Start()
     {
         currentActiveObject = null;
-        backBtn = backdrop.GetComponentInChildren<Button>();
-        backBtn.onClick.AddListener(() => DeactivateUI());
+        GenerateUI();
 
     }
 
@@ -48,26 +48,66 @@ public class PopUpUIManager : MonoBehaviour
         // }
     }
 
+    private void GenerateUI()
+    {
+        foreach (GameObject obj in popUpObjects)
+        {
+            GameObject generatedObj = Instantiate(obj, obj.transform.position, Quaternion.identity, backdrop.transform);
+            generatedObj.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        }
+    }
+
+
+
 
 
     public GameObject ActivateUI(string name)
     {
         Player.gameState = Player.GameState.MENU;
-        foreach (GameObject obj in popUpObjects)
+
+        for (int i = 0; i < popUpObjects.Count; i++)
         {
-            if (name == obj.name)
+            GameObject obj = backdrop.transform.GetChild(i).gameObject;
+            if (name + "(Clone)" == obj.name)
             {
                 backdrop.SetActive(true);
                 obj.SetActive(true);
                 currentActiveObject = obj;
-                if (name == "PauseMenu")
-                {
-                    backBtn.gameObject.SetActive(false);
-                    currentActiveObject.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
-                    {
-                        DeactivateUI();
-                    });
-                }
+                // if (name == "PauseMenu")
+                // {
+                //     // backBtn.gameObject.SetActive(false);
+                //     currentActiveObject.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
+                //     {
+                //         DeactivateUI();
+                //     });
+                // }
+                return currentActiveObject;
+            }
+        }
+        return null;
+    }
+
+    public GameObject ActivateUI(Sprite img)
+    {
+        Player.gameState = Player.GameState.MENU;
+
+        for (int i = 0; i < popUpObjects.Count; i++)
+        {
+            GameObject obj = backdrop.transform.GetChild(i).gameObject;
+            if ("Photo(Clone)" == obj.name)
+            {
+                backdrop.SetActive(true);
+                obj.GetComponent<Image>().sprite = img;
+                obj.SetActive(true);
+                currentActiveObject = obj;
+                // if (name == "PauseMenu")
+                // {
+                //     // backBtn.gameObject.SetActive(false);
+                //     currentActiveObject.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
+                //     {
+                //         DeactivateUI();
+                //     });
+                // }
                 return currentActiveObject;
             }
         }
@@ -79,10 +119,11 @@ public class PopUpUIManager : MonoBehaviour
     {
         if (Player.gameState == Player.GameState.MENU)
         {
-            currentActiveObject.SetActive(false);
-            backdrop.SetActive(false);
-            backBtn.gameObject.SetActive(true);
-            currentActiveObject = null;
+            // currentActiveObject.SetActive(false);
+            // backdrop.SetActive(false);
+            //backBtn.gameObject.SetActive(true);
+            // Destroy(realButton.gameObject);
+            // currentActiveObject = null;
             Player.gameState = Player.GameState.GAMEPLAY;
             // DialogManager.Instance.ShowDialogUI("Blabla");
 

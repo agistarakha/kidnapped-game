@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,9 +18,14 @@ public class DialogManager : MonoBehaviour
     }
 
     public GameObject dialogUIObject;
+
+
+    private Text dialogText;
+
     // Start is called before the first frame update
     void Start()
     {
+
 
     }
 
@@ -36,13 +40,24 @@ public class DialogManager : MonoBehaviour
 
     public void ShowDialogUI(string text)
     {
+        dialogText = dialogUIObject.transform.GetChild(0).GetComponent<Text>();
+        dialogText.text = "";
         //Player.gameState = Player.GameState.DIALOG;
         dialogUIObject.SetActive(true);
-        dialogUIObject.transform.GetChild(0).GetComponent<Text>().text = text;
+        StartCoroutine(GenerateDialogText(text));
     }
     public void HideDialogUI()
     {
         //Player.gameState = Player.GameState.GAMEPLAY;
         dialogUIObject.SetActive(false);
+    }
+
+    private IEnumerator GenerateDialogText(string text)
+    {
+        foreach (char txt in text)
+        {
+            dialogText.text += txt;
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }

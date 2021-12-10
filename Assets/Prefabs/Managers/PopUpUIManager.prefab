@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backdrop: {fileID: 0}
+  backBtn: {fileID: 7177339391761778594, guid: 9d58affccd01b9340b7f5b5d02e5ec04, type: 3}
   popUpObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 958756720206889959, guid: ac78877944898564ab6db80ccd42a9c7, type: 3}
+  - {fileID: 7584282945238946919, guid: 6a2744825607d5d4496e299d5f89213f, type: 3}
+  - {fileID: 5288756261510432911, guid: 74012ccd98d5aa549878016d33fe784b, type: 3}
+  - {fileID: 23910246276556735, guid: 639f8f5a5a4f5944bb4328b6ea19e820, type: 3}
+  - {fileID: 7094179420855638026, guid: 0de1d776bbf121049b4598951fb915db, type: 3}
   currentActiveObject: {fileID: 0}
