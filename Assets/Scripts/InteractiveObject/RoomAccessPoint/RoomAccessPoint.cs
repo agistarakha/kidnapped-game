@@ -65,8 +65,13 @@ public class RoomAccessPoint : InteractiveObject
     {
         if (doorType == DoorType.SIDE)
         {
-            float xOffset = 25.02f - 23.24f;
-            float yOffset = 0.34f - 1.04f;
+            float xOffset = 87.274f - 85.52f;
+            float yOffset = 17.252f - 18f;
+            if (objImg.flipX == true)
+            {
+                // yOffset = yOffset * -1;
+                xOffset = xOffset * -1;
+            }
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             transform.position = new Vector3(transform.position.x - xOffset, transform.position.y - yOffset, 0);
 
