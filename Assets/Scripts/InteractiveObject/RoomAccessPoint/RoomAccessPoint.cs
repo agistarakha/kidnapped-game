@@ -31,7 +31,7 @@ public class RoomAccessPoint : InteractiveObject
         // This is particularly good for creating loading screens.
         // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
         // a sceneBuildIndex of 1 as shown in Build Settings.
-
+        GameDataManager.SaveFile(player);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(connected);
 
         // Wait until the asynchronous scene fully loads
@@ -45,6 +45,9 @@ public class RoomAccessPoint : InteractiveObject
     {
         objImg.color = oriColor;
         yield return new WaitForSeconds(0.5f);
+        // if (doorOpenSprite != null)
+        // {
+        // }
         objImg.sprite = doorOpenSprite;
         DoorTypeHandling();
         yield return new WaitForSeconds(0.1f);

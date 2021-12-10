@@ -5,13 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    [System.Serializable]
-    public struct PlayerData
-    {
-        public Vector3 lastPos;
-        public string lastVisitedScene;
-        public List<Key.typeKey> obtainedKeys;
-    }
+    public Vector3 lastPos;
+    public string lastVisitedScene;
+    public List<Key.typeKey> obtainedKeys;
+    public Dictionary<string, string> obtainedNotes;
+    public List<string> unlockedDoors;
 
 }
 
