@@ -13,7 +13,7 @@ public static class GameDataManager
 
     public static bool LoadFile()
     {
-        GameData.PlayerData playerData = new GameData.PlayerData();
+        GameData gameData = new GameData();
         string saveFile = Application.persistentDataPath + "/gamedata.json";
 
 
@@ -25,11 +25,12 @@ public static class GameDataManager
 
             // Deserialize the JSON data 
             //  into a pattern matching the GameData class.
-            playerData = JsonUtility.FromJson<GameData.PlayerData>(fileContents);
+            gameData = JsonUtility.FromJson<GameData>(fileContents);
             // Player.lastPos = gameData
-            DoorData.lastVisitedScene = playerData.lastVisitedScene;
-            Player.lastPos = playerData.lastPos;
-            Player.obtainedKeys = playerData.obtainedKeys;
+            DoorData.lastVisitedScene = gameData.lastVisitedScene;
+            Player.lastPos = gameData.lastPos;
+            Player.obtainedKeys = gameData.obtainedKeys;
+            Player.unlockedDoors = gameData.unlockedDoors;
             return true;
         }
         return false;
@@ -40,13 +41,14 @@ public static class GameDataManager
         // GameData gameData = new GameData();
         string saveFile = Application.persistentDataPath + "/gamedata.json";
 
-        GameData.PlayerData playerData = new GameData.PlayerData();
-        playerData.lastPos = playerGameObject.GetComponent<Rigidbody2D>().transform
+        GameData gameData = new GameData();
+        gameData.lastPos = playerGameObject.GetComponent<Rigidbody2D>().transform
         .position;
-        playerData.lastVisitedScene = DoorData.lastVisitedScene;
-        playerData.obtainedKeys = Player.obtainedKeys;
+        gameData.lastVisitedScene = DoorData.lastVisitedScene;
+        gameData.obtainedKeys = Player.obtainedKeys;
+        gameData.unlockedDoors = Player.unlockedDoors;
         // Serialize the object into JSON and save string.
-        string jsonString = JsonUtility.ToJson(playerData);
+        string jsonString = JsonUtility.ToJson(gameData);
 
         // Write JSON to file.
         File.WriteAllText(saveFile, jsonString);
