@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = 0;
         verticalInput = 0;
         // Debug.Log(playerRb.velocity.y);
-        Debug.Log(Player.currentState);
+        // Debug.Log(Player.currentState);
         if (Player.gameState == Player.GameState.MENU || Player.gameState == Player.GameState.DIALOG)
         {
             playerRb.velocity = Vector2.zero;

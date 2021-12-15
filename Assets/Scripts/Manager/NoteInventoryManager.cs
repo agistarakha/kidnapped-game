@@ -31,7 +31,7 @@ public class NoteInventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && Player.gameState == Player.GameState.GAMEPLAY)
         {
             // foreach (KeyValuePair<string, string> note in Player.obtainedNotes)
             // {

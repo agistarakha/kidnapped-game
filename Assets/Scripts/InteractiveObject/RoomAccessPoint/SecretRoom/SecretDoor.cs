@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class SecretDoor : MonoBehaviour
 {
+    public GameObject targetObj;
     public Vector3 targetPos;
     // Start is called before the first frame update
     void Start()
     {
-        targetPos = new Vector3(transform.position.x - (125.1f - 120.8f), transform.position.y, transform.position.x);
+        targetPos = new Vector3(transform.position.x - (123.1f - 120.8f) * -1f, transform.position.y, transform.position.z);
         // StartCoroutine(SlideDoor());
     }
 
@@ -23,7 +24,7 @@ public class SecretDoor : MonoBehaviour
 
         while (transform.position.x != targetPos.x)
         {
-            gameObject.transform.position = Vector3.Lerp(transform.position, targetPos, 0.5f * Time.deltaTime);
+            gameObject.transform.position = Vector3.Lerp(transform.position, targetObj.transform.position, 0.5f * Time.deltaTime);
             yield return null;
         }
         transform.position = targetPos;

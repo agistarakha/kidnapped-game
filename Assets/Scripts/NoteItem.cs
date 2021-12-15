@@ -21,6 +21,10 @@ public class NoteItem : MonoBehaviour
 
     void OnEnable()
     {
+        foreach (KeyValuePair<string, string> note in Player.obtainedNotes)
+        {
+
+        }
         GetComponentInChildren<Text>().text = title;
     }
 

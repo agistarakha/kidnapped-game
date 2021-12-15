@@ -45,10 +45,10 @@ public class RoomAccessPoint : InteractiveObject
     {
         objImg.color = oriColor;
         yield return new WaitForSeconds(0.5f);
-        // if (doorOpenSprite != null)
-        // {
-        // }
-        objImg.sprite = doorOpenSprite;
+        if (doorOpenSprite != null)
+        {
+            objImg.sprite = doorOpenSprite;
+        }
         DoorTypeHandling();
         yield return new WaitForSeconds(0.1f);
         if (connectedSceneName == "")
