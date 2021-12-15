@@ -28,6 +28,7 @@ public class PopUpUIManager : MonoBehaviour
     public GameObject currentActiveObject;
     private List<GameObject> generatedObjects;
     private Sprite photoSprite;
+    private bool isPopUpActive = false;
 
 
 
@@ -42,10 +43,25 @@ public class PopUpUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Escape))
-        // {
-        //     DeactivateUI();
-        // }
+        if (!isPopUpActive && Player.gameState == Player.GameState.MENU)
+        {
+            Player.gameState = Player.GameState.GAMEPLAY;
+        }
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape)) && Player.gameState == Player.GameState.MENU)
+        {
+            for (int i = 0; i < backdrop.transform.childCount; i++)
+            {
+                GameObject childObj = backdrop.transform.GetChild(i).gameObject;
+                if (childObj.activeSelf && childObj.name != "Photo(Clone)")
+                {
+
+                    backdrop.transform.GetChild(i).gameObject.SetActive(false);
+                    backdrop.SetActive(false);
+                    isPopUpActive = false;
+                    break;
+                }
+            }
+        }
     }
 
     private void GenerateUI()
@@ -63,6 +79,7 @@ public class PopUpUIManager : MonoBehaviour
 
     public GameObject ActivateUI(string name)
     {
+        isPopUpActive = true;
         Player.gameState = Player.GameState.MENU;
 
         for (int i = 0; i < popUpObjects.Count; i++)
@@ -89,6 +106,7 @@ public class PopUpUIManager : MonoBehaviour
 
     public GameObject ActivateUI(Sprite img)
     {
+        isPopUpActive = true;
         Player.gameState = Player.GameState.MENU;
 
         for (int i = 0; i < popUpObjects.Count; i++)
@@ -128,6 +146,13 @@ public class PopUpUIManager : MonoBehaviour
             // DialogManager.Instance.ShowDialogUI("Blabla");
 
         }
+    }
+
+
+    private IEnumerator gaemStateDelay()
+    {
+
+        yield return null;
     }
 }
 

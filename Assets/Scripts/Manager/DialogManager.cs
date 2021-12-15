@@ -21,6 +21,7 @@ public class DialogManager : MonoBehaviour
 
 
     private Text dialogText;
+    private bool isDialogActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,14 +33,22 @@ public class DialogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!isDialogActive && Player.gameState == Player.GameState.DIALOG)
+        {
+            Player.gameState = Player.GameState.GAMEPLAY;
+        }
+
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)) && Player.gameState == Player.GameState.DIALOG)
         {
             HideDialogUI();
+            isDialogActive = false;
         }
     }
 
     public void ShowDialogUI(string text)
     {
+        isDialogActive = true;
+        Player.gameState = Player.GameState.DIALOG;
         dialogText = dialogUIObject.transform.GetChild(0).GetComponent<Text>();
         dialogText.text = "";
         //Player.gameState = Player.GameState.DIALOG;
