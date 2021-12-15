@@ -8,21 +8,22 @@ public class KeyObject : InteractiveObject
     [SerializeField]
     private Key.typeKey type;
 
-
     public Key.typeKey GetKeyType()
     {
         return type;
     }
 
-    [TextArea(5, 100)]
-    public string dialogText;
-
+    //[TextArea(5, 100)]
+    //public string dialogText;
 
     void Awake()
     {
         if (Player.obtainedKeys.Contains(GetKeyType()))
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            GetComponent<ExamineableObject>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            this.enabled=false;
         }
     }
     void Update()
@@ -30,9 +31,12 @@ public class KeyObject : InteractiveObject
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
             // PopUpUIManager.Instance.backdrop.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
-            DialogManager.Instance.ShowDialogUI(dialogText);
+            //DialogManager.Instance.ShowDialogUI(dialogText);
             Player.obtainedKeys.Add(GetKeyType());
-            gameObject.SetActive(false);
+            GetComponent<ExamineableObject>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            this.enabled = false;
+            //gameObject.SetActive(false);
         }
     }
 }

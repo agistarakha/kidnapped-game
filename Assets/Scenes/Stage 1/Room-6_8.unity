@@ -990,7 +990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0014477, y: 1.8951912, z: -10}
+  m_LocalPosition: {x: -3.0014496, y: 1.895194, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2356,6 +2356,7 @@ GameObject:
   - component: {fileID: 1425368968}
   - component: {fileID: 1425368967}
   - component: {fileID: 1425368966}
+  - component: {fileID: 1425368969}
   m_Layer: 0
   m_Name: Kunci
   m_TagString: Untagged
@@ -2371,7 +2372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425368964}
   m_LocalRotation: {x: -0, y: -0, z: 0.71810144, w: 0.6959385}
-  m_LocalPosition: {x: -27.19, y: 1.58, z: 0}
+  m_LocalPosition: {x: -32.05, y: 1.58, z: 0}
   m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1129421043}
@@ -2389,12 +2390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e464aa6ade1596343927e5201ad5e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Ambil
+  promptText: 
   promptManager: {fileID: 0}
   type: 3
-  dialogText: "\u201CRuang Generator\u201D,\r hmm...\napa masih ada ruangan yang
-    belum ku masuki?\r\nBanyak sekali ruangan di sini, kapan GW bisa keluar dari
-    sini!?"
 --- !u!212 &1425368967
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2436,7 +2434,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ee83640a459a3094f8c50c218b6f2efb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2459,7 +2457,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11093378, y: 0.03776729}
+  m_Offset: {x: 1.8680115, y: 0.36672366}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2470,8 +2468,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.6555243, y: 5.154317}
+  m_Size: {x: 59.765045, y: 5.832638}
   m_EdgeRadius: 0
+--- !u!114 &1425368969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425368964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0359326d9dabf4cb87b4078d7537ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptText: Examine
+  promptManager: {fileID: 0}
+  objectTypes: 0
+  dialogText: "\u201CRuang Generator\u201D\napa masih ada ruangan yang belum ku masuki?\r\nBanyak
+    sekali ruagan di sini, kapan GW bisa keluar dari sini?"
+  photoSprite: {fileID: 21300000, guid: ee83640a459a3094f8c50c218b6f2efb, type: 3}
 --- !u!4 &1455636977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2137789504834958230, guid: 523d4520e0bd47a49b726fc842cf0ac9, type: 3}
