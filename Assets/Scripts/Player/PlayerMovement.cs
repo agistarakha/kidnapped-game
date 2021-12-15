@@ -58,14 +58,16 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = 0;
         verticalInput = 0;
         currentSpeed = speed;
+
     }
 
     void Update()
     {
         horizontalInput = 0;
         verticalInput = 0;
+        playerAnimator.SetFloat("yVelocity", playerRb.velocity.y);
         // Debug.Log(playerRb.velocity.y);
-        Debug.Log(Player.currentState);
+        // Debug.Log(Player.currentState);
         if (Player.gameState == Player.GameState.MENU || Player.gameState == Player.GameState.DIALOG)
         {
             playerRb.velocity = Vector2.zero;
@@ -95,12 +97,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 horizontalInput = 0;
                 horizontalInput = Input.GetAxisRaw("Horizontal");
+                Push();
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     Jump();
                 }
-                Push();
+
                 // Crouch();
+                playerAnimator.SetBool("IsJumping", false);
+                playerAnimator.SetFloat("yVelocity", 0);
             }
         }
 
@@ -120,6 +125,13 @@ public class PlayerMovement : MonoBehaviour
         direction = new Vector2(horizontalInput, verticalInput);
         Ledge();
         Box();
+
+        if (!IsGrounded()) {
+            Debug.Log(playerRb.velocity.y);
+            //playerAnimator.SetTrigger("Jump");
+            playerAnimator.SetBool("IsJumping", true);
+        }
+
     }
 
     // Update is called once per frame
@@ -175,7 +187,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void Jump()
     {
-        playerAnimator.SetTrigger("Jump");
+        playerAnimator.SetBool("IsJumping", true);
+        //playerAnimator.SetTrigger("Jump");
         // playerRb.velocity = Vector2.up * jumpVelocity;
         playerRb.AddForce(new Vector2(0, jumpVelocity));
     }
@@ -307,7 +320,6 @@ public class PlayerMovement : MonoBehaviour
         {
 
             Player.currentState = Player.PlayerState.WANDER;
-            playerAnimator.SetBool("IsJumping", false);
             return true;
 
         }
