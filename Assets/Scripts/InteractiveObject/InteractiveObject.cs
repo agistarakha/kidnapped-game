@@ -25,10 +25,10 @@ public class InteractiveObject : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            player = other.gameObject;
             PlayerEnterFeedback();
             objImg.color = enterColor;
 
-            player = other.gameObject;
             promptManager.ShowPromtBetter(promptText, gameObject.transform.position);
             playerInRange = (Player.gameState == Player.GameState.GAMEPLAY) ? true : false;
 
