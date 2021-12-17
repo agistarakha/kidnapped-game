@@ -101,11 +101,20 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     Jump();
-                }
-
+                }              
                 // Crouch();
                 playerAnimator.SetBool("IsJumping", false);
                 playerAnimator.SetFloat("yVelocity", 0);
+            }
+            if (!IsGrounded())
+            {
+                Debug.Log(playerRb.velocity.y);
+                
+                if (!ledgeGrab)
+                {
+                    playerAnimator.SetTrigger("Jump");
+                    //playerAnimator.SetBool("IsJumping", true);
+                }
             }
         }
 
@@ -117,21 +126,17 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnimator.SetBool("IsPush", true);
         }
-        if (!pullGrab)
+        else if (!pullGrab)
         {
             playerSprite.flipX = (lastInput < 0) ? true : false;
         }
-
-        direction = new Vector2(horizontalInput, verticalInput);
-        Ledge();
-        Box();
-
-        if (!IsGrounded()) {
-            Debug.Log(playerRb.velocity.y);
-            //playerAnimator.SetTrigger("Jump");
-            playerAnimator.SetBool("IsJumping", true);
+        if (!ledgeGrab)
+        {
+            playerAnimator.SetBool("IsGrabLedge", false);
         }
-
+        direction = new Vector2(horizontalInput, verticalInput);
+        Box();
+        Ledge();
     }
 
     // Update is called once per frame
@@ -147,14 +152,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (Mathf.Abs(direction.x) > 0)
         {
-            // if (ledgeGrab)
-            // {
+            if (ledgeGrab)
+            {
 
-            // }
-            // else if (!ledgeGrab)
-            // {
-            Move();
-            // }
+            }
+            else if (!ledgeGrab)
+            {
+                Move();
+            }
         }
         else if (Mathf.Abs(direction.y) > 0)
         {
@@ -187,8 +192,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void Jump()
     {
-        playerAnimator.SetBool("IsJumping", true);
-        //playerAnimator.SetTrigger("Jump");
+        //playerAnimator.SetBool("IsJumping", true);
+        playerAnimator.SetTrigger("Jump");
         // playerRb.velocity = Vector2.up * jumpVelocity;
         playerRb.AddForce(new Vector2(0, jumpVelocity));
     }
@@ -222,6 +227,8 @@ public class PlayerMovement : MonoBehaviour
         if (!isTouchLedge && isTouchWall)
         {
             ledgeGrab = true;
+            //playerAnimator.SetTrigger("IsGrabLedge");
+            playerAnimator.SetBool("IsGrabLedge",true);
             playerRb.velocity = Vector2.zero;
             playerRb.gravityScale = 0;
             ledgePosBot = wallCheck.position;
@@ -250,7 +257,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isTouchBox && isTouchPush)
         {
-            ledgeGrab = true;
+            ledgeGrab = true; 
+            playerAnimator.SetBool("IsGrabLedge", true);
             playerRb.velocity = Vector2.zero;
             playerRb.gravityScale = 0;
             ledgePosBot = boxCheck.position;
