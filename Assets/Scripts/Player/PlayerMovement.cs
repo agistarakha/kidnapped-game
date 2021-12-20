@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = 0;
         playerAnimator.SetFloat("yVelocity", playerRb.velocity.y);
         // Debug.Log(playerRb.velocity.y);
-         Debug.Log(Player.currentState);
+        // Debug.Log(Player.currentState);
         if (Player.gameState == Player.GameState.MENU || Player.gameState == Player.GameState.DIALOG)
         {
             playerRb.velocity = Vector2.zero;
@@ -101,23 +101,25 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     Jump();
-                }              
+                }
                 // Crouch();
+                //if (Input.GetAxisRaw("Vertical") == 1)
                 playerAnimator.SetBool("IsJumping", false);
                 playerAnimator.SetFloat("yVelocity", 0);
             }
             if (!IsGrounded())
             {
                 //Debug.Log(playerRb.velocity.y);
+
+                //playerAnimator.SetTrigger("Jump");
                 if (!ledgeGrab)
                 {
-                    //playerAnimator.SetTrigger("Jump");
                     playerAnimator.SetBool("IsJumping", true);
                 }
             }
         }
 
-        Debug.Log(playerRb.velocity);
+        //Debug.Log(playerRb.velocity);
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         playerAnimator.SetFloat("verticalInput", Mathf.Abs(verticalInput));
 
@@ -129,13 +131,19 @@ public class PlayerMovement : MonoBehaviour
         {
             playerSprite.flipX = (lastInput < 0) ? true : false;
         }
-        if (!ledgeGrab)
+        Ledge();
+
+        if (ledgeGrab)
         {
+            playerRb.velocity = Vector2.zero;
+            playerRb.gravityScale = 0;
+        }
+        else if (!ledgeGrab)
+        {
+            Debug.Log("lepas");
             playerAnimator.SetBool("IsGrabLedge", false);
         }
         direction = new Vector2(horizontalInput, verticalInput);
-        Box();
-        Ledge();
     }
 
     // Update is called once per frame
@@ -222,30 +230,19 @@ public class PlayerMovement : MonoBehaviour
     {
         isTouchLedge = Physics2D.Raycast(ledgeCheck.position, transform.right * lastInput, distance, objectMask);
         isTouchWall = Physics2D.Raycast(wallCheck.position, transform.right * lastInput, distance, objectMask);
-
-        if (!isTouchLedge && isTouchWall)
+        if (isTouchWall&&!isTouchLedge)
         {
-            ledgeGrab = true;
-            //playerAnimator.SetTrigger("IsGrabLedge");
-            playerAnimator.SetBool("IsGrabLedge",true);
-            playerRb.velocity = Vector2.zero;
-            playerRb.gravityScale = 0;
-            ledgePosBot = wallCheck.position;
-            if (lastInput < 0)
+            if (Input.GetKeyDown(KeyCode.W))
             {
-                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x - 1f) + ledgeClimbXOffset2, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
+                Debug.Log("tembok");
+                ledgeGrab = true;
+                playerAnimator.SetBool("IsGrabLedge", true);
             }
-            else if (lastInput > 0)
-            {
-                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x + 1f) + ledgeClimbXOffset1, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
-            }
-            timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                transform.position = ledgePos1;
-                timer = 1;
-                ledgeGrab = false;
-            }
+        }
+        else
+        {
+            ledgeGrab = false;
+            Debug.Log("lepas");
         }
     }
 
@@ -256,26 +253,31 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isTouchBox && isTouchPush)
         {
-            ledgeGrab = true; 
+            ledgeGrab = true;
+            //playerAnimator.SetTrigger("IsGrabLedge1");
             playerAnimator.SetBool("IsGrabLedge", true);
             playerRb.velocity = Vector2.zero;
             playerRb.gravityScale = 0;
             ledgePosBot = boxCheck.position;
             if (lastInput < 0)
             {
-                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x - 1f) + ledgeClimbXOffset2, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
+                //ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x - 1f) + ledgeClimbXOffset2, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
             }
             else if (lastInput > 0)
             {
-                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x + 1f) + ledgeClimbXOffset1, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
+                //ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x + 1f) + ledgeClimbXOffset1, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
             }
-            timer -= Time.deltaTime;
+            //timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                transform.position = ledgePos1;
-                timer = 1;
-                ledgeGrab = false;
+                //transform.position = ledgePos1;
+                //timer = 1;
+                
             }
+        }
+        else if(!isTouchBox && !isTouchPush){
+            ledgeGrab = false;
+            //playerAnimator.SetBool("IsGrabLedge", false);
         }
     }
 
@@ -316,7 +318,24 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
-
+    public void AnimUp()
+    {
+        Vector3 targetPos = new Vector3(playerRb.transform.position.x, playerRb.transform.position.y + 1, 0);
+        playerRb.MovePosition(targetPos);
+    }
+    public void AnimSide()
+    {
+        if (lastInput < 0)
+        {
+            Vector3 targetPos = new Vector3(playerRb.transform.position.x-1, playerRb.transform.position.y, 0);
+            playerRb.MovePosition(targetPos);
+        }
+        else if (lastInput > 0)
+        {
+            Vector3 targetPos = new Vector3(playerRb.transform.position.x + 1, playerRb.transform.position.y, 0);
+            playerRb.MovePosition(targetPos);
+        }
+    }
 
     bool IsGrounded()
     {

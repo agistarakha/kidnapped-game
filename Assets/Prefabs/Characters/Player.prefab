@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2399423272147849791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.2, z: 0}
+  m_LocalPosition: {x: 0, y: 2.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2922143613898503854}
@@ -192,13 +192,13 @@ MonoBehaviour:
   objectMask:
     serializedVersion: 2
     m_Bits: 640
-  distance: 1.1
+  distance: 0.9
   isTouchLedge: 0
   isTouchWall: 0
   isTouchBox: 0
   isTouchPush: 0
   timer: 1
-  ledgeClimbXOffset1: 0.3
+  ledgeClimbXOffset1: 0.2
   ledgeClimbYOffset1: 1
   ledgeClimbXOffset2: 0.3
   ledgeClimbYOffset2: 2
@@ -237,8 +237,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 5.0968995}
-  m_Size: {x: 2.71, y: 10.946963}
+  m_Offset: {x: -0.059723377, y: 5.096899}
+  m_Size: {x: 2.1127663, y: 10.230282}
   m_Direction: 0
 --- !u!1 &5037202156945119969
 GameObject:
@@ -264,7 +264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5037202156945119969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.03, z: 0}
+  m_LocalPosition: {x: 0, y: 8.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2922143613898503854}
