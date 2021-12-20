@@ -125,7 +125,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (pullGrab)
         {
-            playerAnimator.SetBool("IsPush", true);
+            playerAnimator.SetBool("IsPull", true);
+            if (horizontalInput >= 1)
+            {
+                horizontalInput = 0;
+            }
         }
         else if (!pullGrab)
         {
@@ -234,7 +238,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                Debug.Log("tembok");
+                //Debug.Log("tembok");
                 ledgeGrab = true;
                 playerAnimator.SetBool("IsGrabLedge", true);
             }
@@ -242,7 +246,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             ledgeGrab = false;
-            Debug.Log("lepas");
+            //Debug.Log("lepas");
         }
     }
 
@@ -288,19 +292,25 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D hit1 = Physics2D.Raycast(pushCheck.position + Vector3.left, transform.right, 3f, objectMask);
         if (hit.collider != null && hit.collider.gameObject.tag == "pushAble")
         {
-            playerAnimator.SetBool("IsPush", true);
-            box = hit.collider.gameObject;
             if (Input.GetButtonDown("Push"))
             {
                 pullGrab = true;
                 box.GetComponent<FixedJoint2D>().enabled = true;
                 box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+                playerAnimator.SetBool("IsPull", true);
+                playerAnimator.SetBool("IsPush", false);
             }
             else if (Input.GetButtonUp("Push"))
             {
                 box.GetComponent<FixedJoint2D>().enabled = false;
-                pullGrab = false;
-                playerAnimator.SetBool("IsPush", false);
+                pullGrab = false;   
+            }
+            else
+            {
+                playerAnimator.SetBool("IsPull", false);
+                playerAnimator.SetBool("IsPush", true);
+                playerAnimator.SetBool("IsStanding", false);
+                box = hit.collider.gameObject;
             }
         }
         else
@@ -310,6 +320,7 @@ public class PlayerMovement : MonoBehaviour
                 box.GetComponent<FixedJoint2D>().enabled = false;
                 pullGrab = false;
                 playerAnimator.SetBool("IsPush", false);
+                playerAnimator.SetBool("IsPull", false);
                 //box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
             }
             playerAnimator.SetBool("IsPush", false);
