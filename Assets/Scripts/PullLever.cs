@@ -1,46 +1,126 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PullLever : MonoBehaviour
+
+public class PullLever : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    private Image leverUI;
-    public Sprite[] leverSprites;
-    private int index;
+    private Vector2 lastMousePosition;
+    // public RectTransform oriPosObj;
+    // public RectTransform targetPosObj;
+    private Vector3 oriPos;
+    private Vector3 targetPos;
+    private RectTransform rect;
+    private float leverDistance;
+    public Sprite electricityOnSprite;
+    private bool dragDisabled;
+
+    // private Image leverUI;
+    // public Sprite[] leverSprites;
+    // private int index;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        index = 0;
-        leverUI = GetComponent<Image>();
+        rect = GetComponent<RectTransform>();
+
+        if (Player.obtainedKeys.Contains(Key.typeKey.Lever))
+        {
+            dragDisabled = true;
+            rect.position = new Vector3(rect.position.x, 112.5f, 0);
+            transform.parent.GetChild(1).GetComponent<Image>().sprite = electricityOnSprite;
+        }
+        else
+        {
+
+
+            dragDisabled = false;
+            leverDistance = 0;
+            // index = 0;
+            // leverUI = GetComponent<Image>();
+        }
     }
+
+
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Player.obtainedKeys.Contains(Key.typeKey.Lever))
+        // if (Player.obtainedKeys.Contains(Key.typeKey.Lever))
+        // {
+        //     leverUI.sprite = leverSprites[4];
+        // }
+        // else
+        // {
+        //     if (Input.GetKeyDown(KeyCode.UpArrow))
+        //     {
+        //         index = Mathf.Clamp(index + 1, 0, 4);
+        //         leverUI.sprite = leverSprites[index];
+        //         if (index >= 4)
+        //         {
+        //             Player.obtainedKeys.Add(Key.typeKey.Lever);
+        //         }
+
+        //     }
+        //     else if (Input.GetKeyDown(KeyCode.DownArrow))
+        //     {
+        //         index = Mathf.Clamp(index - 1, 0, 4);
+        //         leverUI.sprite = leverSprites[index];
+
+
+        //     }
+        // }
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (dragDisabled) return;
+        Debug.Log("Begin Drag");
+        lastMousePosition = eventData.position;
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (dragDisabled) return;
+
+        Vector2 currentMousePosition = eventData.position;
+        Vector2 diff = currentMousePosition - lastMousePosition;
+        // leverDistance += diff.y;
+
+
+        Vector3 newPosition = rect.position + new Vector3(0, diff.y / 1.5f, transform.position.z);
+        Vector3 oldPos = rect.position;
+        rect.position = newPosition;
+        //-166 -645
+        Debug.Log("New Position" + newPosition);
+        // Debug.Log("Ori Pos:" + oriPos);
+        if (newPosition.y > 216f)
         {
-            leverUI.sprite = leverSprites[4];
+            rect.position = oldPos;
+
         }
-        else
+        else if (newPosition.y < 112.5)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                index = Mathf.Clamp(index + 1, 0, 4);
-                leverUI.sprite = leverSprites[index];
-                if (index >= 4)
-                {
-                    Player.obtainedKeys.Add(Key.typeKey.Lever);
-                }
 
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                index = Mathf.Clamp(index - 1, 0, 4);
-                leverUI.sprite = leverSprites[index];
-
-
-            }
+            dragDisabled = true;
+            rect.position = oldPos;
+            transform.parent.GetChild(1).GetComponent<Image>().sprite = electricityOnSprite;
+            Player.obtainedKeys.Add(Key.typeKey.Lever);
         }
+        lastMousePosition = currentMousePosition;
+    }
+
+    /// <summary>
+    /// This method will be called at the end of mouse drag
+    /// </summary>
+    /// <param name="eventData"></param>
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (dragDisabled) return;
+
+        Debug.Log("End Drag");
+        //Implement your funtionlity here
     }
 }
