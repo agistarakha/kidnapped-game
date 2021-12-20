@@ -109,10 +109,10 @@ TextureImporter:
       name: sprite_climbobjek_0
       rect:
         serializedVersion: 2
-        x: 169
-        y: 160
-        width: 627
-        height: 2047
+        x: 0
+        y: 159
+        width: 892
+        height: 2840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,10 +130,10 @@ TextureImporter:
       name: sprite_climbobjek_1
       rect:
         serializedVersion: 2
-        x: 1068
-        y: 160
-        width: 626
-        height: 2120
+        x: 892
+        y: 159
+        width: 892
+        height: 2840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,10 +151,10 @@ TextureImporter:
       name: sprite_climbobjek_2
       rect:
         serializedVersion: 2
-        x: 1882
-        y: 529
-        width: 740
-        height: 1805
+        x: 1784
+        y: 159
+        width: 892
+        height: 2840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: sprite_climbobjek_3
       rect:
         serializedVersion: 2
-        x: 2808
-        y: 976
-        width: 801
-        height: 1773
+        x: 2728
+        y: 159
+        width: 911
+        height: 2840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: sprite_climbobjek_4
       rect:
         serializedVersion: 2
-        x: 3737
-        y: 1623
-        width: 879
-        height: 1273
+        x: 3698
+        y: 159
+        width: 941
+        height: 2840
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
