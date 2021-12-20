@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = 0;
         playerAnimator.SetFloat("yVelocity", playerRb.velocity.y);
         // Debug.Log(playerRb.velocity.y);
-        // Debug.Log(Player.currentState);
+         Debug.Log(Player.currentState);
         if (Player.gameState == Player.GameState.MENU || Player.gameState == Player.GameState.DIALOG)
         {
             playerRb.velocity = Vector2.zero;
@@ -108,17 +108,16 @@ public class PlayerMovement : MonoBehaviour
             }
             if (!IsGrounded())
             {
-                Debug.Log(playerRb.velocity.y);
-                
+                //Debug.Log(playerRb.velocity.y);
                 if (!ledgeGrab)
                 {
-                    playerAnimator.SetTrigger("Jump");
-                    //playerAnimator.SetBool("IsJumping", true);
+                    //playerAnimator.SetTrigger("Jump");
+                    playerAnimator.SetBool("IsJumping", true);
                 }
             }
         }
 
-
+        Debug.Log(playerRb.velocity);
         playerAnimator.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         playerAnimator.SetFloat("verticalInput", Mathf.Abs(verticalInput));
 
@@ -192,8 +191,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void Jump()
     {
-        //playerAnimator.SetBool("IsJumping", true);
-        playerAnimator.SetTrigger("Jump");
+        playerAnimator.SetBool("IsJumping", true);
+        //playerAnimator.SetTrigger("Jump");
         // playerRb.velocity = Vector2.up * jumpVelocity;
         playerRb.AddForce(new Vector2(0, jumpVelocity));
     }

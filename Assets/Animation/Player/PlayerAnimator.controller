@@ -576,7 +576,7 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: ad3280eacffdb444195f61d8f96ebceb, type: 2}
     m_Threshold: -1
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 0.2
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: horizontalInput
     m_Mirror: 0
@@ -1126,7 +1126,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: IsJumping
+    m_ConditionEvent: Jump
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2404553385674026894}
