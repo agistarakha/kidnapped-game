@@ -126,9 +126,19 @@ public class PlayerMovement : MonoBehaviour
         if (pullGrab)
         {
             playerAnimator.SetBool("IsPull", true);
-            if (horizontalInput >= 1)
+            if (playerSprite.flipX == true)
             {
-                horizontalInput = 0;
+                if (playerRb.velocity.x<0)
+                {
+                    horizontalInput = 0;
+                }
+            }
+            else if(playerSprite.flipX == false)
+            {
+                if (playerRb.velocity.x>0)
+                {
+                    horizontalInput = 0;
+                }
             }
         }
         else if (!pullGrab)
@@ -144,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (!ledgeGrab)
         {
-            Debug.Log("lepas");
+            // Debug.Log("lepas");
             playerAnimator.SetBool("IsGrabLedge", false);
         }
         direction = new Vector2(horizontalInput, verticalInput);
@@ -324,6 +334,7 @@ public class PlayerMovement : MonoBehaviour
                 //box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
             }
             playerAnimator.SetBool("IsPush", false);
+            playerAnimator.SetBool("IsPull", false);
         }
     }
 
