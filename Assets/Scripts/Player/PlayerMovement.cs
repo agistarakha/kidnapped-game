@@ -103,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
                     Jump();
                 }
                 // Crouch();
-                //if (Input.GetAxisRaw("Vertical") == 1)
                 playerAnimator.SetBool("IsJumping", false);
                 playerAnimator.SetFloat("yVelocity", 0);
             }
@@ -175,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (ledgeGrab)
             {
-
+                
             }
             else if (!ledgeGrab)
             {
@@ -250,6 +249,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 //Debug.Log("tembok");
                 ledgeGrab = true;
+                pullGrab = false;
                 playerAnimator.SetBool("IsGrabLedge", true);
             }
         }
