@@ -18,7 +18,7 @@ public class LockedDoor : RoomAccessPoint
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E) && keyIsObtained)
+        if (Input.GetKeyDown(KeyCode.E) && keyIsObtained && playerInRange && (Player.gameState == Player.GameState.GAMEPLAY))
         {
             if (doorIsUnlocked)
             {
@@ -29,11 +29,16 @@ public class LockedDoor : RoomAccessPoint
             {
                 Player.unlockedDoors.Add(doorFullName);
                 doorIsUnlocked = true;
+                DialogManager.Instance.ShowDialogUI("Terbuka!");
                 promptManager.HidePrompt();
                 promptManager.ShowPromt("Open");
             }
 
 
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && !keyIsObtained && playerInRange && (Player.gameState == Player.GameState.GAMEPLAY))
+        {
+            DialogManager.Instance.ShowDialogUI("Sial pintunya terkunci");
         }
         // if (Player.unlockedDoors.Contains(doorFullName) && keyIsObtained)
         // {

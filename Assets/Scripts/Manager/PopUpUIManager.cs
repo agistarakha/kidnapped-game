@@ -90,6 +90,8 @@ public class PopUpUIManager : MonoBehaviour
                 backdrop.SetActive(true);
                 obj.SetActive(true);
                 currentActiveObject = obj;
+                StartCoroutine(PopUpAnim(currentActiveObject.GetComponent<RectTransform>()));
+
                 // if (name == "PauseMenu")
                 // {
                 //     // backBtn.gameObject.SetActive(false);
@@ -118,6 +120,7 @@ public class PopUpUIManager : MonoBehaviour
                 obj.GetComponent<Image>().sprite = img;
                 obj.SetActive(true);
                 currentActiveObject = obj;
+                StartCoroutine(PopUpAnim(currentActiveObject.GetComponent<RectTransform>()));
                 // if (name == "PauseMenu")
                 // {
                 //     // backBtn.gameObject.SetActive(false);
@@ -153,6 +156,20 @@ public class PopUpUIManager : MonoBehaviour
     {
 
         yield return null;
+    }
+
+    private IEnumerator PopUpAnim(RectTransform rect)
+    {
+        Vector3 oriPos = rect.position;
+        rect.position = new Vector3(rect.position.x, rect.position.y - (rect.position.y * 2), rect.position.z);
+
+        while (rect.position.y != oriPos.y)
+        {
+            rect.position = Vector3.Lerp(rect.position, oriPos, 3f * Time.deltaTime);
+            yield return null;
+        }
+        rect.position = oriPos;
+
     }
 }
 

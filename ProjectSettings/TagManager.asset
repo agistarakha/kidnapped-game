@@ -9,6 +9,7 @@ TagManager:
   - NoteDetails
   - pushAble
   - PopUpItem
+  - Fade
   layers:
   - Default
   - TransparentFX
