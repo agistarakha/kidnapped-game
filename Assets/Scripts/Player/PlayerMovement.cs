@@ -103,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
                     Jump();
                 }
                 // Crouch();
-                //if (Input.GetAxisRaw("Vertical") == 1)
                 playerAnimator.SetBool("IsJumping", false);
                 playerAnimator.SetFloat("yVelocity", 0);
             }
@@ -126,9 +125,19 @@ public class PlayerMovement : MonoBehaviour
         if (pullGrab)
         {
             playerAnimator.SetBool("IsPull", true);
-            if (horizontalInput >= 1)
+            if (playerSprite.flipX == true)
             {
-                horizontalInput = 0;
+                if (playerRb.velocity.x<0)
+                {
+                    horizontalInput = 0;
+                }
+            }
+            else if(playerSprite.flipX == false)
+            {
+                if (playerRb.velocity.x>0)
+                {
+                    horizontalInput = 0;
+                }
             }
         }
         else if (!pullGrab)
@@ -144,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (!ledgeGrab)
         {
-            Debug.Log("lepas");
+            // Debug.Log("lepas");
             playerAnimator.SetBool("IsGrabLedge", false);
         }
         direction = new Vector2(horizontalInput, verticalInput);
@@ -165,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (ledgeGrab)
             {
-
+                
             }
             else if (!ledgeGrab)
             {
@@ -240,6 +249,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 //Debug.Log("tembok");
                 ledgeGrab = true;
+                pullGrab = false;
                 playerAnimator.SetBool("IsGrabLedge", true);
             }
         }
@@ -325,6 +335,7 @@ public class PlayerMovement : MonoBehaviour
                 //box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
             }
             playerAnimator.SetBool("IsPush", false);
+            playerAnimator.SetBool("IsPull", false);
         }
     }
 
