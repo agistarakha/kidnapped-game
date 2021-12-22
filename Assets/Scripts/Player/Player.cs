@@ -24,4 +24,8 @@ public static class Player
     public static Dictionary<string, string> obtainedNotes = new Dictionary<string, string>();
     public static List<string> unlockedDoors = new List<string>();
     public static bool gameIsInitiated = false;
+    public static List<string> revealedDialog = new List<string>();
+
+    public static bool isSaveGame = false;
+    public static bool isLoadGame = false;
 }

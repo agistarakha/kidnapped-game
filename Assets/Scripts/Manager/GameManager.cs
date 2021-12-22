@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         Player.sceneState = Player.PlayerState.WANDER;
         vCam.Follow = player.transform;
         roomInfo.text = SceneManager.GetActiveScene().name;
+        Player.isLoadGame = true;
 
     }
 
