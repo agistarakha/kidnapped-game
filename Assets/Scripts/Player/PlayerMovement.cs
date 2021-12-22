@@ -68,10 +68,10 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetFloat("yVelocity", playerRb.velocity.y);
         // Debug.Log(playerRb.velocity.y);
         // Debug.Log(Player.currentState);
-        if (Player.gameState == Player.GameState.MENU || Player.gameState == Player.GameState.DIALOG)
+        if ((Player.gameState == Player.GameState.MENU) || (Player.gameState == Player.GameState.DIALOG))
         {
             playerRb.velocity = Vector2.zero;
-            playerAnimator.Play("IdleAnimation");
+            playerAnimator.Play("V2IdleAnimation");
             return;
         }
         lastInput = (direction.x == 0) ? lastInput : direction.x;
@@ -103,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
                     Jump();
                 }
                 // Crouch();
-                //if (Input.GetAxisRaw("Vertical") == 1)
                 playerAnimator.SetBool("IsJumping", false);
                 playerAnimator.SetFloat("yVelocity", 0);
             }
@@ -126,9 +125,19 @@ public class PlayerMovement : MonoBehaviour
         if (pullGrab)
         {
             playerAnimator.SetBool("IsPull", true);
-            if (horizontalInput >= 1)
+            if (playerSprite.flipX == true)
             {
-                horizontalInput = 0;
+                if (playerRb.velocity.x<0)
+                {
+                    horizontalInput = 0;
+                }
+            }
+            else if(playerSprite.flipX == false)
+            {
+                if (playerRb.velocity.x>0)
+                {
+                    horizontalInput = 0;
+                }
             }
         }
         else if (!pullGrab)
@@ -144,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (!ledgeGrab)
         {
-            Debug.Log("lepas");
+            // Debug.Log("lepas");
             playerAnimator.SetBool("IsGrabLedge", false);
         }
         direction = new Vector2(horizontalInput, verticalInput);
@@ -153,11 +162,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Player.gameState == Player.GameState.MENU)
+        if ((Player.gameState == Player.GameState.MENU) || (Player.gameState == Player.GameState.DIALOG))
         {
+            Debug.Log("Yo dud");
             playerRb.velocity = Vector2.zero;
-            playerAnimator.Play("IdleAnimation");
-
+            playerAnimator.Play("V2IdleAnimation");
             return;
         }
 
@@ -165,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (ledgeGrab)
             {
-
+                
             }
             else if (!ledgeGrab)
             {
@@ -234,12 +243,13 @@ public class PlayerMovement : MonoBehaviour
     {
         isTouchLedge = Physics2D.Raycast(ledgeCheck.position, transform.right * lastInput, distance, objectMask);
         isTouchWall = Physics2D.Raycast(wallCheck.position, transform.right * lastInput, distance, objectMask);
-        if (isTouchWall&&!isTouchLedge)
+        if (isTouchWall && !isTouchLedge)
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
                 //Debug.Log("tembok");
                 ledgeGrab = true;
+                pullGrab = false;
                 playerAnimator.SetBool("IsGrabLedge", true);
             }
         }
@@ -276,10 +286,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 //transform.position = ledgePos1;
                 //timer = 1;
-                
+
             }
         }
-        else if(!isTouchBox && !isTouchPush){
+        else if (!isTouchBox && !isTouchPush)
+        {
             ledgeGrab = false;
             //playerAnimator.SetBool("IsGrabLedge", false);
         }
@@ -303,7 +314,7 @@ public class PlayerMovement : MonoBehaviour
             else if (Input.GetButtonUp("Push"))
             {
                 box.GetComponent<FixedJoint2D>().enabled = false;
-                pullGrab = false;   
+                pullGrab = false;
             }
             else
             {
@@ -324,6 +335,7 @@ public class PlayerMovement : MonoBehaviour
                 //box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
             }
             playerAnimator.SetBool("IsPush", false);
+            playerAnimator.SetBool("IsPull", false);
         }
     }
 
@@ -338,7 +350,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (lastInput < 0)
         {
-            Vector3 targetPos = new Vector3(playerRb.transform.position.x-1, playerRb.transform.position.y, 0);
+            Vector3 targetPos = new Vector3(playerRb.transform.position.x - 1, playerRb.transform.position.y, 0);
             playerRb.MovePosition(targetPos);
         }
         else if (lastInput > 0)
