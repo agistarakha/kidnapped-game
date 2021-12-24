@@ -34,7 +34,7 @@ public class DoorTrigger : InteractiveObject
         {
             if (playerInRange)
             {
-                promptManager.HidePrompt();
+                // promptManager.HidePrompt();
                 objImg.color = oriColor;
 
 

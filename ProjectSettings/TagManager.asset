@@ -10,6 +10,7 @@ TagManager:
   - pushAble
   - PopUpItem
   - Fade
+  - liftBond
   layers:
   - Default
   - TransparentFX

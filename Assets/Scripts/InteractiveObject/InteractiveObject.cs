@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class InteractiveObject : MonoBehaviour
 {
-    public string promptText;
-    public PromptManager promptManager;
+    // public string promptText;
+    // public PromptManager promptManager;
     protected bool playerInRange = false;
     protected GameObject player;
     protected SpriteRenderer objImg;
@@ -17,7 +17,7 @@ public class InteractiveObject : MonoBehaviour
         oriColor = objImg.color;
         enterColor = Color.grey;
         playerInRange = false;
-        promptManager = FindObjectOfType<PromptManager>();
+        // promptManager = FindObjectOfType<PromptManager>();
     }
 
 
@@ -29,7 +29,7 @@ public class InteractiveObject : MonoBehaviour
             PlayerEnterFeedback();
             objImg.color = enterColor;
 
-            promptManager.ShowPromtBetter(promptText, gameObject.transform.position);
+            // promptManager.ShowPromtBetter(promptText, gameObject.transform.position);
             playerInRange = (Player.gameState == Player.GameState.GAMEPLAY) ? true : false;
 
         }
@@ -43,7 +43,7 @@ public class InteractiveObject : MonoBehaviour
 
             playerInRange = false;
             PlayerExitFeedback();
-            promptManager.HidePrompt();
+            // promptManager.HidePrompt();
         }
     }
 

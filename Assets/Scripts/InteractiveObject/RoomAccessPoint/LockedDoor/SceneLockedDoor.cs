@@ -18,8 +18,8 @@ public class SceneLockedDoor : RoomAccessPoint
             coll.enabled = false;
             Player.unlockedDoors.Add(doorFullName);
             doorIsUnlocked = true;
-            promptManager.HidePrompt();
-            promptManager.ShowPromt("Open");            
+            // promptManager.HidePrompt();
+            // promptManager.ShowPromt("Open");            
         }
     }
 
@@ -30,7 +30,7 @@ public class SceneLockedDoor : RoomAccessPoint
         {
             keyIsObtained = true;
             doorIsUnlocked = true;
-            promptText = "Open";
+            // promptText = "Open";
         }
     }
     public override void PlayerEnterFeedback()
@@ -43,12 +43,12 @@ public class SceneLockedDoor : RoomAccessPoint
         {
             if (!Player.obtainedKeys.Contains(requiredKey))
             {
-                promptText = "Locked";
+                //promptText = "Locked";
                 keyIsObtained = false;
             }
             else
             {
-                promptText = "Locked";
+                // promptText = "Locked";
                 keyIsObtained = true;
             }
         }

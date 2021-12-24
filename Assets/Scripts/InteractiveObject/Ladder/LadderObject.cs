@@ -9,7 +9,7 @@ public class LadderObject : InteractiveObject
     {
         if (Mathf.Abs(Input.GetAxis("Vertical")) == 1 && playerInRange && Player.currentState != Player.PlayerState.CLIMBING)
         {
-            promptManager.HidePrompt();
+            // promptManager.HidePrompt();
             Player.currentState = Player.PlayerState.CLIMBING;
         }
     }
