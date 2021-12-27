@@ -30,15 +30,15 @@ public class LockedDoor : RoomAccessPoint
                 Player.unlockedDoors.Add(doorFullName);
                 doorIsUnlocked = true;
                 DialogManager.Instance.ShowDialogUI("Terbuka!");
-                promptManager.HidePrompt();
-                promptManager.ShowPromt("Open");
+                // promptManager.HidePrompt();
+                // promptManager.ShowPromt("Open");
             }
 
 
         }
         else if (Input.GetKeyDown(KeyCode.E) && !keyIsObtained && playerInRange && (Player.gameState == Player.GameState.GAMEPLAY))
         {
-            DialogManager.Instance.ShowDialogUI("Sial pintunya terkunci");
+            DialogManager.Instance.ShowDialogUI("Terkunci...");
         }
         // if (Player.unlockedDoors.Contains(doorFullName) && keyIsObtained)
         // {
@@ -56,7 +56,7 @@ public class LockedDoor : RoomAccessPoint
         {
             keyIsObtained = true;
             doorIsUnlocked = true;
-            promptText = "Open";
+            // promptText = "Open";
         }
     }
     public override void PlayerEnterFeedback()
@@ -70,12 +70,12 @@ public class LockedDoor : RoomAccessPoint
 
             if (!Player.obtainedKeys.Contains(requiredKey))
             {
-                promptText = "Locked";
+                // promptText = "Locked";
                 keyIsObtained = false;
             }
             else
             {
-                promptText = "Locked";
+                // promptText = "Locked";
                 keyIsObtained = true;
             }
         }

@@ -16,26 +16,27 @@ public class KeyObject : InteractiveObject
     //[TextArea(5, 100)]
     //public string dialogText;
 
-    void Awake()
+    // void Awake()
+    // {
+
+    // }
+    void Update()
     {
-        if (Player.obtainedKeys.Contains(GetKeyType()))
+        if (Player.obtainedKeys.Contains(GetKeyType()) && GetComponent<ExamineableObject>().isUIShown)
         {
             //gameObject.SetActive(false);
             GetComponent<ExamineableObject>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
-            this.enabled=false;
+            this.enabled = false;
         }
-    }
-    void Update()
-    {
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
             // PopUpUIManager.Instance.backdrop.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
             //DialogManager.Instance.ShowDialogUI(dialogText);
             Player.obtainedKeys.Add(GetKeyType());
-            GetComponent<ExamineableObject>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            this.enabled = false;
+            // GetComponent<ExamineableObject>().enabled = false;
+            // GetComponent<BoxCollider2D>().enabled = false;
+            // this.enabled = false;
             //gameObject.SetActive(false);
         }
     }

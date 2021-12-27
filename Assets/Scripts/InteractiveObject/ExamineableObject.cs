@@ -13,6 +13,7 @@ public class ExamineableObject : InteractiveObject
     [TextArea(5, 100)]
     public string dialogText;
     public Sprite photoSprite;
+    public bool isUIShown = false;
 
     void Update()
     {
@@ -23,6 +24,7 @@ public class ExamineableObject : InteractiveObject
 
                 GameObject fotoUI = PopUpUIManager.Instance.ActivateUI(photoSprite);
                 fotoUI.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
+                isUIShown = true;
             }
             else
             {

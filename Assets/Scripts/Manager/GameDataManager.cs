@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -31,6 +32,14 @@ public static class GameDataManager
             Player.lastPos = gameData.lastPos;
             Player.obtainedKeys = gameData.obtainedKeys;
             Player.unlockedDoors = gameData.unlockedDoors;
+            for (int i = 0; i < gameData.boxesName.Length; i++)
+            {
+                Player.boxesPos[gameData.boxesName[i]] = gameData.boxesPos[i];
+            }
+            for (int i = 0; i < gameData.obtainedNotesTitle.Length; i++)
+            {
+                Player.obtainedNotes[gameData.obtainedNotesTitle[i]] = gameData.obtainedNotesContent[i];
+            }
             return true;
         }
         return false;
@@ -47,6 +56,10 @@ public static class GameDataManager
         gameData.lastVisitedScene = DoorData.lastVisitedScene;
         gameData.obtainedKeys = Player.obtainedKeys;
         gameData.unlockedDoors = Player.unlockedDoors;
+        gameData.boxesPos = Player.boxesPos.Values.ToArray<Vector3>();
+        gameData.boxesName = Player.boxesPos.Keys.ToArray<string>();
+        gameData.obtainedNotesTitle = Player.obtainedNotes.Keys.ToArray<string>();
+        gameData.obtainedNotesContent = Player.obtainedNotes.Values.ToArray<string>();
         // Serialize the object into JSON and save string.
         string jsonString = JsonUtility.ToJson(gameData);
 

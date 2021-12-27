@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -127,14 +128,14 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("IsPull", true);
             if (playerSprite.flipX == true)
             {
-                if (playerRb.velocity.x<0)
+                if (playerRb.velocity.x < 0)
                 {
                     horizontalInput = 0;
                 }
             }
-            else if(playerSprite.flipX == false)
+            else if (playerSprite.flipX == false)
             {
-                if (playerRb.velocity.x>0)
+                if (playerRb.velocity.x > 0)
                 {
                     horizontalInput = 0;
                 }
@@ -157,6 +158,10 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("IsGrabLedge", false);
         }
         direction = new Vector2(horizontalInput, verticalInput);
+        if (box != null)
+        {
+            Player.boxesPos[SceneManager.GetActiveScene().name + box.name] = box.transform.position;
+        }
     }
 
     // Update is called once per frame
@@ -174,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (ledgeGrab)
             {
-                
+
             }
             else if (!ledgeGrab)
             {
@@ -267,6 +272,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isTouchBox && isTouchPush)
         {
+
             ledgeGrab = true;
             //playerAnimator.SetTrigger("IsGrabLedge1");
             playerAnimator.SetBool("IsGrabLedge", true);
@@ -322,6 +328,7 @@ public class PlayerMovement : MonoBehaviour
                 playerAnimator.SetBool("IsPush", true);
                 playerAnimator.SetBool("IsStanding", false);
                 box = hit.collider.gameObject;
+
             }
         }
         else
@@ -336,6 +343,8 @@ public class PlayerMovement : MonoBehaviour
             }
             playerAnimator.SetBool("IsPush", false);
             playerAnimator.SetBool("IsPull", false);
+
+
         }
     }
 
