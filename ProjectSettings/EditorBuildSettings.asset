@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage 1/GameOver.unity
     guid: ecf9d5484582ddc4eaaaab2c0ef903bd
+  - enabled: 1
+    path: Assets/Scenes/Stage 1/Lift.unity
+    guid: c5db3455046a7814bbbc4ead4f02ba61
   m_configObjects: {}

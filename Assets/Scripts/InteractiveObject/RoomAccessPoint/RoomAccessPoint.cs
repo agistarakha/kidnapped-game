@@ -24,6 +24,7 @@ public class RoomAccessPoint : InteractiveObject
         DoorData.doorSpawnLocation = connectedDoor;
         Player.lastPos = Vector3.zero;
         Player.gameState = Player.GameState.MENU;
+        Debug.Log(Player.gameState);
 
         StartCoroutine(LoadYourAsyncScene(connectedSceneName));
     }
@@ -41,7 +42,7 @@ public class RoomAccessPoint : InteractiveObject
         //     // yield return null;
         // }
         GameObject.FindGameObjectsWithTag("Fade")[0].GetComponent<Animator>().SetTrigger("FadeIn");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.0f);
         GameDataManager.SaveFile(player);
 
         // AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(connected);
