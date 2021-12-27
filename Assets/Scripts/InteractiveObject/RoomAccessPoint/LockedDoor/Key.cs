@@ -13,7 +13,10 @@ public class Key : MonoBehaviour
         WineC,
         RuangKontrol,
         PembangkitListrik,
-        Lever
+        Lever,
+        Teras,
+        RuangDokumen,
+        RuangPenyimpanan
     }
 
     public typeKey GetKeyType()
