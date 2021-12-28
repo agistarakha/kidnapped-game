@@ -57,6 +57,8 @@ public class DialogManager : MonoBehaviour
     }
     public void HideDialogUI()
     {
+        StopAllCoroutines();
+        dialogText.text = "";
         //Player.gameState = Player.GameState.GAMEPLAY;
         dialogUIObject.SetActive(false);
     }

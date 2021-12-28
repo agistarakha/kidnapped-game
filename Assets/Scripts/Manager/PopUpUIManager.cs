@@ -52,12 +52,17 @@ public class PopUpUIManager : MonoBehaviour
             for (int i = 0; i < backdrop.transform.childCount; i++)
             {
                 GameObject childObj = backdrop.transform.GetChild(i).gameObject;
-                if (childObj.activeSelf && childObj.name != "Photo(Clone)")
+                if (childObj.activeSelf)
                 {
+                    if (childObj.name == "Photo(Clone)")
+                    {
+                        childObj.transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
 
+                    }
                     backdrop.transform.GetChild(i).gameObject.SetActive(false);
                     backdrop.SetActive(false);
                     isPopUpActive = false;
+
                     break;
                 }
             }
