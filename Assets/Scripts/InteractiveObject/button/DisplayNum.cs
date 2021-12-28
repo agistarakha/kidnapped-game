@@ -18,7 +18,7 @@ public class DisplayNum : MonoBehaviour
         sequence = "";
         for (int i=0;i<=number.Length - 1; i++)
         {
-            number[i].sprite = digits[2];
+            number[i].sprite = digits[10];
         }
 
         BtnClicked.ButtonPressed += AddDigitToSequence;
@@ -37,6 +37,38 @@ public class DisplayNum : MonoBehaviour
                 case "One":
                     sequence += 1;
                     DisplaySequence(1);
+                    break;
+                case "Two":
+                    sequence += 2;
+                    DisplaySequence(2);
+                    break;
+                case "Three":
+                    sequence += 3;
+                    DisplaySequence(3);
+                    break;
+                case "Four":
+                    sequence += 4;
+                    DisplaySequence(4);
+                    break;
+                case "Five":
+                    sequence += 5;
+                    DisplaySequence(5);
+                    break;
+                case "Six":
+                    sequence += 6;
+                    DisplaySequence(6);
+                    break;
+                case "Seven":
+                    sequence += 7;
+                    DisplaySequence(7);
+                    break;
+                case "Eight":
+                    sequence += 8;
+                    DisplaySequence(8);
+                    break;
+                case "Nine":
+                    sequence += 9;
+                    DisplaySequence(9);
                     break;
             }
         }
@@ -60,19 +92,28 @@ public class DisplayNum : MonoBehaviour
         switch (sequence.Length)
         {
             case 1:
-                number[0].sprite = digits[2];
-                number[1].sprite = digits[2];
-                number[2].sprite = digits[digitJustEnter];
+                number[0].sprite = digits[10];
+                number[1].sprite = digits[10];
+                number[2].sprite = digits[10];
+                number[3].sprite = digits[digitJustEnter];
                 break;
             case 2:
-                number[0].sprite = digits[2];
-                number[1].sprite = number[2].sprite;
-                number[2].sprite = digits[digitJustEnter];
+                number[0].sprite = digits[10];
+                number[1].sprite = digits[10];
+                number[2].sprite = number[3].sprite;
+                number[3].sprite = digits[digitJustEnter];
                 break;
             case 3:
+                number[0].sprite = digits[10];
+                number[1].sprite = number[2].sprite;
+                number[2].sprite = number[3].sprite;
+                number[3].sprite = digits[digitJustEnter];
+                break;
+            case 4:
                 number[0].sprite = number[1].sprite;
                 number[1].sprite = number[2].sprite;
-                number[2].sprite = digits[digitJustEnter];
+                number[2].sprite = number[3].sprite;
+                number[3].sprite = digits[digitJustEnter];
                 break;
         }
     }
@@ -96,7 +137,7 @@ public class DisplayNum : MonoBehaviour
     {
         for (int i= 0; i<=number.Length - 1; i++)
         {
-            number[i].sprite = digits[2];
+            number[i].sprite = digits[10];
         }
         sequence = "";
     }
