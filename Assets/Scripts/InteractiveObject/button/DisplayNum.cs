@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class display : MonoBehaviour
+public class DisplayNum : MonoBehaviour
 {
     [SerializeField]
     private Sprite[] digits;
     [SerializeField]
     private Image[] number;
+    public Key.typeKey typeKey;
 
     private string sequence;
+    public string password;
     void Start()
     {
         sequence = "";
@@ -19,7 +21,7 @@ public class display : MonoBehaviour
             number[i].sprite = digits[2];
         }
 
-        button.ButtonPressed += AddDigitToSequence;
+        BtnClicked.ButtonPressed += AddDigitToSequence;
     }
 
     private void AddDigitToSequence(string digitEnter)
@@ -77,9 +79,10 @@ public class display : MonoBehaviour
 
     private void CheckResults()
     {
-        if(sequence == "101")
+        if(sequence == password)
         {
             Debug.Log("Correct!");
+            Player.obtainedKeys.Add(typeKey);
             ResetDisplay();
         }
         else
@@ -100,6 +103,6 @@ public class display : MonoBehaviour
 
     private void OnDestroy()
     {
-        button.ButtonPressed -= AddDigitToSequence;
+        BtnClicked.ButtonPressed -= AddDigitToSequence;
     }
 }
