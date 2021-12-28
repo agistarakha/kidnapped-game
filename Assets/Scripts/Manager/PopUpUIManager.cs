@@ -47,7 +47,7 @@ public class PopUpUIManager : MonoBehaviour
         {
             Player.gameState = Player.GameState.GAMEPLAY;
         }
-        if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape)) && Player.gameState == Player.GameState.MENU)
+        if ((Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Escape)) && Player.gameState == Player.GameState.MENU)
         {
             for (int i = 0; i < backdrop.transform.childCount; i++)
             {
@@ -84,16 +84,20 @@ public class PopUpUIManager : MonoBehaviour
 
     public GameObject ActivateUI(string name)
     {
+        //Debug.Log(name);
         isPopUpActive = true;
         Player.gameState = Player.GameState.MENU;
 
         for (int i = 0; i < popUpObjects.Count; i++)
         {
             GameObject obj = backdrop.transform.GetChild(i).gameObject;
+            //Debug.Log(obj.name);
             if (name + "(Clone)" == obj.name)
             {
                 backdrop.SetActive(true);
                 obj.SetActive(true);
+                Debug.Log(backdrop.activeSelf);
+                Debug.Log(obj.activeSelf);
                 currentActiveObject = obj;
                 StartCoroutine(PopUpAnim(currentActiveObject.GetComponent<RectTransform>()));
 

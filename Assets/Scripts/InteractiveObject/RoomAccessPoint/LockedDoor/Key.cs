@@ -16,7 +16,9 @@ public class Key : MonoBehaviour
         Lever,
         Teras,
         RuangDokumen,
-        RuangPenyimpanan
+        RuangPenyimpanan,
+        TglLahir,
+        TglPernikahan
     }
 
     public typeKey GetKeyType()

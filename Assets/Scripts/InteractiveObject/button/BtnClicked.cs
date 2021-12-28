@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class button : MonoBehaviour
+public class BtnClicked : MonoBehaviour
 {
     public static event Action<string> ButtonPressed = delegate { };
 
