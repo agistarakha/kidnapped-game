@@ -36,6 +36,7 @@ public class PopUpBackBtn : MonoBehaviour
 
     private void DisableParent()
     {
+        StopAllCoroutines();
         int i = 0;
         firstParent = gameObject.transform.parent.gameObject;
         while (!firstParent.CompareTag("PopUpItem"))
