@@ -21,10 +21,10 @@ public class ExamineableObject : InteractiveObject
         {
             if (objectTypes == ObjectTypes.FIGURA)
             {
-
                 GameObject fotoUI = PopUpUIManager.Instance.ActivateUI(photoSprite);
                 fotoUI.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
                 isUIShown = true;
+                //Disini Audio untuk figura.
             }
             else
             {

@@ -29,6 +29,7 @@ public class PopUpUIManager : MonoBehaviour
     private List<GameObject> generatedObjects;
     private Sprite photoSprite;
     private bool isPopUpActive = false;
+    private Vector3 oriPos;
 
 
 
@@ -59,6 +60,8 @@ public class PopUpUIManager : MonoBehaviour
                         childObj.transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
 
                     }
+                    StopAllCoroutines();
+                    backdrop.transform.GetChild(i).GetComponent<RectTransform>().position = oriPos;
                     backdrop.transform.GetChild(i).gameObject.SetActive(false);
                     backdrop.SetActive(false);
                     isPopUpActive = false;
@@ -169,7 +172,7 @@ public class PopUpUIManager : MonoBehaviour
 
     private IEnumerator PopUpAnim(RectTransform rect)
     {
-        Vector3 oriPos = rect.position;
+        oriPos = rect.position;
         rect.position = new Vector3(rect.position.x, rect.position.y - (rect.position.y * 2), rect.position.z);
 
         while (rect.position.y != oriPos.y)
