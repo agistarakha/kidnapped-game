@@ -28,6 +28,7 @@ public class LockedDoor : RoomAccessPoint
             else
             {
                 //Disini Audio ketika kunci berhasil
+                AudioManager.instance.PlaySFX("BukaKunci");
                 Player.unlockedDoors.Add(doorFullName);
                 doorIsUnlocked = true;
                 DialogManager.Instance.ShowDialogUI("Terbuka!");
@@ -40,6 +41,7 @@ public class LockedDoor : RoomAccessPoint
         else if (Input.GetKeyDown(KeyCode.E) && !keyIsObtained && playerInRange && (Player.gameState == Player.GameState.GAMEPLAY))
         {
             //Disini Audio Ketika Pintu terkunci
+            AudioManager.instance.PlaySFX("Terkunci");
             DialogManager.Instance.ShowDialogUI("Terkunci...");
         }
         // if (Player.unlockedDoors.Contains(doorFullName) && keyIsObtained)
