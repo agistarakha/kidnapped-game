@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask objectMask;
     private Collider2D standingCollider;
 
+    private AudioSource walkSound;
     public float distance = 5f;
     private GameObject box;
 
@@ -54,12 +55,12 @@ public class PlayerMovement : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
         playerCollider = GetComponents<CapsuleCollider2D>()[0];
+        walkSound = GetComponent<AudioSource>();
         direction = Vector2.zero;
         lastInput = 0;
         horizontalInput = 0;
         verticalInput = 0;
         currentSpeed = speed;
-
     }
 
     void Update()
@@ -169,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((Player.gameState == Player.GameState.MENU) || (Player.gameState == Player.GameState.DIALOG))
         {
-            Debug.Log("Yo dud");
+            //Debug.Log("Yo dud");
             playerRb.velocity = Vector2.zero;
             playerAnimator.Play("V2IdleAnimation");
             return;
@@ -206,7 +207,9 @@ public class PlayerMovement : MonoBehaviour
         // playerRb.MovePosition((Vector2)transform.position + (direction * speed) * Time.deltaTime);
         playerAnimator.SetBool("IsStanding", false);
         playerRb.velocity = new Vector2(currentSpeed * direction.x, playerRb.velocity.y);
+        //walkSound.PlayOneShot(walkSound.clip);
         // playerRb.velocity = Vector2.right * Mathf.Ceil(direction.x) * currentSpeed;
+        //Debug.Log(playerRb.velocity.x);
 
     }
 
@@ -367,6 +370,16 @@ public class PlayerMovement : MonoBehaviour
             Vector3 targetPos = new Vector3(playerRb.transform.position.x + 1, playerRb.transform.position.y, 0);
             playerRb.MovePosition(targetPos);
         }
+    }
+
+    public void footstepPlay()
+    {
+        walkSound.Play();
+        //walkSound.PlayOneShot(walkSound.clip);
+    }
+    public void footstepStop()
+    {
+        walkSound.Stop();
     }
 
     bool IsGrounded()
