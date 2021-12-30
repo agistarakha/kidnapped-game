@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 ledgePosBot;
     private Vector2 ledgePos1;
 
-    public float timer = 1;
+    public float timer = -99f;
     public float ledgeClimbXOffset1 = 0f;
     public float ledgeClimbYOffset1 = 0f;
     public float ledgeClimbXOffset2 = 0f;
@@ -65,6 +65,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // if (timer > 0)
+        // {
+        //     timer -= Time.deltaTime;
+        //     //transform.position = ledgePos1;
+        //     return;
+        // }
+        if (!Player.isPlayerMoveable)
+        {
+            playerRb.velocity = Vector2.zero;
+            playerAnimator.Play("V2IdleAnimation");
+            return;
+        }
         horizontalInput = 0;
         verticalInput = 0;
         playerAnimator.SetFloat("yVelocity", playerRb.velocity.y);
@@ -107,6 +119,8 @@ public class PlayerMovement : MonoBehaviour
                 // Crouch();
                 playerAnimator.SetBool("IsJumping", false);
                 playerAnimator.SetFloat("yVelocity", 0);
+                //timer = 2f;
+
             }
             if (!IsGrounded())
             {
@@ -168,6 +182,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!Player.isPlayerMoveable) return;
         if ((Player.gameState == Player.GameState.MENU) || (Player.gameState == Player.GameState.DIALOG))
         {
             //Debug.Log("Yo dud");
@@ -215,8 +230,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Climb()
     {
-        playerRb.MovePosition((Vector2)transform.position + (direction * currentSpeed) * Time.deltaTime);
-        // playerRb.velocity = Vector2.up * direction * 2.0f;
+        // playerRb.MovePosition((Vector2)transform.position + (direction * currentSpeed) * Time.deltaTime);
+        playerRb.velocity = Vector2.up * direction * 2.0f;
     }
     void Jump()
     {
@@ -290,13 +305,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 //ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x + 1f) + ledgeClimbXOffset1, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
             }
-            //timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                //transform.position = ledgePos1;
-                //timer = 1;
 
-            }
         }
         else if (!isTouchBox && !isTouchPush)
         {
