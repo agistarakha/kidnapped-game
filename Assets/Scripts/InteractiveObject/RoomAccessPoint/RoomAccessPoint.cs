@@ -21,11 +21,12 @@ public class RoomAccessPoint : InteractiveObject
     protected void LoadConnectedScene()
     {
         //Disini Audio Untuk Pintu terbuka
-        AudioManager.instance.PlaySFX("BukaPintu");
         DoorData.lastVisitedScene = connectedSceneName;
         DoorData.doorSpawnLocation = connectedDoor;
         Player.lastPos = Vector3.zero;
         Player.gameState = Player.GameState.MENU;
+        //player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        Player.isPlayerMoveable = false;
         Debug.Log(Player.gameState);
 
         StartCoroutine(LoadYourAsyncScene(connectedSceneName));
@@ -71,12 +72,13 @@ public class RoomAccessPoint : InteractiveObject
         yield return new WaitForSeconds(0.1f);
         if (connectedSceneName == "")
         {
+            AudioManager.instance.PlaySFX("BukaPintu");
             doorCollider.enabled = false;
             //AudioManager.instance.PlaySFX("");
         }
         else
         {
-
+            AudioManager.instance.PlaySFX("BukaPintu");
             LoadConnectedScene();
 
         }

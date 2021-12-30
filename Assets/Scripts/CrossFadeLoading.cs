@@ -5,26 +5,13 @@ using UnityEngine.UI;
 
 public class CrossFadeLoading : MonoBehaviour
 {
-    private Image img;
-    // Start is called before the first frame update
-    void Start()
+    public void PlayerStopMoving()
     {
-        img = GetComponent<Image>();
-
+        Player.isPlayerMoveable = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayerStartMoving()
     {
-        if (Player.isLoadGame)
-        {
-            Player.isLoadGame = false;
-            img.CrossFadeAlpha(0, 1f, false);
-        }
-        else if (Player.isSaveGame)
-        {
-            Player.isSaveGame = false;
-            img.CrossFadeAlpha(255f, 1f, false);
-        }
+        Player.isPlayerMoveable = true;
     }
 }

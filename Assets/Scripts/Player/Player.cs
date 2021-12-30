@@ -3,6 +3,7 @@ using UnityEngine;
 
 public static class Player
 {
+    public static bool isPlayerMoveable = false;
     public static Vector3 lastPos = Vector3.zero;
     public enum PlayerState
     {

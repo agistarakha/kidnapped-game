@@ -32,6 +32,7 @@ public static class GameDataManager
             Player.lastPos = gameData.lastPos;
             Player.obtainedKeys = gameData.obtainedKeys;
             Player.unlockedDoors = gameData.unlockedDoors;
+            Player.revealedDialog = gameData.revealedDialog;
             for (int i = 0; i < gameData.boxesName.Length; i++)
             {
                 Player.boxesPos[gameData.boxesName[i]] = gameData.boxesPos[i];
@@ -56,6 +57,7 @@ public static class GameDataManager
         gameData.lastVisitedScene = DoorData.lastVisitedScene;
         gameData.obtainedKeys = Player.obtainedKeys;
         gameData.unlockedDoors = Player.unlockedDoors;
+        gameData.revealedDialog = Player.revealedDialog;
         gameData.boxesPos = Player.boxesPos.Values.ToArray<Vector3>();
         gameData.boxesName = Player.boxesPos.Keys.ToArray<string>();
         gameData.obtainedNotesTitle = Player.obtainedNotes.Keys.ToArray<string>();

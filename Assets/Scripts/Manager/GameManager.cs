@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
         // Debug.Log(Player.currentState == Player.PlayerState.EXAMINE);
         GameObject player = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
         Player.currentState = Player.PlayerState.WANDER;
+        // Player.gameState = Player.GameState.MENU;
+        // StartCoroutine(MoveDelay());
         Player.sceneState = Player.PlayerState.WANDER;
         vCam.Follow = player.transform;
         roomInfo.text = "";
@@ -77,6 +79,13 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+
+    // private IEnumerator MoveDelay()
+    // {
+    //     yield return new WaitForSeconds(2f);
+    //     Player.gameState = Player.GameState.MENU;
+    // }
 
     // Update is called once per frame
     void Update()
