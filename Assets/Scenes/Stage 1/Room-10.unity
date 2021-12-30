@@ -279,8 +279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e464aa6ade1596343927e5201ad5e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Examine
-  promptManager: {fileID: 0}
   type: 2
 --- !u!114 &53823675
 MonoBehaviour:
@@ -294,12 +292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0359326d9dabf4cb87b4078d7537ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: adfa
-  promptManager: {fileID: 0}
   objectTypes: 0
   dialogText: 'Nemu kunci!
 
     Kunci apa ini?'
+  audioName: 
   photoSprite: {fileID: 21300000, guid: ee83640a459a3094f8c50c218b6f2efb, type: 3}
   isUIShown: 0
 --- !u!1 &56564591
@@ -1404,7 +1401,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.082044, y: 0.0000042915344, z: -10}
+  m_LocalPosition: {x: -8.082045, y: 0.0000042915344, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2091,6 +2088,7 @@ Transform:
   - {fileID: 1242297818}
   - {fileID: 458704317}
   - {fileID: 1387188778}
+  - {fileID: 1996151670}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3636,8 +3634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e0e9b9309669a46b1a5bdf0e0109e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Read
-  promptManager: {fileID: 0}
   title: '1983-11-03 '
   description: "1983-11-03\r\nProduksi wine kali ini hanya sekitar 500 botol. \r\nHal
     seperti ini sebelumnya tidak pernah terjadi. \r\nSejak kejadian saat itu, produksi
@@ -4660,8 +4656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5670e86aecccb0340a3fe4d8ea1de745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Open
-  promptManager: {fileID: 0}
   connectedSceneName: Room-D
   connectedDoor: WP10
   doorOpenSprite: {fileID: 21300000, guid: e2ef9ab38893c0443806d077183d3952, type: 3}
@@ -5142,6 +5136,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1996151669
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 859526303}
+    m_Modifications:
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353399, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+--- !u!4 &1996151670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+  m_PrefabInstance: {fileID: 1996151669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2021231250
 GameObject:
   m_ObjectHideFlags: 0

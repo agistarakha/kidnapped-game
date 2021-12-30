@@ -808,7 +808,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.262783, y: 0.0000009536743, z: -10}
+  m_LocalPosition: {x: -9.260196, y: 0.0000009536743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1146,6 +1146,7 @@ Transform:
   - {fileID: 1242297818}
   - {fileID: 458704317}
   - {fileID: 1387188778}
+  - {fileID: 1457097701}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1795,6 +1796,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2137789504834958230, guid: 523d4520e0bd47a49b726fc842cf0ac9, type: 3}
   m_PrefabInstance: {fileID: 2137789504142815847}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1457097700
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 859526303}
+    m_Modifications:
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937346933345353399, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+--- !u!4 &1457097701 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3937346933345353396, guid: d58987ffebf03fa419453c21a29a4055, type: 3}
+  m_PrefabInstance: {fileID: 1457097700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1466779159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,8 +2241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5670e86aecccb0340a3fe4d8ea1de745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Open
-  promptManager: {fileID: 0}
   connectedSceneName: Room-A
   connectedDoor: D-5
   doorOpenSprite: {fileID: 21300000, guid: e2ef9ab38893c0443806d077183d3952, type: 3}
@@ -2589,11 +2650,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0359326d9dabf4cb87b4078d7537ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Examine
-  promptManager: {fileID: 0}
   objectTypes: 0
   dialogText: Kunci apa ya?
+  audioName: 
   photoSprite: {fileID: 21300000, guid: ee83640a459a3094f8c50c218b6f2efb, type: 3}
+  isUIShown: 0
 --- !u!114 &1950301087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2606,8 +2667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e464aa6ade1596343927e5201ad5e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: 
-  promptManager: {fileID: 0}
   type: 1
 --- !u!114 &1955517480 stripped
 MonoBehaviour:
@@ -2781,11 +2840,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0359326d9dabf4cb87b4078d7537ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: examine
-  promptManager: {fileID: 0}
   objectTypes: 0
   dialogText: Botong kosong.
+  audioName: 
   photoSprite: {fileID: 21300000, guid: 1412c2056d3ff76428b63c1639dc568e, type: 3}
+  isUIShown: 0
 --- !u!61 &2008407713
 BoxCollider2D:
   m_ObjectHideFlags: 0

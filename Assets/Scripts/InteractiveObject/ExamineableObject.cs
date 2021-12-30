@@ -12,6 +12,7 @@ public class ExamineableObject : InteractiveObject
     public ObjectTypes objectTypes;
     [TextArea(5, 100)]
     public string dialogText;
+    public string audioName;
     public Sprite photoSprite;
     public bool isUIShown = false;
 
@@ -25,6 +26,7 @@ public class ExamineableObject : InteractiveObject
                 fotoUI.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
                 isUIShown = true;
                 //Disini Audio untuk figura.
+                AudioManager.instance.PlaySFX(audioName);
             }
             else
             {

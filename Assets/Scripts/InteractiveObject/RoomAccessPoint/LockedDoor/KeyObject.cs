@@ -34,6 +34,7 @@ public class KeyObject : InteractiveObject
             // PopUpUIManager.Instance.backdrop.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
             //DialogManager.Instance.ShowDialogUI(dialogText);
             // Audio ketika mengambil kunci
+            AudioManager.instance.PlaySFX("Kunci");
             Player.obtainedKeys.Add(GetKeyType());
             // GetComponent<ExamineableObject>().enabled = false;
             // GetComponent<BoxCollider2D>().enabled = false;

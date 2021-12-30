@@ -21,6 +21,7 @@ public class RoomAccessPoint : InteractiveObject
     protected void LoadConnectedScene()
     {
         //Disini Audio Untuk Pintu terbuka
+        AudioManager.instance.PlaySFX("BukaPintu");
         DoorData.lastVisitedScene = connectedSceneName;
         DoorData.doorSpawnLocation = connectedDoor;
         Player.lastPos = Vector3.zero;

@@ -21,6 +21,7 @@ public class NoteObject : InteractiveObject
             }
             GameObject noteUIObj = PopUpUIManager.Instance.ActivateUI("Note");
             // Disini Audio
+            AudioManager.instance.PlaySFX("Note");
             Debug.Log(noteUIObj);
             noteUIObj.transform.GetChild(0).GetComponent<Text>().text = title;
             noteUIObj.transform.GetChild(1).GetComponent<Text>().text = description;
