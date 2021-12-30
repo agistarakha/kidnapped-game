@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 2922143613898503826}
   - component: {fileID: 293152994969109949}
   - component: {fileID: 6859859293631086755}
-  - component: {fileID: 8636096171130278477}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -196,6 +195,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 640
   distance: 0.9
+  soundList:
+  - 
+  - 
+  - 
   isTouchLedge: 0
   isTouchWall: 0
   isTouchBox: 0
@@ -339,14 +342,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &8636096171130278477
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2922143613898503848}
-  m_Enabled: 0
 --- !u!1 &4896651676078394535
 GameObject:
   m_ObjectHideFlags: 0

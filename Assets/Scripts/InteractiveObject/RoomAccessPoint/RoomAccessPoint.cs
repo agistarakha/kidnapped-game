@@ -72,7 +72,7 @@ public class RoomAccessPoint : InteractiveObject
         if (connectedSceneName == "")
         {
             doorCollider.enabled = false;
-
+            //AudioManager.instance.PlaySFX("");
         }
         else
         {
