@@ -29,4 +29,25 @@ public class AudioManager : MonoBehaviour
         }
         _audioSource.PlayOneShot(sfx);
     }
+
+    public void PlayLoopSFX(string name)
+    {
+        AudioClip sfx = _audioClips.Find(s => s.name == name);
+        _audioSource.clip = sfx;
+        if (sfx == null)
+        {
+            return;
+        }
+        _audioSource.Play();
+    }
+    public void StopLoopSFX(string name)
+    {
+        AudioClip sfx = _audioClips.Find(s => s.name == name);
+        _audioSource.clip = sfx;
+        if (sfx == null)
+        {
+            return;
+        }
+        _audioSource.Stop();
+    }
 }

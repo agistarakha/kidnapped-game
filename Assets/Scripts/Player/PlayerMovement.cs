@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource walkSound;
     public float distance = 5f;
     private GameObject box;
-
 
     private Rigidbody2D playerRb;
     private SpriteRenderer playerSprite;
@@ -374,12 +374,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void footstepPlay()
     {
-        walkSound.Play();
+        //walkSound.Play();
         //walkSound.PlayOneShot(walkSound.clip);
+        AudioManager.instance.PlayLoopSFX("Mlaku");
     }
     public void footstepStop()
     {
-        walkSound.Stop();
+        //walkSound.Stop();
+        AudioManager.instance.StopLoopSFX("Mlaku");
     }
 
     bool IsGrounded()
