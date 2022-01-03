@@ -1661,7 +1661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3705216240400642791, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: connectedDoor
-      value: R. Perpustakaan
+      value: R. Tunggu3
       objectReference: {fileID: 0}
     - target: {fileID: 3705216240400642791, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: promptManager
@@ -1669,7 +1669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3705216240400642791, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: connectedSceneName
-      value: Room2-Dokumen
+      value: Room2-Tunggu2
       objectReference: {fileID: 0}
     - target: {fileID: 3947519061046120497, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_Name

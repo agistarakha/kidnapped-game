@@ -24,7 +24,7 @@ public class RoomAccessPoint : InteractiveObject
         DoorData.lastVisitedScene = connectedSceneName;
         DoorData.doorSpawnLocation = connectedDoor;
         Player.lastPos = Vector3.zero;
-        Player.gameState = Player.GameState.MENU;
+        //Player.gameState = Player.GameState.MENU;
         //player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         Player.isPlayerMoveable = false;
         Debug.Log(Player.gameState);

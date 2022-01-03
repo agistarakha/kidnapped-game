@@ -161,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 1838321839068628308, guid: 144ba0b2187a59643b58a8affb166fc3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0e2e9bfead5462342a39fb3e0f414e75, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1838321839068628308, guid: 144ba0b2187a59643b58a8affb166fc3, type: 3}
       propertyPath: m_SortingLayer
       value: 6
@@ -170,17 +170,21 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -343776207
       objectReference: {fileID: 0}
+    - target: {fileID: 1838321839068628308, guid: 144ba0b2187a59643b58a8affb166fc3, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1838321839068628309, guid: 144ba0b2187a59643b58a8affb166fc3, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1838321839068628309, guid: 144ba0b2187a59643b58a8affb166fc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.58
+      value: -39.46
       objectReference: {fileID: 0}
     - target: {fileID: 1838321839068628309, guid: 144ba0b2187a59643b58a8affb166fc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.9
+      value: 21.81
       objectReference: {fileID: 0}
     - target: {fileID: 1838321839068628309, guid: 144ba0b2187a59643b58a8affb166fc3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -216,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1838321839068628311, guid: 144ba0b2187a59643b58a8affb166fc3, type: 3}
       propertyPath: m_Name
-      value: Room Makan
+      value: Room Tunggu2
       objectReference: {fileID: 0}
     - target: {fileID: 1838321839068628311, guid: 144ba0b2187a59643b58a8affb166fc3, type: 3}
       propertyPath: m_IsActive
@@ -247,9 +251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5670e86aecccb0340a3fe4d8ea1de745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedSceneName: Room2-D-B
-  connectedDoor: R. Perpustakaan
-  doorOpenSprite: {fileID: 21300000, guid: 9a532d5d94b1b9d4ba9597af30087808, type: 3}
+  connectedSceneName: Room2-Tunggu2
+  connectedDoor: R. Tunggu1
+  doorOpenSprite: {fileID: 0}
   doorCollider: {fileID: 0}
   doorType: 0
 --- !u!1001 &193126734
@@ -557,10 +561,10 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -27.665066, y: 2.6335166}
-  - {x: -23.87146, y: 2.633517}
-  - {x: -23.87146, y: -6}
-  - {x: 29.5418, y: -6}
+  - {x: -24.774738, y: -6.062622}
+  - {x: 19.43, y: -6.062622}
+  - {x: 19.43, y: 2.7246323}
+  - {x: 23.3, y: 2.724632}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -605,7 +609,7 @@ SpriteRenderer:
   m_SortingLayerID: 856378965
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db00de6bafae7d847a514643eb12c0da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4aaf309a0df336e41988ad4c74fceacd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -641,7 +645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374094780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.93, y: 23.31, z: 0}
+  m_LocalPosition: {x: -62.2, y: 23.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1350825998}
@@ -689,7 +693,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 38c7a66ddeb20ad4bb7be32524724f3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.58, y: 14.66}
@@ -726,7 +730,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.025230408, y: 0}
@@ -784,7 +788,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0b8540787679ff445b19c63a6d99eb53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 4.22, y: 18.21}
@@ -801,7 +805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509945750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.289999, y: 21.55, z: 0}
+  m_LocalPosition: {x: -63.859997, y: 21.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1350825998}
@@ -1087,7 +1091,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1066195488}
   m_Layer: 0
-  m_Name: R. Makan
+  m_Name: R. Tunggu2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,7 +1105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066195487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -41.44, y: 15.59, z: 0}
+  m_LocalPosition: {x: -39.49, y: 15.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1350825998}
@@ -1131,7 +1135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079336814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07, y: 15.73, z: 0}
+  m_LocalPosition: {x: -39.53, y: 15.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1194,7 +1198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288807453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.849998, y: 18.119999, z: 0}
+  m_LocalPosition: {x: -62.29, y: 18.119999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1350825998}
@@ -1283,9 +1287,9 @@ SpriteRenderer:
   m_SortingLayerID: -343776207
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 55529ea79cf4e804bab47b449b635777, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22329ba998ed568428b637e28680d581, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 7.03}
@@ -1633,7 +1637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1134658182396585482, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.67
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 1134658182396585482, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1661,7 +1665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3705216240400642791, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: connectedDoor
-      value: R. Perpustakaan
+      value: R. Tunggu1
       objectReference: {fileID: 0}
     - target: {fileID: 3705216240400642791, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: promptManager
@@ -1669,15 +1673,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3705216240400642791, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: connectedSceneName
-      value: Room2-Dokumen
+      value: Room2-B-A
       objectReference: {fileID: 0}
     - target: {fileID: 3947519061046120497, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_Name
-      value: R. Dokumen
+      value: R. B-A
       objectReference: {fileID: 0}
     - target: {fileID: 4779482525792723099, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_Name
-      value: WarpDokumen
+      value: WarpB-A
       objectReference: {fileID: 0}
     - target: {fileID: 4779482525792723102, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_RootOrder
@@ -1685,7 +1689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779482525792723102, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.81
+      value: -63.4
       objectReference: {fileID: 0}
     - target: {fileID: 4779482525792723102, guid: b3ad4390e20bf6744bb1df38786a378b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1778,10 +1782,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -66.38377, y: 2.273561}
-      - {x: -11.019021, y: 2.273561}
-      - {x: -11.01902, y: 20.435263}
-      - {x: -66.383766, y: 20.43526}
+    - - {x: -62.78203, y: 2.257659}
+      - {x: -15.408791, y: 2.2576594}
+      - {x: -15.40879, y: 20.377579}
+      - {x: -62.78203, y: 20.37758}
 --- !u!4 &1820424802
 Transform:
   m_ObjectHideFlags: 0
@@ -1913,12 +1917,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 17296e38e9477b04684162a6bade6c7c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5748d1e915b16c8489cc786ad665aade, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 69.75151, y: 38.52}
+  m_Size: {x: 37.75458, y: 21.789999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
