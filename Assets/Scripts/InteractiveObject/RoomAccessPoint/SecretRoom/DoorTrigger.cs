@@ -24,10 +24,12 @@ public class DoorTrigger : InteractiveObject
         {
             if (Input.GetKeyDown(KeyCode.E) && playerInRange)
             {
+                CinemachineShake.Instance.ShakeCamera(2f, 1f);
                 StartCoroutine(secretDoor.SlideDoor());
                 door.GetComponent<BoxCollider2D>().enabled = true;
                 door.enabled = true;
                 Player.unlockedDoors.Add("SecretDoor");
+
             }
         }
         else

@@ -21,6 +21,9 @@ public class PopUpBackBtn : MonoBehaviour
         secondParent = null;
         backBtn.onClick.AddListener(() => DisableParent());
         backBtn.onClick.AddListener(() => PopUpUIManager.Instance.DeactivateUI());
+        backBtn.onClick.AddListener(() => PopUpUIManager.Instance.StopAllCoroutines());
+
+
     }
 
     void OnDisable()
@@ -50,6 +53,7 @@ public class PopUpBackBtn : MonoBehaviour
             }
         }
         secondParent = firstParent.transform.parent.gameObject;
+        firstParent.transform.position = PopUpUIManager.Instance.OriPos();
         firstParent.SetActive(false);
         secondParent.SetActive(false);
     }
