@@ -11,6 +11,7 @@ TagManager:
   - PopUpItem
   - Fade
   - liftBond
+  - LiftBond
   layers:
   - Default
   - TransparentFX

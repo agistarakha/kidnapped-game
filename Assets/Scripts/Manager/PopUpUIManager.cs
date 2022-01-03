@@ -30,6 +30,10 @@ public class PopUpUIManager : MonoBehaviour
     private Sprite photoSprite;
     private bool isPopUpActive = false;
     private Vector3 oriPos;
+    public Vector3 OriPos()
+    {
+        return oriPos;
+    }
     private bool isAnimEnd;
     private float popUpAnimationTimer = 3.0f;
 
@@ -53,7 +57,7 @@ public class PopUpUIManager : MonoBehaviour
             RectTransform rect = currentActiveObject.GetComponent<RectTransform>();
             Debug.Log(rect.position.y);
             Debug.Log("Ori Pos: " + oriPos.y);
-            if (Mathf.Ceil(rect.position.y / 10f) >= Mathf.Ceil(oriPos.y / 10))
+            if (Mathf.Ceil(rect.position.y / 10) >= Mathf.Ceil(oriPos.y / 10) / 1.25f)
             {
 
                 Debug.Log("Zehhhhaaa");
