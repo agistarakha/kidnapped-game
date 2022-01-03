@@ -195,10 +195,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 640
   distance: 0.9
-  soundList:
-  - 
-  - 
-  - 
   isTouchLedge: 0
   isTouchWall: 0
   isTouchBox: 0
@@ -253,7 +249,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2922143613898503848}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e83d5d7cee9be024aa463eeea17ed6dc, type: 3}
