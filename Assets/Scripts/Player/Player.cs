@@ -30,4 +30,5 @@ public static class Player
 
     public static bool isSaveGame = false;
     public static bool isLoadGame = false;
+    public static bool isScreenShakingEnded = false;
 }
