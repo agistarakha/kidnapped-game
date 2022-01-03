@@ -53,4 +53,64 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage 1/Lift.unity
     guid: c5db3455046a7814bbbc4ead4f02ba61
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-A.unity
+    guid: b26c936466240354e81a92009e77b424
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-B-A.unity
+    guid: b353d84f2ffaa434a83ae856aaa0ed51
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-B.unity
+    guid: d0f6ba73cf21aa24783f2219a4387289
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-C-A.unity
+    guid: 2db015586995ab5488b314f2c77f983f
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-C-B.unity
+    guid: 5820c4102e0bdf64f88bafd713946014
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-C.unity
+    guid: 0b62cf75016c3b74e82810f51247cf61
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-Cucian.unity
+    guid: 294c2d689177f5448a742062ff377b6c
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-D-A.unity
+    guid: 5d932e5067496cc4290e22391613d8f3
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-D-B.unity
+    guid: 18d77267e9b81914d937abcec74e027f
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-D.unity
+    guid: a7c38ed5ed7742f45a0ade6e430d1d12
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-Dapur.unity
+    guid: 7dc64ea7d840e56449d8bb731be2e116
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-Dokumen.unity
+    guid: 02042395f5693e24889f05fc068ec039
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-Gudang.unity
+    guid: 87bebd75dfada09428b7bc325750f767
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-Makan.unity
+    guid: 3eca638b427c7c24a95eb9d42317d724
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-Penyimpanan.unity
+    guid: 114371a6b30d66c49adfee7118de10a5
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-Perpustakaan.unity
+    guid: 65878f7bf1a6f4e4d836088b067d2c95
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-Tidur.unity
+    guid: a26a69112dd45b245af5472db384f858
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-Tunggu1.unity
+    guid: 3d306ba2d1bd1b34d87559c7f4ec2c7c
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-Tunggu2.unity
+    guid: 165f5dbfcaab9fa4c8bc50864a7dfce1
+  - enabled: 1
+    path: Assets/Scenes/Stage 2 with asset/Room2-Tunggu3.unity
+    guid: cd5c5f3a295ff654fa5798326f8133da
   m_configObjects: {}
