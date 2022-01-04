@@ -2,34 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class CharacterAudio : MonoBehaviour
 {
-    private static AudioManager _instance = null;
-    public static AudioManager instance
+    private static CharacterAudio _instances = null;
+    public static CharacterAudio instances
     {
         get
         {
-            if (_instance == null)
+            if (_instances == null)
             {
-                _instance = FindObjectOfType<AudioManager>();
+                _instances = FindObjectOfType<CharacterAudio>();
             }
-            return _instance;
+            return _instances;
         }
     }
 
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private List<AudioClip> _audioClips;
 
-    public void PlaySFX(string name)
-    {
-        AudioClip sfx = _audioClips.Find(s => s.name == name);
-        if (sfx == null)
-        {
-            return;
-        }
-        _audioSource.PlayOneShot(sfx);
-    }
-   /*
     public void PlayLoopSFX(string name)
     {
         AudioClip sfx = _audioClips.Find(s => s.name == name);
@@ -50,5 +40,4 @@ public class AudioManager : MonoBehaviour
         }
         _audioSource.Stop();
     }
-    */
 }

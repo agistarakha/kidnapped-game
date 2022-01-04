@@ -702,6 +702,115 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &391841535
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2102418307146146128, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Name
+      value: Catatan Perburuan
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146129, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Radius
+      value: 0.37273216
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146129, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.1580677
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146129, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.045713663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fab10dc0c59fb9b49b23635a18091adb, type: 3}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1707758617
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -53.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: title
+      value: Catatan Perburuan
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: description
+      value: "...\r\nJumat, 13 Februari 1981\r\nSenapan: Remington Model 700\r\nJumlah
+        peluru: 10\r\nHasil: \r\n1 Rusa\r\n3 Burung\r\n\r\nMinggu, 22 Februari 1981\r\nSenapan:
+        Remington Model 700\r\nJumlah peluru: 12\r\nHasil:\r\n2 Rusa\r\n3 Babi hutan\r\n\r\nSabtu,
+        28 Februari 1981\r\nSenapan: Remington Model 700\r\nJumlah peluru: 16\r\nHasil:\r\n1
+        Beruang\r\n1 Rusa\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: promptManager
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
 --- !u!1 &509945750
 GameObject:
   m_ObjectHideFlags: 0

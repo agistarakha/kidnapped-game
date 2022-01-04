@@ -17,6 +17,8 @@ public class Key : MonoBehaviour
         Teras,
         RuangDokumen,
         RuangPenyimpanan,
+        RuangCucian,
+        KamarTidur,
         TglLahir,
         TglPernikahan
     }
