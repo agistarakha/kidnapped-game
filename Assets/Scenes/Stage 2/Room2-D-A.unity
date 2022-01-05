@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedSceneName: Room2-D
   connectedDoor: R. D-A
-  doorOpenSprite: {fileID: 0}
+  doorOpenSprite: {fileID: 21300000, guid: 9a532d5d94b1b9d4ba9597af30087808, type: 3}
   doorCollider: {fileID: 0}
   doorType: 0
 --- !u!1001 &193126734

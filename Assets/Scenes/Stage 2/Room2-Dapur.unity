@@ -609,7 +609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 485450169}
   m_Layer: 0
-  m_Name: R. Tunggu
+  m_Name: R. Makan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1214,6 +1214,87 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1342016659
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.60786
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.75558
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986357, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986358, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ee83640a459a3094f8c50c218b6f2efb, type: 3}
+    - target: {fileID: 3689273218406986358, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986358, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1707758617
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986359, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_Name
+      value: KunciPenyimpanan
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959650244541498243, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: type
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
 --- !u!1 &1350825997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1398,122 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8160435126255833724, guid: 130d0b2efcc071e4a998ddf69f2cbac5, type: 3}
   m_PrefabInstance: {fileID: 1408568255}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1428726960
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2102418307146146128, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Name
+      value: Resep Makanan
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146129, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Radius
+      value: 0.55928314
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146129, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.1580677
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146129, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.23226464
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 36c10efe64974fe40b02de755cd1f8b0, type: 3}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1707758617
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -30.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146131, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: title
+      value: Resep Makanan
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: description
+      value: 'Selamat pagi, Pak Dul.
+
+
+
+        Saya pesan makanan biasa untuk Tuan.
+
+        Kali
+        ini ekstra gandum.
+
+
+
+        Salam Marie.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: promptManager
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
 --- !u!1 &1466779159
 GameObject:
   m_ObjectHideFlags: 0

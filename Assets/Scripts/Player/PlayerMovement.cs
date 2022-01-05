@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask objectMask;
     private Collider2D standingCollider;
 
-    private AudioSource walkSound;
+    //private AudioSource walkSound;
     public float distance = 5f;
     private GameObject box;
 
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
         playerCollider = GetComponents<CapsuleCollider2D>()[0];
-        walkSound = GetComponent<AudioSource>();
+        //walkSound = GetComponent<AudioSource>();
         direction = Vector2.zero;
         lastInput = 0;
         horizontalInput = 0;
@@ -385,12 +385,12 @@ public class PlayerMovement : MonoBehaviour
     {
         //walkSound.Play();
         //walkSound.PlayOneShot(walkSound.clip);
-        AudioManager.instance.PlayLoopSFX("Mlaku");
+        CharacterAudio.instances.PlayLoopSFX("Mlaku");
     }
     public void footstepStop()
     {
         //walkSound.Stop();
-        AudioManager.instance.StopLoopSFX("Mlaku");
+        CharacterAudio.instances.StopLoopSFX("Mlaku");
     }
 
     bool IsGrounded()
