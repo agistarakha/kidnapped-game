@@ -14,8 +14,11 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadGame()
     {
-        GameDataManager.LoadFile();
-        SceneManager.LoadScene(DoorData.lastVisitedScene);
+        if (GameDataManager.LoadFile())
+        {
+            SceneManager.LoadScene(DoorData.lastVisitedScene);
+
+        }
     }
 
     public void NewGame()

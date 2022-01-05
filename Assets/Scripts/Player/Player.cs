@@ -3,6 +3,7 @@ using UnityEngine;
 
 public static class Player
 {
+    public static bool isPlayerMoveable = false;
     public static Vector3 lastPos = Vector3.zero;
     public enum PlayerState
     {
@@ -24,4 +25,10 @@ public static class Player
     public static Dictionary<string, string> obtainedNotes = new Dictionary<string, string>();
     public static List<string> unlockedDoors = new List<string>();
     public static bool gameIsInitiated = false;
+    public static List<string> revealedDialog = new List<string>();
+    public static Dictionary<string, Vector3> boxesPos = new Dictionary<string, Vector3>();
+
+    public static bool isSaveGame = false;
+    public static bool isLoadGame = false;
+    public static bool isScreenShakingEnded = false;
 }

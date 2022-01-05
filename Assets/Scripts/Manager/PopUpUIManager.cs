@@ -28,6 +28,14 @@ public class PopUpUIManager : MonoBehaviour
     public GameObject currentActiveObject;
     private List<GameObject> generatedObjects;
     private Sprite photoSprite;
+    private bool isPopUpActive = false;
+    private Vector3 oriPos;
+    public Vector3 OriPos()
+    {
+        return oriPos;
+    }
+    private bool isAnimEnd;
+    private float popUpAnimationTimer = 3.0f;
 
 
 
@@ -42,10 +50,46 @@ public class PopUpUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Escape))
-        // {
-        //     DeactivateUI();
-        // }
+        if (currentActiveObject != null)
+        {
+            Debug.Log("Zehhhhaaa");
+
+            RectTransform rect = currentActiveObject.GetComponent<RectTransform>();
+            Debug.Log(rect.position.y);
+            Debug.Log("Ori Pos: " + oriPos.y);
+            if (Mathf.Ceil(rect.position.y / 10) >= Mathf.Ceil(oriPos.y / 10) / 1.25f)
+            {
+
+                Debug.Log("Zehhhhaaa");
+                if (!isPopUpActive && Player.gameState == Player.GameState.MENU)
+                {
+                    Player.gameState = Player.GameState.GAMEPLAY;
+                }
+                if (((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape)) && Player.gameState == Player.GameState.MENU))
+                {
+                    for (int i = 0; i < backdrop.transform.childCount; i++)
+                    {
+                        GameObject childObj = backdrop.transform.GetChild(i).gameObject;
+                        if (childObj.activeSelf)
+                        {
+                            if (childObj.name == "Photo(Clone)")
+                            {
+                                childObj.transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
+
+                            }
+                            StopAllCoroutines();
+                            backdrop.transform.GetChild(i).GetComponent<RectTransform>().position = oriPos;
+                            backdrop.transform.GetChild(i).gameObject.SetActive(false);
+                            backdrop.SetActive(false);
+                            isPopUpActive = false;
+                            isAnimEnd = false;
+
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private void GenerateUI()
@@ -63,16 +107,26 @@ public class PopUpUIManager : MonoBehaviour
 
     public GameObject ActivateUI(string name)
     {
+        //Debug.Log(name);
+        isAnimEnd = false;
+        isPopUpActive = true;
         Player.gameState = Player.GameState.MENU;
 
         for (int i = 0; i < popUpObjects.Count; i++)
         {
             GameObject obj = backdrop.transform.GetChild(i).gameObject;
+            //Debug.Log(obj.name);
             if (name + "(Clone)" == obj.name)
             {
                 backdrop.SetActive(true);
                 obj.SetActive(true);
+                Debug.Log(backdrop.activeSelf);
+                Debug.Log(obj.activeSelf);
                 currentActiveObject = obj;
+                // isAnimEnd = PopUpAnimation(currentActiveObject.GetComponent<RectTransform>());
+
+                StartCoroutine(PopUpAnim(currentActiveObject.GetComponent<RectTransform>()));
+
                 // if (name == "PauseMenu")
                 // {
                 //     // backBtn.gameObject.SetActive(false);
@@ -89,6 +143,8 @@ public class PopUpUIManager : MonoBehaviour
 
     public GameObject ActivateUI(Sprite img)
     {
+        isAnimEnd = false;
+        isPopUpActive = true;
         Player.gameState = Player.GameState.MENU;
 
         for (int i = 0; i < popUpObjects.Count; i++)
@@ -100,6 +156,8 @@ public class PopUpUIManager : MonoBehaviour
                 obj.GetComponent<Image>().sprite = img;
                 obj.SetActive(true);
                 currentActiveObject = obj;
+                // isAnimEnd = PopUpAnimation(currentActiveObject.GetComponent<RectTransform>());
+                StartCoroutine(PopUpAnim(currentActiveObject.GetComponent<RectTransform>()));
                 // if (name == "PauseMenu")
                 // {
                 //     // backBtn.gameObject.SetActive(false);
@@ -128,6 +186,41 @@ public class PopUpUIManager : MonoBehaviour
             // DialogManager.Instance.ShowDialogUI("Blabla");
 
         }
+    }
+
+
+    private IEnumerator gaemStateDelay()
+    {
+
+        yield return null;
+    }
+
+    private IEnumerator PopUpAnim(RectTransform rect)
+    {
+        oriPos = rect.position;
+        rect.position = new Vector3(rect.position.x, rect.position.y - (rect.position.y * 2), rect.position.z);
+
+        while (rect.position.y != oriPos.y)
+        {
+            rect.position = Vector3.Lerp(rect.position, oriPos, 3f * Time.deltaTime);
+            yield return null;
+        }
+        rect.position = oriPos;
+        // isAnimEnd = true;
+
+    }
+
+    private bool PopUpAnimation(RectTransform rect)
+    {
+        oriPos = rect.position;
+        rect.position = new Vector3(rect.position.x, rect.position.y - (rect.position.y * 2), rect.position.z);
+
+        while (rect.position.y != oriPos.y)
+        {
+            rect.position = Vector3.Lerp(rect.position, oriPos, 3f * Time.deltaTime);
+        }
+        rect.position = oriPos;
+        return true;
     }
 }
 

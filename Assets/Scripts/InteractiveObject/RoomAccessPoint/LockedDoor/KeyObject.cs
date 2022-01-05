@@ -8,31 +8,38 @@ public class KeyObject : InteractiveObject
     [SerializeField]
     private Key.typeKey type;
 
-
     public Key.typeKey GetKeyType()
     {
         return type;
     }
 
-    [TextArea(5, 100)]
-    public string dialogText;
+    //[TextArea(5, 100)]
+    //public string dialogText;
 
+    // void Awake()
+    // {
 
-    void Awake()
-    {
-        if (Player.obtainedKeys.Contains(GetKeyType()))
-        {
-            gameObject.SetActive(false);
-        }
-    }
+    // }
     void Update()
     {
+        if (Player.obtainedKeys.Contains(GetKeyType()) && GetComponent<ExamineableObject>().isUIShown)
+        {
+            //gameObject.SetActive(false);
+            GetComponent<ExamineableObject>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            this.enabled = false;
+        }
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
             // PopUpUIManager.Instance.backdrop.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
-            DialogManager.Instance.ShowDialogUI(dialogText);
+            //DialogManager.Instance.ShowDialogUI(dialogText);
+            // Audio ketika mengambil kunci
+            AudioManager.instance.PlaySFX("Kunci");
             Player.obtainedKeys.Add(GetKeyType());
-            gameObject.SetActive(false);
+            // GetComponent<ExamineableObject>().enabled = false;
+            // GetComponent<BoxCollider2D>().enabled = false;
+            // this.enabled = false;
+            //gameObject.SetActive(false);
         }
     }
 }

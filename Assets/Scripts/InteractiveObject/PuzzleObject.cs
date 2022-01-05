@@ -9,7 +9,7 @@ public class PuzzleObject : InteractiveObject
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && Player.gameState == Player.GameState.GAMEPLAY)
         {
             PopUpUIManager.Instance.ActivateUI(puzzlePrefab.name);
         }

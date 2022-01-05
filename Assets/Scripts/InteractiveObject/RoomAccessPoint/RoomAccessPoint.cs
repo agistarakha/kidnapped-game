@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class RoomAccessPoint : InteractiveObject
@@ -19,9 +20,15 @@ public class RoomAccessPoint : InteractiveObject
 
     protected void LoadConnectedScene()
     {
+        //Disini Audio Untuk Pintu terbuka
         DoorData.lastVisitedScene = connectedSceneName;
         DoorData.doorSpawnLocation = connectedDoor;
         Player.lastPos = Vector3.zero;
+        //Player.gameState = Player.GameState.MENU;
+        //player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        Player.isPlayerMoveable = false;
+        Debug.Log(Player.gameState);
+
         StartCoroutine(LoadYourAsyncScene(connectedSceneName));
     }
 
@@ -31,38 +38,55 @@ public class RoomAccessPoint : InteractiveObject
         // This is particularly good for creating loading screens.
         // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
         // a sceneBuildIndex of 1 as shown in Build Settings.
+        // Image blackPanel = GameObject.FindGameObjectsWithTag("Fade")[0].GetComponent<Image>();
+        // while (blackPanel.color.a < 255f)
+        // {
+        //     blackPanel.CrossFadeAlpha(255f, 1f, false);
+        //     // yield return null;
+        // }
+        GameObject.FindGameObjectsWithTag("Fade")[0].GetComponent<Animator>().SetTrigger("FadeIn");
+        yield return new WaitForSeconds(2.0f);
         GameDataManager.SaveFile(player);
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(connected);
+
+        // AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(connected);
+        SceneManager.LoadScene(connected);
+
 
         // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
+        // while (!asyncLoad.isDone)
+        // {
+        //     yield return null;
+        // }
     }
 
     public IEnumerator OpenDoor()
     {
+
         objImg.color = oriColor;
         yield return new WaitForSeconds(0.5f);
-        // if (doorOpenSprite != null)
-        // {
-        // }
-        objImg.sprite = doorOpenSprite;
+        if (doorOpenSprite != null)
+        {
+            objImg.sprite = doorOpenSprite;
+        }
         DoorTypeHandling();
         yield return new WaitForSeconds(0.1f);
         if (connectedSceneName == "")
         {
+            AudioManager.instance.PlaySFX("BukaPintu");
             doorCollider.enabled = false;
-
+            //AudioManager.instance.PlaySFX("");
         }
         else
         {
+            AudioManager.instance.PlaySFX("BukaPintu");
             LoadConnectedScene();
 
         }
 
     }
+
+
+
 
     private void DoorTypeHandling()
     {

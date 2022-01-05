@@ -9,6 +9,9 @@ TagManager:
   - NoteDetails
   - pushAble
   - PopUpItem
+  - Fade
+  - liftBond
+  - LiftBond
   layers:
   - Default
   - TransparentFX

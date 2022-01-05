@@ -12,7 +12,8 @@ public class DoorTrigger : InteractiveObject
         base.StartFunExtension();
         if (Player.unlockedDoors.Contains("SecretDoor"))
         {
-            secretDoor.transform.position = secretDoor.targetPos;
+            door.GetComponent<BoxCollider2D>().enabled = true;
+            secretDoor.transform.position = secretDoor.targetObj.transform.position;
             door.enabled = true;
         }
     }
@@ -23,16 +24,19 @@ public class DoorTrigger : InteractiveObject
         {
             if (Input.GetKeyDown(KeyCode.E) && playerInRange)
             {
+                CinemachineShake.Instance.ShakeCamera(2f, 1f);
                 StartCoroutine(secretDoor.SlideDoor());
+                door.GetComponent<BoxCollider2D>().enabled = true;
                 door.enabled = true;
                 Player.unlockedDoors.Add("SecretDoor");
+
             }
         }
         else
         {
             if (playerInRange)
             {
-                promptManager.HidePrompt();
+                // promptManager.HidePrompt();
                 objImg.color = oriColor;
 
 
