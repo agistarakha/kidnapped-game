@@ -5,6 +5,11 @@ public class InteractiveObject : MonoBehaviour
     // public string promptText;
     // public PromptManager promptManager;
     protected bool playerInRange = false;
+    public bool PlayerInRange
+    {
+        get { return playerInRange; }
+        set { playerInRange = value; }
+    }
     protected GameObject player;
     protected SpriteRenderer objImg;
     protected Color oriColor;

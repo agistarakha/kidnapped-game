@@ -5,6 +5,7 @@ using UnityEngine;
 public class LockedExaminableObj : InteractiveObject
 {
     public Key.typeKey key;
+    public string code;
     // Start is called before the first frame update
     void Awake()
     {
@@ -13,16 +14,18 @@ public class LockedExaminableObj : InteractiveObject
             GetComponent<ExamineableObject>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = true;
+            GetComponent<ExamineableObject>().PlayerInRange = true;
             this.enabled = false;
         }
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (Player.obtainedKeys.Contains(key))
         {
             GetComponent<ExamineableObject>().enabled = true;
+            Player.gameState = Player.GameState.GAMEPLAY;
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = true;
             this.enabled = false;
@@ -32,7 +35,10 @@ public class LockedExaminableObj : InteractiveObject
 
             if (Input.GetKeyDown(KeyCode.E) && playerInRange && Player.gameState == Player.GameState.GAMEPLAY)
             {
-                GameObject popUpObj = PopUpUIManager.Instance.ActivateUI("Brankas");
+                GameObject popUpObj = PopUpUIManager.Instance.ActivateUI("NumLock");
+                NumLockChecker numLockChecker = popUpObj.transform.GetChild(0).GetComponent<NumLockChecker>();
+                numLockChecker.Code = code;
+                numLockChecker.KeyType = key;
 
             }
         }

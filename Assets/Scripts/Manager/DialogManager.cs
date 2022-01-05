@@ -22,6 +22,7 @@ public class DialogManager : MonoBehaviour
 
     private Text dialogText;
     private bool isDialogActive = false;
+    private string fullText;
 
     // Start is called before the first frame update
     void Start()
@@ -40,8 +41,11 @@ public class DialogManager : MonoBehaviour
 
         if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)) && Player.gameState == Player.GameState.DIALOG)
         {
-            HideDialogUI();
-            isDialogActive = false;
+            if (fullText == dialogText.text)
+            {
+                HideDialogUI();
+                isDialogActive = false;
+            }
         }
     }
 
@@ -65,6 +69,7 @@ public class DialogManager : MonoBehaviour
 
     private IEnumerator GenerateDialogText(string text)
     {
+        fullText = text;
         foreach (char txt in text)
         {
             dialogText.text += txt;

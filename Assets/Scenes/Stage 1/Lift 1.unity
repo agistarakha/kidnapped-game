@@ -3798,6 +3798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 0
+  code: 12345123
 --- !u!61 &957666869
 BoxCollider2D:
   m_ObjectHideFlags: 0
