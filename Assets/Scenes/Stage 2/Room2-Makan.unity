@@ -1432,7 +1432,6 @@ GameObject:
   - component: {fileID: 1288807457}
   - component: {fileID: 1288807456}
   - component: {fileID: 1288807455}
-  - component: {fileID: 1288807458}
   m_Layer: 0
   m_Name: pintu (1)
   m_TagString: Untagged
@@ -1461,7 +1460,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288807453}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5670e86aecccb0340a3fe4d8ea1de745, type: 3}
   m_Name: 
@@ -1548,24 +1547,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1288807458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1288807453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4fbe31d75f9b3348892599f6c5ebe3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connectedSceneName: 
-  connectedDoor: 
-  doorOpenSprite: {fileID: 21300000, guid: 5d6e100da82909649a0a2526da2fe5c8, type: 3}
-  doorCollider: {fileID: 0}
-  doorType: 1
-  requiredKey: 6
 --- !u!1 &1293029024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,7 +1690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321714285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.749916, y: 21.666704, z: -10}
+  m_LocalPosition: {x: -26.752031, y: 21.666704, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
