@@ -1769,7 +1769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.3056726, y: 0.0000009536743, z: 0}
+  m_LocalPosition: {x: -7.3229027, y: 0.0000009536743, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4643,18 +4643,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: description
-      value: '*
+      value: 'Catatan!!!
 
-        Catatan!!!
+        Apabila suplai listrik utama padam, gunakanlah
+        generator yang ada di basement.
 
-        Apabila suplai listrik utama padam,
-        gunakanlah generator yang ada di basement.
+        Generator digunakan untuk menyuplai
+        listrik apabila listrik utama tidak bisa diandalkan.
 
-        Generator digunakan untuk
-        menyuplai listrik apabila listrik utama tidak bisa diandalkan.
-
-        Tarik
-        tuas merah untuk menyalakan generator.
+        Tarik tuas
+        merah untuk menyalakan generator.
 
         Listrik bisa bertahan kurang
         lebih selama sebulan.
@@ -4662,11 +4660,9 @@ PrefabInstance:
         Generator bisa menyuplai listrik ke seluruh
         sudut rumah.
 
+        
 
-
-        NB: Gunakan listrik sebijak mungkin.
-
-        *'
+        NB: Gunakan listrik sebijak mungkin.'
       objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: promptManager

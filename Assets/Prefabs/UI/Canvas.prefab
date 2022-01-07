@@ -508,6 +508,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlackScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 4178081711263975119, guid: 7b546d6ddf818e9469f18184973f22a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b546d6ddf818e9469f18184973f22a7, type: 3}
 --- !u!224 &4068304500829426216 stripped
@@ -623,6 +627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 7579531527537520368, guid: 75c80650a50892f428372fe5ea124cf1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7579531527537520371, guid: 75c80650a50892f428372fe5ea124cf1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -653,11 +661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7579531527537520371, guid: 75c80650a50892f428372fe5ea124cf1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1160
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 7579531527537520371, guid: 75c80650a50892f428372fe5ea124cf1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 7579531527537520371, guid: 75c80650a50892f428372fe5ea124cf1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -693,7 +701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7579531527537520371, guid: 75c80650a50892f428372fe5ea124cf1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 187
+      value: 166
       objectReference: {fileID: 0}
     - target: {fileID: 7579531527537520371, guid: 75c80650a50892f428372fe5ea124cf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -706,6 +714,14 @@ PrefabInstance:
     - target: {fileID: 7579531527537520371, guid: 75c80650a50892f428372fe5ea124cf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579531528632636713, guid: 75c80650a50892f428372fe5ea124cf1, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579531528632636718, guid: 75c80650a50892f428372fe5ea124cf1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.5499878
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75c80650a50892f428372fe5ea124cf1, type: 3}

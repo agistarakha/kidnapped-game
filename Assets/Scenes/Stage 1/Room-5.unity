@@ -550,7 +550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.273347, y: 0.0000009536743, z: -10}
+  m_LocalPosition: {x: -9.278724, y: 0.0000009536743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2176,8 +2176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTypes: 0
-  dialogText: Botong kosong.
-  audioName: 
+  dialogText: Botol kosong.
+  audioName: Bottle
   photoSprite: {fileID: 21300000, guid: 1412c2056d3ff76428b63c1639dc568e, type: 3}
   isUIShown: 0
 --- !u!61 &2008407713
