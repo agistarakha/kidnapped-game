@@ -383,7 +383,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.5955125, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -394,7 +394,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.25, y: 18.21}
+  m_Size: {x: 2.058975, y: 18.21}
   m_EdgeRadius: 0
 --- !u!1 &185963673
 GameObject:
@@ -834,7 +834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0014496, y: 1.8951993, z: -10}
+  m_LocalPosition: {x: -3.0014505, y: 1.8952036, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1807,7 +1807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4654113939345703892, guid: 370ff015f9ab0cc4a9d66b7c0ca10914, type: 3}
       propertyPath: dialogText
-      value: Tidak Ada Apapun Di dalam sini.
+      value: "Tidak ada apapun \rdi dalam sini."
       objectReference: {fileID: 0}
     - target: {fileID: 4654113939345703893, guid: 370ff015f9ab0cc4a9d66b7c0ca10914, type: 3}
       propertyPath: m_RootOrder
@@ -2128,9 +2128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTypes: 0
-  dialogText: "\u201CRuang Generator\u201D\napa masih ada ruangan yang belum ku masuki?\r\nBanyak
-    sekali ruagan di sini, kapan GW bisa keluar dari sini?"
-  audioName: 
+  dialogText: "Tertulis \u201CRuang Generator\u201D. \r\nApa masih ada ruangan yang
+    belum kumasuki?\r\nBanyak sekali ruagan di sini, di mana jalan keluarnya?"
+  audioName: Kunci
   photoSprite: {fileID: 21300000, guid: ee83640a459a3094f8c50c218b6f2efb, type: 3}
   isUIShown: 0
 --- !u!1 &1466779159
@@ -2421,7 +2421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4654113939345703892, guid: 370ff015f9ab0cc4a9d66b7c0ca10914, type: 3}
       propertyPath: dialogText
-      value: "Sayang sekali anggur ini \r\ntidak ada yang minum."
+      value: "Sayang sekali anggur ini \rtidak ada yang minum."
       objectReference: {fileID: 0}
     - target: {fileID: 4654113939345703893, guid: 370ff015f9ab0cc4a9d66b7c0ca10914, type: 3}
       propertyPath: m_RootOrder
