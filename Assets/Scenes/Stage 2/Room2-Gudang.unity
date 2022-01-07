@@ -1484,7 +1484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321714285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.863508, y: 19.447083, z: -10}
+  m_LocalPosition: {x: -18.852839, y: 19.447083, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2259,7 +2259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099760532}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.84, y: 20.7, z: 0}
+  m_LocalPosition: {x: 3.74, y: 19.28, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 1350825998}
@@ -2278,18 +2278,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06558609, y: -4.9896116}
+  m_Offset: {x: 0.06443167, y: -2.7721765}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.55, y: 10.8}
+    oldSize: {x: 3.65, y: 4.12}
     newSize: {x: 1.23, y: 0.93}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.9726744, y: 11.839222}
+  m_Size: {x: 4.2117977, y: 9.377951}
   m_EdgeRadius: 0
 --- !u!114 &2099760535
 MonoBehaviour:
@@ -2304,7 +2304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTypes: 0
-  dialogText: Foto Pernikahan...
+  dialogText: "Foto Pernikahan\nTertulis 05 Juli 1971\r"
   audioName: 
   photoSprite: {fileID: 21300000, guid: 41bbaf6c47279b74887c024468cb1982, type: 3}
   isUIShown: 0
@@ -2348,7 +2348,7 @@ SpriteRenderer:
   m_SortingLayerID: 1707758617
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 41bbaf6c47279b74887c024468cb1982, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d47d439f7161aff47ae79cdf4e19f55e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
