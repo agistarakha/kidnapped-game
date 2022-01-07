@@ -508,7 +508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204369680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.36, y: -1.93, z: 0}
+  m_LocalPosition: {x: 27.38, y: -1.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 798895797}
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTypes: 1
-  dialogText: Seperti patung yang baru saja kulewati...
+  dialogText: Seperti patung yang baru saja kulewati.
   audioName: 
   photoSprite: {fileID: 0}
   isUIShown: 0
@@ -3458,7 +3458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412436851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.22, y: 1.59, z: 0}
+  m_LocalPosition: {x: 19.14, y: -4.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4104,12 +4104,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4654113939345703892, guid: 370ff015f9ab0cc4a9d66b7c0ca10914, type: 3}
       propertyPath: dialogText
-      value: 'Oh tidak! Jalannya tertimbun.
-
-        Harus cari jalan lain.
-
-        [lihat
-        ke atas] Ah!'
+      value: Oh tidak! Jalannya tertimbun.
       objectReference: {fileID: 0}
     - target: {fileID: 4654113939345703893, guid: 370ff015f9ab0cc4a9d66b7c0ca10914, type: 3}
       propertyPath: m_RootOrder
@@ -4875,9 +4870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4654113939345703892, guid: 370ff015f9ab0cc4a9d66b7c0ca10914, type: 3}
       propertyPath: dialogText
-      value: 'Arahnya benar ke sini kah?
-
-        Entahlah.'
+      value: Arahnya benar ke sini kah?
       objectReference: {fileID: 0}
     - target: {fileID: 4654113939345703893, guid: 370ff015f9ab0cc4a9d66b7c0ca10914, type: 3}
       propertyPath: m_RootOrder

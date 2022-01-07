@@ -1431,7 +1431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -95.54303, y: 20.42111, z: -10}
+  m_LocalPosition: {x: -95.5484, y: 20.42111, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2418,6 +2418,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2609161637967963558, guid: 4a84bc68aa3f23d408f95443574d6db0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609161639266803320, guid: 4a84bc68aa3f23d408f95443574d6db0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.5499878
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068304500829426217, guid: 4a84bc68aa3f23d408f95443574d6db0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a84bc68aa3f23d408f95443574d6db0, type: 3}
 --- !u!1 &1256660526 stripped
@@ -2894,15 +2906,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: description
-      value: "...basement dibangun untuk menyimpan beberapa barang yang tidak lagi
-        digunakan. Pada akhirnya basement dijadikan sebagai tempat produksi wine.
-        Walau tidak banyak wine yang diproduksi karena produksi rumahan, tetapi cukup
-        menguntungkan. \r\n\r\nAda ruang generator di basement untuk menyuplai listrik
-        cadangan apabila sumber listrik utama mati. Lokasinya ada di ujung basement.
-        Akan memakan sedikit waktu menuju ke sana. Walau listrik utama mati, listrik
-        di basement tidak akan padam, jadi lampu di basement akan tetap menyala,
-        tetapi arus listrik tidak sanggup untuk menyalakan lift. Jadi, alternatif
-        bisa menggunakan tangga darurat untuk keluar dari basement.\r\n\r\n..."
+      value: "Basement dibangun untuk menyimpan beberapa barang yang tidak lagi digunakan.
+        Pada akhirnya basement dijadikan sebagai tempat produksi wine. Walau tidak
+        banyak wine yang diproduksi karena produksi rumahan, tetapi cukup menguntungkan.
+        \r\n\r\nAda ruang generator di basement untuk menyuplai listrik cadangan
+        apabila sumber listrik utama mati. Lokasinya ada di ujung basement. Akan
+        memakan sedikit waktu menuju ke sana. Walau listrik utama mati, listrik di
+        basement tidak akan padam, jadi lampu di basement akan tetap menyala, tetapi
+        arus listrik tidak sanggup untuk menyalakan lift. Jadi, alternatif bisa menggunakan
+        tangga darurat untuk keluar dari basement.\r\n\r\n..."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
@@ -3321,11 +3333,12 @@ PrefabInstance:
       value: Pigura (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3617540371822662698, guid: d271b0c11d3aa504ba68dc36db4f8b74, type: 3}
+      propertyPath: audioName
+      value: Frame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617540371822662698, guid: d271b0c11d3aa504ba68dc36db4f8b74, type: 3}
       propertyPath: dialogText
-      value: "foto ini adalah foto yang diambil saat sebelum kejadian mengerikan
-        terjadi.\r\nfoto terdiri dari ayah,ibu, dan anak laki-lakinya.\r\nanak laki-laki
-        kira-kira berusia 8 tahun.\r\nfoto diambi tanggal 1981-03-08.\r\ntertulis
-        difoto \u201881-3-8 menggunakan spidol merah."
+      value: Siapa mereka?
       objectReference: {fileID: 0}
     - target: {fileID: 3617540371822662698, guid: d271b0c11d3aa504ba68dc36db4f8b74, type: 3}
       propertyPath: photoSprite

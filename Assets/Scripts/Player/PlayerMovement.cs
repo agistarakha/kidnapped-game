@@ -393,6 +393,18 @@ public class PlayerMovement : MonoBehaviour
         CharacterAudio.instances.StopLoopSFX("Mlaku");
     }
 
+    public void delay()
+    {
+        float waktu = 0f;
+        waktu += Time.deltaTime;
+        if (waktu < 1)
+        {
+            playerRb.velocity = Vector2.zero;
+            horizontalInput = 0;
+        }
+        if (waktu >= 1) { waktu = 0f; }
+            
+    }
     bool IsGrounded()
     {
         RaycastHit2D hit = Physics2D.Raycast(playerCollider.bounds.center, Vector2.down, playerCollider.bounds.extents.y + 0.1f, LayerMask.GetMask("Floor"));
