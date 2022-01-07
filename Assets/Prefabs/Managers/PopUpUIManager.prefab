@@ -52,4 +52,5 @@ MonoBehaviour:
   - {fileID: 7094179420855638026, guid: 0de1d776bbf121049b4598951fb915db, type: 3}
   - {fileID: 5374857031229680316, guid: 3a432b4dc42a5ff41b9f0fa3d3f5913a, type: 3}
   - {fileID: 7584282945238946919, guid: b490c7e911c215b44ac949453cdfadad, type: 3}
+  - {fileID: 958756720206889959, guid: 57c6d9a80716c104ba222c5b31204c2f, type: 3}
   currentActiveObject: {fileID: 0}

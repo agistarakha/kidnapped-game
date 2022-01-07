@@ -2243,6 +2243,7 @@ GameObject:
   - component: {fileID: 2099760536}
   - component: {fileID: 2099760535}
   - component: {fileID: 2099760534}
+  - component: {fileID: 2099760537}
   m_Layer: 0
   m_Name: Foto Pernikahan
   m_TagString: Untagged
@@ -2297,7 +2298,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099760532}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f0359326d9dabf4cb87b4078d7537ca, type: 3}
   m_Name: 
@@ -2358,6 +2359,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2099760537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099760532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3198b89b80a354b98031a91f343709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 10
+  code: 08031972
 --- !u!1 &2102744405
 GameObject:
   m_ObjectHideFlags: 0

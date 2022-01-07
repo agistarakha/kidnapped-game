@@ -12,6 +12,11 @@ public class LockedExaminableObj : InteractiveObject
         if (Player.obtainedKeys.Contains(key))
         {
             GetComponent<ExamineableObject>().enabled = true;
+            // if (gameObject.GetComponent<KeyObject>().enabled == false || GetComponent<KeyObject>() != null)
+            // {
+            //     Debug.Log("Verdinald ssw");
+            //     GetComponent<KeyObject>().enabled = true;
+            // }
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = true;
             GetComponent<ExamineableObject>().PlayerInRange = true;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PopUpBackBtn : MonoBehaviour
@@ -39,6 +40,7 @@ public class PopUpBackBtn : MonoBehaviour
 
     private void DisableParent()
     {
+        EventSystem.current.SetSelectedGameObject(null);
         StopAllCoroutines();
         int i = 0;
         firstParent = gameObject.transform.parent.gameObject;

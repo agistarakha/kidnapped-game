@@ -12,6 +12,7 @@ TagManager:
   - Fade
   - liftBond
   - LiftBond
+  - OptionUI
   layers:
   - Default
   - TransparentFX
