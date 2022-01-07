@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 using UnityEngine.UI;
 public class PopUpUIManager : MonoBehaviour
@@ -52,15 +53,15 @@ public class PopUpUIManager : MonoBehaviour
     {
         if (currentActiveObject != null)
         {
-            Debug.Log("Zehhhhaaa");
+            // Debug.Log("Zehhhhaaa");
 
             RectTransform rect = currentActiveObject.GetComponent<RectTransform>();
-            Debug.Log(rect.position.y);
-            Debug.Log("Ori Pos: " + oriPos.y);
+            // Debug.Log(rect.position.y);
+            // Debug.Log("Ori Pos: " + oriPos.y);
             if (Mathf.Ceil(rect.position.y / 10) >= Mathf.Ceil(oriPos.y / 10) / 1.25f)
             {
 
-                Debug.Log("Zehhhhaaa");
+                // Debug.Log("Zehhhhaaa");
                 if (!isPopUpActive && Player.gameState == Player.GameState.MENU)
                 {
                     Player.gameState = Player.GameState.GAMEPLAY;
@@ -77,6 +78,8 @@ public class PopUpUIManager : MonoBehaviour
                                 childObj.transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
 
                             }
+                            EventSystem.current.SetSelectedGameObject(null);
+
                             StopAllCoroutines();
                             backdrop.transform.GetChild(i).GetComponent<RectTransform>().position = oriPos;
                             backdrop.transform.GetChild(i).gameObject.SetActive(false);
@@ -120,8 +123,8 @@ public class PopUpUIManager : MonoBehaviour
             {
                 backdrop.SetActive(true);
                 obj.SetActive(true);
-                Debug.Log(backdrop.activeSelf);
-                Debug.Log(obj.activeSelf);
+                // Debug.Log(backdrop.activeSelf);
+                // Debug.Log(obj.activeSelf);
                 currentActiveObject = obj;
                 // isAnimEnd = PopUpAnimation(currentActiveObject.GetComponent<RectTransform>());
 
