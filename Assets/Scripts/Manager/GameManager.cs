@@ -55,7 +55,10 @@ public class GameManager : MonoBehaviour
         // StartCoroutine(MoveDelay());
         Player.sceneState = Player.PlayerState.WANDER;
         vCam.Follow = player.transform;
-        roomInfo.text = "";
+        // roomInfo.text = "";
+        OptionDataManager.Load();
+        AudioManager.instance.GetAudioSource().volume = OptionDataManager.Option.sfxVolume;
+        CharacterAudio.instances.GetAudioSource().volume = OptionDataManager.Option.sfxVolume;
         GameObject[] boxes = GameObject.FindGameObjectsWithTag("pushAble");
         if (boxes.Length > 0 && Player.boxesPos.Count > 0)
         {

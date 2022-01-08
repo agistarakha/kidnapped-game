@@ -19,7 +19,16 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private List<AudioClip> _audioClips;
+    public AudioSource GetAudioSource()
+    {
+        return _audioSource;
+    }
+    // public void Awake()
+    // {
+    //     OptionDataManager.Load();
 
+    //     _audioSource.volume = OptionDataManager.Option.sfxVolume;
+    // }
     public void PlaySFX(string name)
     {
         AudioClip sfx = _audioClips.Find(s => s.name == name);
@@ -29,26 +38,26 @@ public class AudioManager : MonoBehaviour
         }
         _audioSource.PlayOneShot(sfx);
     }
-   /*
-    public void PlayLoopSFX(string name)
-    {
-        AudioClip sfx = _audioClips.Find(s => s.name == name);
-        _audioSource.clip = sfx;
-        if (sfx == null)
-        {
-            return;
-        }
-        _audioSource.Play();
-    }
-    public void StopLoopSFX(string name)
-    {
-        AudioClip sfx = _audioClips.Find(s => s.name == name);
-        _audioSource.clip = sfx;
-        if (sfx == null)
-        {
-            return;
-        }
-        _audioSource.Stop();
-    }
-    */
+    /*
+     public void PlayLoopSFX(string name)
+     {
+         AudioClip sfx = _audioClips.Find(s => s.name == name);
+         _audioSource.clip = sfx;
+         if (sfx == null)
+         {
+             return;
+         }
+         _audioSource.Play();
+     }
+     public void StopLoopSFX(string name)
+     {
+         AudioClip sfx = _audioClips.Find(s => s.name == name);
+         _audioSource.clip = sfx;
+         if (sfx == null)
+         {
+             return;
+         }
+         _audioSource.Stop();
+     }
+     */
 }
