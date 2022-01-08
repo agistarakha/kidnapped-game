@@ -32,7 +32,11 @@ public class InteractiveObject : MonoBehaviour
         {
             player = other.gameObject;
             PlayerEnterFeedback();
-            objImg.color = enterColor;
+            if (objImg != null)
+            {
+                objImg.color = enterColor;
+
+            }
 
             // promptManager.ShowPromtBetter(promptText, gameObject.transform.position);
             playerInRange = (Player.gameState == Player.GameState.GAMEPLAY) ? true : false;
@@ -44,7 +48,11 @@ public class InteractiveObject : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            objImg.color = oriColor;
+            if (objImg != null)
+            {
+                objImg.color = oriColor;
+
+            }
 
             playerInRange = false;
             PlayerExitFeedback();

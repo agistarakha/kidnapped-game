@@ -16,17 +16,23 @@ public class KeyObject : InteractiveObject
     //[TextArea(5, 100)]
     //public string dialogText;
 
-    // void Awake()
-    // {
-
-    // }
+    void Awake()
+    {
+        if (Player.obtainedKeys.Contains(GetKeyType()))
+        {
+            //gameObject.SetActive(false);
+            GetComponent<ExamineableObject>().enabled = false;
+            GetComponent<Collider2D>().enabled = false;
+            this.enabled = false;
+        }
+    }
     void Update()
     {
         if (Player.obtainedKeys.Contains(GetKeyType()) && GetComponent<ExamineableObject>().isUIShown)
         {
             //gameObject.SetActive(false);
             GetComponent<ExamineableObject>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Collider2D>().enabled = false;
             this.enabled = false;
         }
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
@@ -34,8 +40,12 @@ public class KeyObject : InteractiveObject
             // PopUpUIManager.Instance.backdrop.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
             //DialogManager.Instance.ShowDialogUI(dialogText);
             // Audio ketika mengambil kunci
-            AudioManager.instance.PlaySFX("Kunci");
-            Player.obtainedKeys.Add(GetKeyType());
+            if (GetComponent<ExamineableObject>() != null)
+            {
+                AudioManager.instance.PlaySFX("Kunci");
+                Player.obtainedKeys.Add(GetKeyType());
+
+            }
             // GetComponent<ExamineableObject>().enabled = false;
             // GetComponent<BoxCollider2D>().enabled = false;
             // this.enabled = false;
