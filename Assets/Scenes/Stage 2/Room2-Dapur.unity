@@ -1483,6 +1483,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+--- !u!1 &1342016660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3689273218406986359, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+  m_PrefabInstance: {fileID: 1342016659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1342016661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342016660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0359326d9dabf4cb87b4078d7537ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectTypes: 0
+  dialogText: "\u201CKunci lagi.\u201D"
+  audioName: Kunci
+  photoSprite: {fileID: 21300000, guid: ee83640a459a3094f8c50c218b6f2efb, type: 3}
+  isUIShown: 0
 --- !u!1 &1350825997
 GameObject:
   m_ObjectHideFlags: 0

@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTypes: 0
-  dialogText: Kunci
+  dialogText: Kunci lagi..
   audioName: Kunci
   photoSprite: {fileID: 21300000, guid: ee83640a459a3094f8c50c218b6f2efb, type: 3}
   isUIShown: 0
