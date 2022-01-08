@@ -9,7 +9,7 @@ public class PromptManager : MonoBehaviour
 
     void Start()
     {
-        promptTextUI = promtPanel.gameObject.GetComponentInChildren<Text>();
+        // promptTextUI = promtPanel.gameObject.GetComponentInChildren<Text>();
     }
     public void ShowPromtBetter(string text, Vector3 objPos)
     {

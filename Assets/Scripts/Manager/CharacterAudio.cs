@@ -19,7 +19,17 @@ public class CharacterAudio : MonoBehaviour
 
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private List<AudioClip> _audioClips;
+    public AudioSource GetAudioSource()
+    {
+        return _audioSource;
+    }
 
+
+    // public void Awake()
+    // {
+    //     OptionDataManager.Load();
+    //     _audioSource.volume = OptionDataManager.Option.sfxVolume;
+    // }
     public void PlayLoopSFX(string name)
     {
         AudioClip sfx = _audioClips.Find(s => s.name == name);

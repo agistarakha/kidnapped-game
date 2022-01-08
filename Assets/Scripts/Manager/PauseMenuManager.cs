@@ -7,16 +7,24 @@ using UnityEngine.UI;
 public class PauseMenuManager : MonoBehaviour
 {
     public GameObject optionUIPrefab;
+    private Button[] pauseMenuBtns;
     // Start is called before the first frame update
     void OnEnable()
     {
-        Button[] pauseMenuBtns = transform.GetComponentsInChildren<Button>();
-        // Instantiate(optionUIPrefab, optionUIPrefab.transform.position, Quaternion.identity, transform.parent.parent);
+        pauseMenuBtns = transform.GetComponentsInChildren<Button>();
         // GameObject OptionUIObj = GameObject.FindGameObjectWithTag("OptionUI");
         // Debug.Log(OptionUIObj);
         // GetComponentsInChildren<Button>()[1].onClick.AddListener(() => OptionUIObj.SetActive(true));
         pauseMenuBtns[1].onClick.AddListener(() => ShowOption());
         pauseMenuBtns[2].onClick.AddListener(() => MainMenu());
+    }
+
+    private void OnDisable()
+    {
+        foreach (Button btn in pauseMenuBtns)
+        {
+            btn.onClick.RemoveAllListeners();
+        }
     }
 
     // Update is called once per frame
@@ -27,8 +35,16 @@ public class PauseMenuManager : MonoBehaviour
 
     private void ShowOption()
     {
-        transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
-        PopUpUIManager.Instance.ActivateUI("Option");
+        // foreach (Button menuBtn in pauseMenuBtns)
+        // {
+        //     menuBtn.interactable = false;
+        // }
+        GameObject obj = Instantiate(optionUIPrefab, optionUIPrefab.transform.position, Quaternion.identity, transform.parent.parent);
+        obj.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        obj.transform.SetParent(transform.parent);
+
+        // transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
+        // PopUpUIManager.Instance.ActivateUI("Option");
         //transform.parent.gameObject.SetActive(false);
     }
 

@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 1
-  m_ReverseArrangement: 0
+  m_ReverseArrangement: 1
 --- !u!1 &5288756260927038457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,6 +1497,8 @@ MonoBehaviour:
   noteItem: {fileID: 5009767446236561215, guid: c984ad600895652419477201428ad55d, type: 3}
   noteItemParent: {fileID: 5288756260403942860}
   noteDetails: {fileID: 5478854114643611395}
+  originalColor: {r: 1, g: 1, b: 1, a: 0.47843137}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0.47843137}
 --- !u!1 &5452675060066341620
 GameObject:
   m_ObjectHideFlags: 0
