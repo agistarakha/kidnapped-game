@@ -72,13 +72,19 @@ public class RoomAccessPoint : InteractiveObject
         yield return new WaitForSeconds(0.1f);
         if (connectedSceneName == "")
         {
-            AudioManager.instance.PlaySFX("BukaPintu");
+            if (doorOpenSprite != null)
+            {
+                AudioManager.instance.PlaySFX("BukaPintu");
+            }
             doorCollider.enabled = false;
             //AudioManager.instance.PlaySFX("");
         }
         else
         {
-            AudioManager.instance.PlaySFX("BukaPintu");
+            if(doorOpenSprite != null)
+            {
+                AudioManager.instance.PlaySFX("BukaPintu");
+            }
             LoadConnectedScene();
 
         }

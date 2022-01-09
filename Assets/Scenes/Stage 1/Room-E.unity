@@ -205,6 +205,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &59077144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3689273218406986359, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+  m_PrefabInstance: {fileID: 2125616560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &59077149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59077144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0359326d9dabf4cb87b4078d7537ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectTypes: 0
+  dialogText: Hidden Key
+  audioName: kunci
+  photoSprite: {fileID: 21300000, guid: 3ef94f70c1641aa45b192c4c9e8555af, type: 3}
+  isUIShown: 0
 --- !u!1 &61307722
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +998,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986359, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7959650244541498243, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
       propertyPath: type
       value: 4
@@ -1674,7 +1700,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1698,7 +1724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.872871, y: -58.075394, z: -10}
+  m_LocalPosition: {x: -30.093504, y: -57.075394, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2385,6 +2411,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4654113939345703892, guid: 370ff015f9ab0cc4a9d66b7c0ca10914, type: 3}
+      propertyPath: dialogId
+      value: Kadohen pak
+      objectReference: {fileID: 0}
     - target: {fileID: 4654113939345703892, guid: 370ff015f9ab0cc4a9d66b7c0ca10914, type: 3}
       propertyPath: dialogText
       value: Terlalu jauh untuk dilompati.
@@ -6679,6 +6709,10 @@ PrefabInstance:
     - target: {fileID: 3689273218406986359, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
       propertyPath: m_Name
       value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689273218406986359, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7959650244541498243, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
       propertyPath: type

@@ -810,7 +810,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -834,7 +834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0014477, y: 1.8951921, z: -10}
+  m_LocalPosition: {x: -3.0006819, y: 0.89383316, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2129,7 +2129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectTypes: 0
   dialogText: "Tertulis \u201CRuang Generator\u201D. \r\nApa masih ada ruangan yang
-    belum kumasuki?\r\nBanyak sekali ruagan di sini, di mana jalan keluarnya?"
+    belum kumasuki?\r\nBanyak sekali ruangan di sini, di mana jalan keluarnya?"
   audioName: Kunci
   photoSprite: {fileID: 21300000, guid: ee83640a459a3094f8c50c218b6f2efb, type: 3}
   isUIShown: 0
