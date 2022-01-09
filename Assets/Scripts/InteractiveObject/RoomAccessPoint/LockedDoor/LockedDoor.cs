@@ -8,6 +8,8 @@ public class LockedDoor : RoomAccessPoint
     private bool keyIsObtained = false;
     private bool doorIsUnlocked = false;
     private string doorFullName;
+    [TextAreaAttribute(5, 100)]
+    public string lockedDialog = "Terkunci...";
 
     // void Start()
     // {
@@ -42,7 +44,7 @@ public class LockedDoor : RoomAccessPoint
         {
             //Disini Audio Ketika Pintu terkunci
             AudioManager.instance.PlaySFX("Terkunci");
-            DialogManager.Instance.ShowDialogUI("Terkunci...");
+            DialogManager.Instance.ShowDialogUI(lockedDialog);
         }
         // if (Player.unlockedDoors.Contains(doorFullName) && keyIsObtained)
         // {
