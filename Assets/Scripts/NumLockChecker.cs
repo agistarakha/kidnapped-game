@@ -41,11 +41,13 @@ public class NumLockChecker : MonoBehaviour
             input += transform.GetChild(i).GetComponent<NumLock>().GetNumStr();
         }
         Debug.Log(input);
+        Debug.Log(code);
         if (input == code)
         {
+            AudioManager.instance.PlaySFX("BukaKunci");
             Player.obtainedKeys.Add(keyType);
             Debug.Log("OPPPPEEEEN");
-            Button backBtn = transform.parent.GetChild(1).gameObject.GetComponent<Button>();
+            Button backBtn = transform.parent.parent.GetChild(1).gameObject.GetComponent<Button>();
             //backBtn.onClick.AddListener(() => DialogManager.Instance.ShowDialogUI("Terbukaa!"));
             backBtn.onClick.Invoke();
         }

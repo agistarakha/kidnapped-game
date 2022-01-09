@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-
+        Camera.main.backgroundColor = Color.black;
 
     }
 
