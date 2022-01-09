@@ -68,4 +68,26 @@ public static class GameDataManager
         // Write JSON to file.
         File.WriteAllText(saveFile, jsonString);
     }
+
+    public static void ResetData()
+    {
+        // GameData gameData = new GameData();
+
+        DoorData.lastVisitedScene = "Room-1_3";
+        Player.lastPos = Vector3.zero;
+        Player.obtainedKeys = new List<Key.typeKey>();
+        Player.unlockedDoors = new List<string>();
+        Player.revealedDialog = new List<string>();
+        Player.boxesPos = new Dictionary<string, Vector3>();
+        Player.obtainedNotes = new Dictionary<string, string>();
+        // for (int i = 0; i < gameData.boxesName.Length; i++)
+        // {
+        //     Player.boxesPos[gameData.boxesName[i]] = gameData.boxesPos[i];
+        // }
+        // for (int i = 0; i < gameData.obtainedNotesTitle.Length; i++)
+        // {
+        //     Player.obtainedNotes[gameData.obtainedNotesTitle[i]] = gameData.obtainedNotesContent[i];
+        // }
+
+    }
 }

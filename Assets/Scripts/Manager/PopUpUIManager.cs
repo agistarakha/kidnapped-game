@@ -73,7 +73,7 @@ public class PopUpUIManager : MonoBehaviour
                         GameObject childObj = backdrop.transform.GetChild(i).gameObject;
                         if (childObj.activeSelf)
                         {
-                            if (childObj.name == "Photo(Clone)")
+                            if (childObj.name == "Photo(Clone)" || childObj.name == "Note(Clone)")
                             {
                                 childObj.transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
 
