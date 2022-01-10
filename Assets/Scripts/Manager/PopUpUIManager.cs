@@ -76,6 +76,8 @@ public class PopUpUIManager : MonoBehaviour
                             if (childObj.name == "Photo(Clone)" || childObj.name == "Note(Clone)")
                             {
                                 childObj.transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
+                                // Debug.Log("Sampah");
+                                Player.gameState = Player.GameState.MENU;
 
                             }
                             EventSystem.current.SetSelectedGameObject(null);

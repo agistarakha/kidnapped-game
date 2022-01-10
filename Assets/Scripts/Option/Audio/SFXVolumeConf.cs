@@ -26,6 +26,8 @@ public class SFXVolumeConf : MonoBehaviour
 
     private void OnDisable()
     {
+        Debug.Log(AudioManager.instance.GetAudioSource().volume);
+        // Debug.Log(OptionDataManager.Option.sfxVolume);
         OptionDataManager.Option.sfxVolume = AudioManager.instance.GetAudioSource().volume;
         OptionDataManager.Save();
     }
