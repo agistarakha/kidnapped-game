@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Player.gameIsInitiated == false)
+        {
+            StartCoroutine(DispayFirstTutorial());
+        }
         Vector3 spawnPos;
         if (spawnPoint == null || Player.gameIsInitiated)
         {
@@ -89,6 +93,11 @@ public class GameManager : MonoBehaviour
     //     yield return new WaitForSeconds(2f);
     //     Player.gameState = Player.GameState.MENU;
     // }
+    private IEnumerator DispayFirstTutorial()
+    {
+        yield return new WaitForSeconds(4f);
+        TutorialManager.Instance.ShowTutorialUI(0);
+    }
 
     // Update is called once per frame
     void Update()

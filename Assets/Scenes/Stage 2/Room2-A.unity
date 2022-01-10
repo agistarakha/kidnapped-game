@@ -1775,7 +1775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321714285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.628155, y: 19.067854, z: -10}
+  m_LocalPosition: {x: -16.619759, y: 19.067854, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2256,11 +2256,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: title
-      value: Catatan 2
+      value: Kutipan
       objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: dialogText
-      value: 
+      value: Aku tidak mengerti.
       objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: description

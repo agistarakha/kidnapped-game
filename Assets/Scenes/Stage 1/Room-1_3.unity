@@ -1277,7 +1277,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 98.92329, y: 18.21}
+    oldSize: {x: 98.8, y: 18.211426}
     newSize: {x: 96.63, y: 14.343515}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1303,7 +1303,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 98.92329, y: 18.21}
+    oldSize: {x: 98.8, y: 18.211426}
     newSize: {x: 96.63, y: 14.343515}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1329,7 +1329,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 98.92329, y: 18.21}
+    oldSize: {x: 98.8, y: 18.211426}
     newSize: {x: 96.63, y: 14.343515}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1471,6 +1471,7 @@ MonoBehaviour:
   doorCollider: {fileID: 2138962688}
   doorType: 1
   requiredKey: 3
+  lockedDialog: Terkunci...
 --- !u!212 &411937211
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1769,7 +1770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.3229027, y: 0.0000009536743, z: 0}
+  m_LocalPosition: {x: -7.3151445, y: 0.0000009536743, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2210,6 +2211,7 @@ MonoBehaviour:
   doorCollider: {fileID: 2138962688}
   doorType: 1
   requiredKey: 3
+  lockedDialog: Terkunci...
 --- !u!212 &722782656
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2886,6 +2888,11 @@ SortingGroup:
   m_SortingLayerID: 603627977
   m_SortingLayer: 3
   m_SortingOrder: 0
+--- !u!1 &992620999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 112029574675366861, guid: 4a84bc68aa3f23d408f95443574d6db0, type: 3}
+  m_PrefabInstance: {fileID: 22114669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1020104148
 GameObject:
   m_ObjectHideFlags: 0
@@ -4654,13 +4661,13 @@ PrefabInstance:
         Tarik tuas
         merah untuk menyalakan generator.
 
-        Listrik bisa bertahan kurang
-        lebih selama sebulan.
+        Listrik bisa bertahan kurang lebih
+        selama sebulan.
 
-        Generator bisa menyuplai listrik ke seluruh
-        sudut rumah.
+        Generator bisa menyuplai listrik ke seluruh sudut
+        rumah.
 
-        
+
 
         NB: Gunakan listrik sebijak mungkin.'
       objectReference: {fileID: 0}
@@ -6327,6 +6334,67 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.957384, y: 18.21}
   m_EdgeRadius: 0
+--- !u!1001 &5763649981697868192
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5763649982162905461, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_Name
+      value: TutorialManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763649982162905462, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: canvasObj
+      value: 
+      objectReference: {fileID: 992620999}
+    - target: {fileID: 5763649982162905463, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763649982162905463, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 241.70555
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763649982162905463, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 138.30267
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763649982162905463, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -329.5142
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763649982162905463, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763649982162905463, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763649982162905463, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763649982162905463, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763649982162905463, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763649982162905463, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763649982162905463, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cccaa500884a3d142944da3a3309b3ec, type: 3}
 --- !u!1001 &8961245249919330015
 PrefabInstance:
   m_ObjectHideFlags: 0

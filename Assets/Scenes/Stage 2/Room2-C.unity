@@ -231,6 +231,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3637219545193918884, guid: 144ba0b2187a59643b58a8affb166fc3, type: 3}
+      propertyPath: lockedDialog
+      value: Mungkin ini jalan keluarnya, tapi terkunci.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637219545193918884, guid: 144ba0b2187a59643b58a8affb166fc3, type: 3}
       propertyPath: connectedDoor
       value: 
       objectReference: {fileID: 0}
@@ -1582,7 +1586,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1606,7 +1610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321714285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.278397, y: 20.630798, z: -10}
+  m_LocalPosition: {x: -33.05436, y: 21.630798, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

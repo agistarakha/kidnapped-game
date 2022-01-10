@@ -10,6 +10,7 @@ public class LockedDoor : RoomAccessPoint
     private string doorFullName;
     [TextAreaAttribute(5, 100)]
     public string lockedDialog = "Terkunci...";
+    private bool doorIsOpened = false;
 
     // void Start()
     // {
@@ -20,11 +21,12 @@ public class LockedDoor : RoomAccessPoint
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E) && keyIsObtained && playerInRange && (Player.gameState == Player.GameState.GAMEPLAY))
+        if (Input.GetKeyDown(KeyCode.E) && keyIsObtained && playerInRange && (Player.gameState == Player.GameState.GAMEPLAY) && !doorIsOpened)
         {
             if (doorIsUnlocked)
             {
                 StartCoroutine(OpenDoor());
+                doorIsOpened = true;
 
             }
             else

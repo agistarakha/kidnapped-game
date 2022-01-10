@@ -25,6 +25,7 @@ public class NoteObject : InteractiveObject
             if (dialogText != "")
             {
                 noteUIObj.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
+                noteUIObj.name = "Note2";
 
             }
 
