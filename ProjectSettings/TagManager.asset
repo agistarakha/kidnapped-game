@@ -74,3 +74,6 @@ TagManager:
   - name: Foreground
     uniqueID: 1382988619
     locked: 0
+  - name: Black
+    uniqueID: 1579656983
+    locked: 0

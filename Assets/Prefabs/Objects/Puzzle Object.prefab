@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,8 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da638a7d75d8174084b68f332a526da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Technically I'm Lever
-  promptManager: {fileID: 0}
   puzzlePrefab: {fileID: 7584282945238946919, guid: 6a2744825607d5d4496e299d5f89213f, type: 3}
 --- !u!61 &2224771263475391202
 BoxCollider2D:
