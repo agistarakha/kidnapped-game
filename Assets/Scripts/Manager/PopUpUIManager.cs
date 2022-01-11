@@ -73,9 +73,23 @@ public class PopUpUIManager : MonoBehaviour
                         GameObject childObj = backdrop.transform.GetChild(i).gameObject;
                         if (childObj.activeSelf)
                         {
-                            if (childObj.name == "Photo(Clone)")
+                            if (childObj.name == "Note(Clone)")
                             {
+                                if (!Player.revealedTutorial.Contains(2))
+                                {
+                                    Player.revealedTutorial.Add(2);
+                                    TutorialManager.Instance.ShowTutorialUI(2);
+                                }
+                            }
+                            if (childObj.name == "Photo(Clone)" || childObj.name == "Note2")
+                            {
+                                if (childObj.name == "Note2")
+                                {
+                                    childObj.name = "Note(Clone)";
+                                }
                                 childObj.transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
+                                // Debug.Log("Sampah");
+                                // Player.gameState = Player.GameState.MENU;
 
                             }
                             EventSystem.current.SetSelectedGameObject(null);

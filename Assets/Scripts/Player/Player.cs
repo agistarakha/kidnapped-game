@@ -27,6 +27,7 @@ public static class Player
     public static bool gameIsInitiated = false;
     public static List<string> revealedDialog = new List<string>();
     public static Dictionary<string, Vector3> boxesPos = new Dictionary<string, Vector3>();
+    public static List<int> revealedTutorial = new List<int>();
 
     public static bool isSaveGame = false;
     public static bool isLoadGame = false;
