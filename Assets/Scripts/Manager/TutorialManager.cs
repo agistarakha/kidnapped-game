@@ -21,12 +21,11 @@ public class TutorialManager : MonoBehaviour
 
     [SerializeField]
     private GameObject[] tutorialUIPrefabs;
-    [SerializeField]
     private GameObject canvasObj;
     // Start is called before the first frame update
     void Start()
     {
-
+        canvasObj = GameObject.FindGameObjectWithTag("MainCanvas");
     }
 
     // Update is called once per frame
@@ -40,6 +39,7 @@ public class TutorialManager : MonoBehaviour
         GameObject tutorialUI = tutorialUIPrefabs[index];
         GameObject obj = Instantiate(tutorialUI, tutorialUI.transform.position, Quaternion.identity, canvasObj.transform);
         obj.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        Player.gameState = Player.GameState.MENU;
     }
 
 

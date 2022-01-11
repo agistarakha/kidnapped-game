@@ -13,6 +13,7 @@ TagManager:
   - liftBond
   - LiftBond
   - OptionUI
+  - MainCanvas
   layers:
   - Default
   - TransparentFX

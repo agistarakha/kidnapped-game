@@ -45,4 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialUIPrefabs:
   - {fileID: 5207949321067381797, guid: 045965127e355a145b17c41afd3c9c6a, type: 3}
+  - {fileID: 1183757603138210757, guid: 48f25517609073a429003c2570631e7f, type: 3}
+  - {fileID: 627019497020916319, guid: fa6a846f87f3e4740aaf71060481f756, type: 3}
+  - {fileID: 2225207185571984089, guid: 9af06ff3fcdba5a4299f9f1e838f99ed, type: 3}
   canvasObj: {fileID: 0}

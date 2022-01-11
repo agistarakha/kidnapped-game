@@ -1922,7 +1922,7 @@ GameObject:
   - component: {fileID: 5207949321067381817}
   - component: {fileID: 5207949321067381798}
   m_Layer: 5
-  m_Name: BasicTutor 1
+  m_Name: bads
   m_TagString: PopUpItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
