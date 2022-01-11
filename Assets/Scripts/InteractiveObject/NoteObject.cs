@@ -36,7 +36,8 @@ public class NoteObject : InteractiveObject
             AudioManager.instance.PlaySFX("Note");
             Debug.Log(noteUIObj);
             noteUIObj.transform.GetChild(1).GetComponent<Text>().text = title;
-            noteUIObj.transform.GetChild(2).GetComponent<Text>().text = description;
+            //noteUIObj.transform.GetChild(2).GetComponent<Text>().text = description;
+            noteUIObj.transform.GetChild(2).GetComponentInChildren<Text>().text = description;
         }
     }
 

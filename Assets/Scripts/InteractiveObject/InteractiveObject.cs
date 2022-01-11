@@ -20,7 +20,7 @@ public class InteractiveObject : MonoBehaviour
         StartFunExtension();
         objImg = GetComponent<SpriteRenderer>();
         oriColor = objImg.color;
-        enterColor = Color.grey;
+        enterColor = new Color(0.5f, 0.5f, 0.5f, oriColor.a);
         playerInRange = false;
         // promptManager = FindObjectOfType<PromptManager>();
     }
