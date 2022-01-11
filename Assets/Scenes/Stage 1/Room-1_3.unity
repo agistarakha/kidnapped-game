@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4068304500829426217, guid: 4a84bc68aa3f23d408f95443574d6db0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a84bc68aa3f23d408f95443574d6db0, type: 3}
 --- !u!1 &22114670 stripped
@@ -1754,6 +1758,7 @@ MonoBehaviour:
   doorCollider: {fileID: 2138962688}
   doorType: 1
   requiredKey: 3
+  lockedDialog: Terkunci...
 --- !u!212 &411937211
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2191,7 +2196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.313097, y: 0.0000009536743, z: 0}
+  m_LocalPosition: {x: -7.2919483, y: 0.0000009536743, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2758,6 +2763,7 @@ MonoBehaviour:
   doorCollider: {fileID: 2138962688}
   doorType: 1
   requiredKey: 3
+  lockedDialog: Terkunci...
 --- !u!212 &722782656
 SpriteRenderer:
   m_ObjectHideFlags: 0
