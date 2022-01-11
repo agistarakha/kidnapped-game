@@ -73,6 +73,14 @@ public class PopUpUIManager : MonoBehaviour
                         GameObject childObj = backdrop.transform.GetChild(i).gameObject;
                         if (childObj.activeSelf)
                         {
+                            if (childObj.name == "Note(Clone)")
+                            {
+                                if (!Player.revealedTutorial.Contains(2))
+                                {
+                                    Player.revealedTutorial.Add(2);
+                                    TutorialManager.Instance.ShowTutorialUI(2);
+                                }
+                            }
                             if (childObj.name == "Photo(Clone)" || childObj.name == "Note2")
                             {
                                 if (childObj.name == "Note2")

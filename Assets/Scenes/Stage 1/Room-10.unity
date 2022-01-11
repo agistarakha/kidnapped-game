@@ -1245,7 +1245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.082044, y: 0.0000042915344, z: -10}
+  m_LocalPosition: {x: -8.082045, y: 0.0000042915344, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2938,6 +2938,7 @@ MonoBehaviour:
     tapi mereka tidak yakin itu apa. \r\nSemoga aku baik-baik saja.\r\n\r\n1983-11-04\r\nUhm,
     bagaimana aku harus mengatakannya. Semoga ini hanya imajinasiku saja. Botol-botol
     anggur itu bergerak sendiri."
+  dialogText: 
 --- !u!1 &1452059346
 GameObject:
   m_ObjectHideFlags: 0
