@@ -26,6 +26,10 @@ public class BGMManager : MonoBehaviour
     private AudioSource bgms;
     [SerializeField] private List<AudioClip> _bgmClips;
     private bool isStop = false;
+    public AudioSource GetAudioSource()
+    {
+        return bgms;
+    }
 
     void Awake()
     {
@@ -76,7 +80,7 @@ public class BGMManager : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name.Contains("Room-")||SceneManager.GetActiveScene().name.Contains("MainMenu"))
+        if (SceneManager.GetActiveScene().name.Contains("Room-") || SceneManager.GetActiveScene().name.Contains("MainMenu"))
         {
             Play("Stage1");
         }

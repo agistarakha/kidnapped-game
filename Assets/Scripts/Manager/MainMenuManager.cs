@@ -24,6 +24,7 @@ public class MainMenuManager : MonoBehaviour
         OptionDataManager.Load();
         AudioManager.instance.GetAudioSource().volume = OptionDataManager.Option.sfxVolume;
         CharacterAudio.instances.GetAudioSource().volume = OptionDataManager.Option.sfxVolume;
+        BGMManager.instance.GetAudioSource().volume = OptionDataManager.Option.musicVolume;
 
         if (!GameDataManager.LoadFile())
         {
@@ -52,6 +53,7 @@ public class MainMenuManager : MonoBehaviour
     {
         if (GameDataManager.LoadFile())
         {
+            BGMManager.instance.Stop();
             GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
             blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
             //StartCoroutine(Fade());

@@ -63,6 +63,8 @@ public class GameManager : MonoBehaviour
         OptionDataManager.Load();
         AudioManager.instance.GetAudioSource().volume = OptionDataManager.Option.sfxVolume;
         CharacterAudio.instances.GetAudioSource().volume = OptionDataManager.Option.sfxVolume;
+        BGMManager.instance.GetAudioSource().volume = OptionDataManager.Option.musicVolume;
+
         GameObject[] boxes = GameObject.FindGameObjectsWithTag("pushAble");
         if (boxes.Length > 0 && Player.boxesPos.Count > 0)
         {

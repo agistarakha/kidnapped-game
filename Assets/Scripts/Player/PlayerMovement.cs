@@ -73,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         // }
         if (!Player.isPlayerMoveable)
         {
+            CharacterAudio.instances.GetAudioSource().Stop();
             playerRb.velocity = Vector2.zero;
             playerAnimator.Play("V2IdleAnimation");
             return;
@@ -84,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         // Debug.Log(Player.currentState);
         if ((Player.gameState == Player.GameState.MENU) || (Player.gameState == Player.GameState.DIALOG))
         {
+            CharacterAudio.instances.GetAudioSource().Stop();
             playerRb.velocity = Vector2.zero;
             playerAnimator.Play("V2IdleAnimation");
             return;
@@ -186,6 +188,7 @@ public class PlayerMovement : MonoBehaviour
         if ((Player.gameState == Player.GameState.MENU) || (Player.gameState == Player.GameState.DIALOG))
         {
             //Debug.Log("Yo dud");
+            CharacterAudio.instances.GetAudioSource().Stop();
             playerRb.velocity = Vector2.zero;
             playerAnimator.Play("V2IdleAnimation");
             return;

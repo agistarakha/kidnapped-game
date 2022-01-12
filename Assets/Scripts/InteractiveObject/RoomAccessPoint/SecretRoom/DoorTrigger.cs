@@ -12,6 +12,7 @@ public class DoorTrigger : InteractiveObject
         base.StartFunExtension();
         if (Player.unlockedDoors.Contains("SecretDoor"))
         {
+            transform.GetChild(0).gameObject.SetActive(true);
             door.GetComponent<BoxCollider2D>().enabled = true;
             secretDoor.transform.position = secretDoor.targetObj.transform.position;
             door.enabled = true;
@@ -24,6 +25,7 @@ public class DoorTrigger : InteractiveObject
         {
             if (Input.GetKeyDown(KeyCode.E) && playerInRange)
             {
+                transform.GetChild(0).gameObject.SetActive(true);
                 CinemachineShake.Instance.ShakeCamera(2f, 1f);
                 StartCoroutine(secretDoor.SlideDoor());
                 door.GetComponent<BoxCollider2D>().enabled = true;

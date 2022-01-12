@@ -6,6 +6,8 @@ using UnityEngine;
 public class GameData
 {
     public Vector3 lastPos;
+    public bool gameIsInitiated;
+    public string doorSpawnLocation;
     public string lastVisitedScene;
     public List<Key.typeKey> obtainedKeys;
     public Dictionary<string, string> obtainedNotes;

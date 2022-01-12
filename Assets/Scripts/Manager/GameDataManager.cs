@@ -28,7 +28,9 @@ public static class GameDataManager
             //  into a pattern matching the GameData class.
             gameData = JsonUtility.FromJson<GameData>(fileContents);
             // Player.lastPos = gameData
+            Player.gameIsInitiated = gameData.gameIsInitiated;
             DoorData.lastVisitedScene = gameData.lastVisitedScene;
+            DoorData.doorSpawnLocation = gameData.doorSpawnLocation;
             Player.lastPos = gameData.lastPos;
             Player.obtainedKeys = gameData.obtainedKeys;
             Player.unlockedDoors = gameData.unlockedDoors;
@@ -53,6 +55,8 @@ public static class GameDataManager
         string saveFile = Application.persistentDataPath + "/gamedata.json";
 
         GameData gameData = new GameData();
+        gameData.gameIsInitiated = Player.gameIsInitiated;
+        gameData.doorSpawnLocation = DoorData.doorSpawnLocation;
         gameData.lastPos = playerGameObject.GetComponent<Rigidbody2D>().transform
         .position;
         gameData.lastVisitedScene = DoorData.lastVisitedScene;

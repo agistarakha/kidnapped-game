@@ -50,6 +50,7 @@ public class PauseMenuManager : MonoBehaviour
 
     private void MainMenu()
     {
+        BGMManager.instance.Stop();
         GameObject.FindGameObjectWithTag("Fade").GetComponent<Animator>().SetTrigger("FadeIn");
         StartCoroutine(LoadYourAsyncScene("MainMenu"));
 

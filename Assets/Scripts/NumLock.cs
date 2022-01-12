@@ -26,12 +26,15 @@ public class NumLock : MonoBehaviour
         GetComponentsInChildren<Button>()[1].onClick.AddListener(() => DecIndex());
         index = 0;
         numStr = "" + index;
+        numImg.sprite = numSprites[index];
+
         // numText.text = numStr;
 
     }
 
     void OnDisable()
     {
+        index = 0;
         GetComponentsInChildren<Button>()[0].onClick.RemoveAllListeners();
         GetComponentsInChildren<Button>()[1].onClick.RemoveAllListeners();
     }
