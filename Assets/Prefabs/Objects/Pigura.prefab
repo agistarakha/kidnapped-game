@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,11 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0359326d9dabf4cb87b4078d7537ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Examine
-  promptManager: {fileID: 0}
+  objectTypes: 0
   dialogText: "[mengambil kunci] Tertulis \u201CRuang Generator\u201D,\r\napa masih
     ada ruangan yang belum ku masuki?\r\nBanyak sekali ruagan di sini, kapan GW bisa
     keluar dari sini?"
+  audioName: 
+  photoSprite: {fileID: 0}
+  isUIShown: 0
 --- !u!61 &3617540371822662701
 BoxCollider2D:
   m_ObjectHideFlags: 0
