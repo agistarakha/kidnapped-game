@@ -635,6 +635,12 @@ PrefabInstance:
       value: Catatan Harian
       objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: dialogText
+      value: 'Nyonya yang malang.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: description
       value: "...\r\n\r\nJumat, 06 Maret 1981\r\n\r\n...\r\n\r\nSabtu, 07 Maret 1981\r\nHari
         ini, Aku dan Albert berencana untuk memberikan kejutan kepada anak kita tercinta
@@ -1714,7 +1720,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321714285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.688236, y: 19.53241, z: -10}
+  m_LocalPosition: {x: -26.690285, y: 19.53241, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -12,6 +12,8 @@ public class OptionButton : MonoBehaviour
     [SerializeField]
     private GameObject audioOption;
     [SerializeField]
+    private GameObject controlOption;
+    [SerializeField]
     private GameObject optionParent;
     private Button[] buttons;
     [SerializeField]
@@ -24,7 +26,7 @@ public class OptionButton : MonoBehaviour
         // selectedColor = buttons[0].colors.selectedColor;
         buttons[0].onClick.AddListener(() => ShowOption(videoOption));
         buttons[1].onClick.AddListener(() => ShowOption(audioOption));
-        // buttons[2].onClick.AddListener(() => );
+        buttons[2].onClick.AddListener(() => ShowOption(controlOption));
         buttons[3].onClick.AddListener(() => ShowPauseMenu());
         SetActiveColor();
     }

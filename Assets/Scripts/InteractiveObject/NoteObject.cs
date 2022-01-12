@@ -9,6 +9,8 @@ public class NoteObject : InteractiveObject
 
     [TextAreaAttribute(5, 100)]
     public string description;
+    [TextAreaAttribute(5, 100)]
+    public string dialogText = "";
     // Update is called once per frame
     void Update()
     {
@@ -20,12 +22,31 @@ public class NoteObject : InteractiveObject
                 // NoteInventoryManager.Instance.SpawnNoteUI(title);
             }
             GameObject noteUIObj = PopUpUIManager.Instance.ActivateUI("Note");
+            if (dialogText != "")
+            {
+                noteUIObj.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
+                noteUIObj.name = "Note2";
+            }
+            else
+            {
+                noteUIObj.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => ShowNoteTutorial());
+            }
 
             // Disini Audio
             AudioManager.instance.PlaySFX("Note");
             Debug.Log(noteUIObj);
-            noteUIObj.transform.GetChild(0).GetComponent<Text>().text = title;
-            noteUIObj.transform.GetChild(1).GetComponent<Text>().text = description;
+            noteUIObj.transform.GetChild(1).GetComponent<Text>().text = title;
+            //noteUIObj.transform.GetChild(2).GetComponent<Text>().text = description;
+            noteUIObj.transform.GetChild(2).GetComponentInChildren<Text>().text = description;
+        }
+    }
+
+    private void ShowNoteTutorial()
+    {
+        if (!Player.revealedTutorial.Contains(2))
+        {
+            Player.revealedTutorial.Add(2);
+            TutorialManager.Instance.ShowTutorialUI(2);
         }
     }
 }

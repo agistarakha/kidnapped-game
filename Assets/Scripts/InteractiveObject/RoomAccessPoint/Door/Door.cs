@@ -5,7 +5,7 @@ using System.Collections;
 public class Door : RoomAccessPoint
 {
 
-
+    private bool doorIsOpened = false;
 
     public override void StartFunExtension()
     {
@@ -14,9 +14,10 @@ public class Door : RoomAccessPoint
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && !doorIsOpened)
         {
             StartCoroutine(OpenDoor());
+            doorIsOpened = true;
         }
     }
 

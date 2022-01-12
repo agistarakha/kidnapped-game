@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject optionUIPrefab;
     // public delegate void Delegate();
     // public Delegate LoadGameCall;
     // public Delegate NewGameCall;
@@ -15,6 +17,13 @@ public class MainMenuManager : MonoBehaviour
         //LoadGameCall = LoadGame;
         //NewGameCall = NewGame;
         //GetComponentsInChildren<Button>()[1].onClick.AddListener(() => GetComponentsInChildren<Button>()[1].Select());
+        if (SceneManager.GetActiveScene().name != "MainMenu")
+        {
+            return;
+        }
+        OptionDataManager.Load();
+        AudioManager.instance.GetAudioSource().volume = OptionDataManager.Option.sfxVolume;
+        CharacterAudio.instances.GetAudioSource().volume = OptionDataManager.Option.sfxVolume;
 
         if (!GameDataManager.LoadFile())
         {
@@ -24,6 +33,8 @@ public class MainMenuManager : MonoBehaviour
         }
         GetComponentsInChildren<Button>()[0].onClick.AddListener(() => LoadGame());
         GetComponentsInChildren<Button>()[1].onClick.AddListener(() => NewGame());
+        GetComponentsInChildren<Button>()[2].onClick.AddListener(() => ShowOption());
+        GetComponentsInChildren<Button>()[3].onClick.AddListener(() => ShowCredits());
         GetComponentsInChildren<Button>()[4].onClick.AddListener(() => ExitGame());
         foreach (Button btn in GetComponentsInChildren<Button>())
         {
@@ -32,10 +43,10 @@ public class MainMenuManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    // void Update()
+    // {
 
-    }
+    // }
 
     public void LoadGame()
     {
@@ -54,9 +65,17 @@ public class MainMenuManager : MonoBehaviour
     {
         //StartCoroutine(Fade());
         GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
+        GameDataManager.ResetData();
         blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
         StartCoroutine(LoadYourAsyncScene("Room-1_3"));
 
+    }
+
+    public void ShowCredits()
+    {
+        GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
+        blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
+        StartCoroutine(LoadYourAsyncScene("Credits"));
     }
 
     public void ExitGame()
@@ -66,9 +85,25 @@ public class MainMenuManager : MonoBehaviour
 
     public void Menu()
     {
-        // StartCoroutine(LoadYourAsyncScene("MainMenu"));
+        GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
+        blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
+        StartCoroutine(LoadYourAsyncScene("MainMenu"));
+    }
 
-        SceneManager.LoadScene("MainMenu");
+
+    private void ShowOption()
+    {
+        // foreach (Button menuBtn in pauseMenuBtns)
+        // {
+        //     menuBtn.interactable = false;
+        // }
+        GameObject obj = Instantiate(optionUIPrefab, optionUIPrefab.transform.position, Quaternion.identity, transform.parent.parent);
+        obj.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        // obj.transform.SetParent(transform.parent);
+
+        // transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
+        // PopUpUIManager.Instance.ActivateUI("Option");
+        //transform.parent.gameObject.SetActive(false);
     }
 
     // private IEnumerator FadeScene(Delegate methodCall)

@@ -568,6 +568,10 @@ PrefabInstance:
       value: Catatan Kejadian
       objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: dialogText
+      value: Apa yang sebenarnya terjadi?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: description
       value: "Senin, 09 Maret 1981.\r\nSaya melihatnya langsung dengan mata kepala
         saya sendiri.\r\nHari ini ketika saya akan mengantarkan makanan untuk Tuan
@@ -1800,7 +1804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321714285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.427003, y: 19.542187, z: -10}
+  m_LocalPosition: {x: -15.42905, y: 19.542187, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

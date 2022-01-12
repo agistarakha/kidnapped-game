@@ -7,8 +7,11 @@ public class NumLock : MonoBehaviour
 {
     private int index;
     private string password;
-    private Text numText;
+    // private Text numText;
     private string numStr;
+    [SerializeField]
+    private Sprite[] numSprites;
+    private Image numImg;
     public string GetNumStr()
     {
         return numStr;
@@ -16,13 +19,14 @@ public class NumLock : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        numText = GetComponentsInChildren<Text>()[1];
+        numImg = transform.GetChild(2).GetComponent<Image>();
+        // numText = GetComponentsInChildren<Text>()[1];
         password = "5371";
         GetComponentsInChildren<Button>()[0].onClick.AddListener(() => IncIndex());
         GetComponentsInChildren<Button>()[1].onClick.AddListener(() => DecIndex());
         index = 0;
         numStr = "" + index;
-        numText.text = numStr;
+        // numText.text = numStr;
 
     }
 
@@ -46,7 +50,8 @@ public class NumLock : MonoBehaviour
             index = 0;
         }
         numStr = "" + index;
-        numText.text = numStr;
+        numImg.sprite = numSprites[index];
+        // numText.text = numStr;
         transform.parent.GetComponent<NumLockChecker>().CodeCheck();
     }
 
@@ -58,7 +63,8 @@ public class NumLock : MonoBehaviour
             index = 9;
         }
         numStr = "" + index;
-        numText.text = numStr;
+        numImg.sprite = numSprites[index];
+        // numText.text = numStr;
         transform.parent.GetComponent<NumLockChecker>().CodeCheck();
 
     }

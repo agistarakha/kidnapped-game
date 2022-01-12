@@ -3028,6 +3028,7 @@ MonoBehaviour:
     tapi mereka tidak yakin itu apa. \r\nSemoga aku baik-baik saja.\r\n\r\n1983-11-04\r\nUhm,
     bagaimana aku harus mengatakannya. Semoga ini hanya imajinasiku saja. Botol-botol
     anggur itu bergerak sendiri."
+  dialogText: 
 --- !u!1 &1452059346
 GameObject:
   m_ObjectHideFlags: 0
