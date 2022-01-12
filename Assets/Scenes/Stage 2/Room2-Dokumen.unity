@@ -2097,6 +2097,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1669386101}
     m_Modifications:
+    - target: {fileID: 741949656168769524, guid: 2c443d4d4dafd5d4a98a42383222a509, type: 3}
+      propertyPath: m_ShadowIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 741949656168769524, guid: 2c443d4d4dafd5d4a98a42383222a509, type: 3}
+      propertyPath: m_ShadowVolumeIntensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 741949656168769526, guid: 2c443d4d4dafd5d4a98a42383222a509, type: 3}
       propertyPath: m_Name
       value: Point Light 2D Variant (1)
@@ -2222,6 +2230,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1669386101}
     m_Modifications:
+    - target: {fileID: 741949656168769524, guid: 2c443d4d4dafd5d4a98a42383222a509, type: 3}
+      propertyPath: m_ShadowIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 741949656168769524, guid: 2c443d4d4dafd5d4a98a42383222a509, type: 3}
+      propertyPath: m_ShadowVolumeIntensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 741949656168769526, guid: 2c443d4d4dafd5d4a98a42383222a509, type: 3}
       propertyPath: m_Name
       value: Point Light 2D Variant

@@ -53,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3274540122709227781, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
       propertyPath: m_Intensity
-      value: 1.2
+      value: 1.48
       objectReference: {fileID: 0}
     - target: {fileID: 3274540122709227803, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
       propertyPath: m_Name
-      value: Global Light 2D Stage 2 Variant
+      value: Global Light 2D Stage 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
