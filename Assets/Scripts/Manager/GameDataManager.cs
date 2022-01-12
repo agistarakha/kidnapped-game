@@ -33,6 +33,7 @@ public static class GameDataManager
             Player.obtainedKeys = gameData.obtainedKeys;
             Player.unlockedDoors = gameData.unlockedDoors;
             Player.revealedDialog = gameData.revealedDialog;
+            Player.revealedTutorial = gameData.revealedTutorial;
             for (int i = 0; i < gameData.boxesName.Length; i++)
             {
                 Player.boxesPos[gameData.boxesName[i]] = gameData.boxesPos[i];
@@ -58,6 +59,7 @@ public static class GameDataManager
         gameData.obtainedKeys = Player.obtainedKeys;
         gameData.unlockedDoors = Player.unlockedDoors;
         gameData.revealedDialog = Player.revealedDialog;
+        gameData.revealedTutorial = Player.revealedTutorial;
         gameData.boxesPos = Player.boxesPos.Values.ToArray<Vector3>();
         gameData.boxesName = Player.boxesPos.Keys.ToArray<string>();
         gameData.obtainedNotesTitle = Player.obtainedNotes.Keys.ToArray<string>();
@@ -80,6 +82,7 @@ public static class GameDataManager
         Player.obtainedKeys = new List<Key.typeKey>();
         Player.unlockedDoors = new List<string>();
         Player.revealedDialog = new List<string>();
+        Player.revealedTutorial = new List<int>();
         Player.boxesPos = new Dictionary<string, Vector3>();
         Player.obtainedNotes = new Dictionary<string, string>();
         if (File.Exists(saveFile))

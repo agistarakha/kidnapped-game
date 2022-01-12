@@ -1088,6 +1088,10 @@ PrefabInstance:
       value: Catatan Perburuan
       objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: dialogText
+      value: Ehm?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: description
       value: "...\r\nJumat, 13 Februari 1981\r\nSenapan: Remington Model 700\r\nJumlah
         peluru: 10\r\nHasil: \r\n1 Rusa\r\n3 Burung\r\n\r\nMinggu, 22 Februari 1981\r\nSenapan:
@@ -1191,7 +1195,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.025230408, y: 0}
@@ -1916,7 +1920,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.023683071, y: 0}
+  m_Offset: {x: 0.12439346, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1927,7 +1931,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0473661, y: 7.03}
+  m_Size: {x: 1.2487869, y: 7.03}
   m_EdgeRadius: 0
 --- !u!212 &1288807457
 SpriteRenderer:
@@ -2124,7 +2128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321714285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.078005, y: 19.51651, z: -10}
+  m_LocalPosition: {x: -31.077599, y: 19.51651, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

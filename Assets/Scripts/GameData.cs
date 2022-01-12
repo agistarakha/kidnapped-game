@@ -13,6 +13,7 @@ public class GameData
     public string[] obtainedNotesContent;
     public List<string> unlockedDoors;
     public List<string> revealedDialog;
+    public List<int> revealedTutorial;
     public string[] boxesName;
     public Vector3[] boxesPos;
 

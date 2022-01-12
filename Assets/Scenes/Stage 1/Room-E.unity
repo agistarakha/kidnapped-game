@@ -1822,7 +1822,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.87524, y: -58.075394, z: -10}
+  m_LocalPosition: {x: -31.877577, y: -58.075394, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2477,8 +2477,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621921839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83.7293, y: -50.5691, z: 0}
-  m_LocalScale: {x: 7.0243564, y: 6.7015476, z: 1}
+  m_LocalPosition: {x: 84.2379, y: -55.9091, z: 0}
+  m_LocalScale: {x: 23.84465, y: 10.8732605, z: 1}
   m_Children: []
   m_Father: {fileID: 1622011941}
   m_RootOrder: 13
@@ -4356,7 +4356,7 @@ MonoBehaviour:
   doorCollider: {fileID: 0}
   doorType: 0
   requiredKey: 4
-  lockedDialog: Terkunci...
+  lockedDialog: Kok tidak mau kebuka?
 --- !u!61 &1159709145
 BoxCollider2D:
   m_ObjectHideFlags: 0
