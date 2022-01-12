@@ -76,19 +76,18 @@ public class BGMManager : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Lift" && !isStop)
-        {
-            Stop();
-            isStop = true;
-        }
-
-        if (SceneManager.GetActiveScene().name.Contains("Room-"))
+        if (SceneManager.GetActiveScene().name.Contains("Room-")||SceneManager.GetActiveScene().name.Contains("MainMenu"))
         {
             Play("Stage1");
         }
         else if (SceneManager.GetActiveScene().name.Contains("Room2-"))
         {
             Play("Stage2");
+        }
+        else if (!SceneManager.GetActiveScene().name.Contains("Room") && !isStop)
+        {
+            Stop();
+            isStop = true;
         }
     }
 

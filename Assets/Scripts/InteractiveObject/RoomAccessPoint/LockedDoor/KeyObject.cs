@@ -40,7 +40,7 @@ public class KeyObject : InteractiveObject
             // PopUpUIManager.Instance.backdrop.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
             //DialogManager.Instance.ShowDialogUI(dialogText);
             // Audio ketika mengambil kunci
-            if (GetComponent<ExamineableObject>() != null)
+            if (GetComponent<ExamineableObject>().enabled)
             {
                 AudioManager.instance.PlaySFX("Kunci");
                 Player.obtainedKeys.Add(GetKeyType());

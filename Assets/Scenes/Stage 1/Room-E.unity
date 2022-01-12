@@ -205,6 +205,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &41605600 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3274540122709227780, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
+  m_PrefabInstance: {fileID: 347429879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &59077144 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3689273218406986359, guid: d17ce73cb15b1a14c834c4e9b993ce00, type: 3}
@@ -256,7 +261,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 133.07, y: -23.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 41605600}
   m_Father: {fileID: 1122667637}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1390,23 +1396,23 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 61307723}
     m_Modifications:
     - target: {fileID: 3274540122709227780, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3274540122709227780, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.58
+      value: -0.05000305
       objectReference: {fileID: 0}
     - target: {fileID: 3274540122709227780, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -62.48
+      value: 1.1800003
       objectReference: {fileID: 0}
     - target: {fileID: 3274540122709227780, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -41.9038
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3274540122709227780, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1414,15 +1420,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3274540122709227780, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3274540122709227780, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3274540122709227780, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3274540122709227780, guid: 02783f9e32c1bba4ba6584954585981a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1822,7 +1828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.87524, y: -58.075394, z: -10}
+  m_LocalPosition: {x: -31.877577, y: -58.075394, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2477,8 +2483,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621921839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83.7293, y: -50.5691, z: 0}
-  m_LocalScale: {x: 7.0243564, y: 6.7015476, z: 1}
+  m_LocalPosition: {x: 84.2379, y: -55.9091, z: 0}
+  m_LocalScale: {x: 23.84465, y: 10.8732605, z: 1}
   m_Children: []
   m_Father: {fileID: 1622011941}
   m_RootOrder: 13
@@ -4356,7 +4362,7 @@ MonoBehaviour:
   doorCollider: {fileID: 0}
   doorType: 0
   requiredKey: 4
-  lockedDialog: Terkunci...
+  lockedDialog: Kok tidak mau kebuka?
 --- !u!61 &1159709145
 BoxCollider2D:
   m_ObjectHideFlags: 0
