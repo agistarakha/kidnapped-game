@@ -29,12 +29,12 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Camera.main.backgroundColor = Color.black;
-
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        //BGMManager.instance.Play();
         if (Player.gameIsInitiated == false)
         {
             StartCoroutine(DispayFirstTutorial());
