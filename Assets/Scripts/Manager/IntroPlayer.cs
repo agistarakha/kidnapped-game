@@ -36,7 +36,7 @@ public class IntroPlayer : MonoBehaviour
 
     IEnumerator LoadYourAsyncScene(string sceneName)
     {
-        yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(2f);
         Player.gameState = Player.GameState.GAMEPLAY;
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.
