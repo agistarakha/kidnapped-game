@@ -28,13 +28,17 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-
-
+        Camera.main.backgroundColor = Color.black;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        //BGMManager.instance.Play();
+        if (Player.gameIsInitiated == false)
+        {
+            StartCoroutine(DispayFirstTutorial());
+        }
         Vector3 spawnPos;
         if (spawnPoint == null || Player.gameIsInitiated)
         {
@@ -55,7 +59,12 @@ public class GameManager : MonoBehaviour
         // StartCoroutine(MoveDelay());
         Player.sceneState = Player.PlayerState.WANDER;
         vCam.Follow = player.transform;
-        roomInfo.text = "";
+        // roomInfo.text = "";
+        OptionDataManager.Load();
+        AudioManager.instance.GetAudioSource().volume = OptionDataManager.Option.sfxVolume;
+        CharacterAudio.instances.GetAudioSource().volume = OptionDataManager.Option.sfxVolume;
+        BGMManager.instance.GetAudioSource().volume = OptionDataManager.Option.musicVolume;
+
         GameObject[] boxes = GameObject.FindGameObjectsWithTag("pushAble");
         if (boxes.Length > 0 && Player.boxesPos.Count > 0)
         {
@@ -86,6 +95,11 @@ public class GameManager : MonoBehaviour
     //     yield return new WaitForSeconds(2f);
     //     Player.gameState = Player.GameState.MENU;
     // }
+    private IEnumerator DispayFirstTutorial()
+    {
+        yield return new WaitForSeconds(4f);
+        TutorialManager.Instance.ShowTutorialUI(0);
+    }
 
     // Update is called once per frame
     void Update()

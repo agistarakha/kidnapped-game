@@ -12,6 +12,11 @@ public class LockedExaminableObj : InteractiveObject
         if (Player.obtainedKeys.Contains(key))
         {
             GetComponent<ExamineableObject>().enabled = true;
+            // if (gameObject.GetComponent<KeyObject>().enabled == false || GetComponent<KeyObject>() != null)
+            // {
+            //     Debug.Log("Verdinald ssw");
+            //     GetComponent<KeyObject>().enabled = true;
+            // }
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = true;
             GetComponent<ExamineableObject>().PlayerInRange = true;
@@ -36,7 +41,7 @@ public class LockedExaminableObj : InteractiveObject
             if (Input.GetKeyDown(KeyCode.E) && playerInRange && Player.gameState == Player.GameState.GAMEPLAY)
             {
                 GameObject popUpObj = PopUpUIManager.Instance.ActivateUI("NumLock");
-                NumLockChecker numLockChecker = popUpObj.transform.GetChild(0).GetComponent<NumLockChecker>();
+                NumLockChecker numLockChecker = popUpObj.transform.GetChild(0).GetChild(0).GetComponent<NumLockChecker>();
                 numLockChecker.Code = code;
                 numLockChecker.KeyType = key;
 
