@@ -1505,11 +1505,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1642954920476943308, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_Size.x
-      value: 2.7421808
+      value: 2.513153
       objectReference: {fileID: 0}
     - target: {fileID: 1642954920476943308, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_Size.y
-      value: 2.6674495
+      value: 2.4419904
       objectReference: {fileID: 0}
     - target: {fileID: 1642954920476943308, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_Enabled
@@ -1517,11 +1517,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1642954920476943308, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_Offset.x
-      value: 0.00000023841858
+      value: 0.009841919
       objectReference: {fileID: 0}
     - target: {fileID: 1642954920476943308, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_Offset.y
-      value: -0.053724825
+      value: -0.16645432
       objectReference: {fileID: 0}
     - target: {fileID: 1642954920476943308, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
@@ -1554,6 +1554,10 @@ PrefabInstance:
     - target: {fileID: 1642954920476943310, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_SortingLayer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642954920476943310, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1642954920476943310, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_SortingLayerID
@@ -1621,19 +1625,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1642954921464858334, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_Size.x
-      value: 3.0741649
+      value: 2.8034267
       objectReference: {fileID: 0}
     - target: {fileID: 1642954921464858334, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_Size.y
-      value: 10.68785
+      value: 10.065383
       objectReference: {fileID: 0}
     - target: {fileID: 1642954921464858334, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_Offset.x
-      value: 0.020031214
+      value: 0.02101177
       objectReference: {fileID: 0}
     - target: {fileID: 1642954921464858334, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
       propertyPath: m_Offset.y
-      value: -3.591639
+      value: -3.9028726
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c423c1317caa81499cd7efee7bd0464, type: 3}
@@ -1832,7 +1836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.87056, y: -58.075394, z: -10}
+  m_LocalPosition: {x: -31.877544, y: -58.075394, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3944,7 +3948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e0e9b9309669a46b1a5bdf0e0109e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Ruang basement
+  title: Ruang Rahasia
   description: Di dalam basement ini terdapat sebuah ruangan yang hanya bisa diakses
     apabila arus listrik memadai. Letaknya ada di balik tembok kayu.
   dialogText: 

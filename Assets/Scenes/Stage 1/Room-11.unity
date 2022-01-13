@@ -1433,7 +1433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -95.53819, y: 20.42111, z: -10}
+  m_LocalPosition: {x: -95.53816, y: 20.42111, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3018,19 +3018,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: title
-      value: Basement
+      value: Kode
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: dialogText
+      value: 'Kode?
+
+        Apa maksudnya itu?'
       objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146140, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: description
-      value: "Basement dibangun untuk menyimpan beberapa barang yang tidak lagi digunakan.
-        Pada akhirnya basement dijadikan sebagai tempat produksi wine. Walau tidak
-        banyak wine yang diproduksi karena produksi rumahan, tetapi cukup menguntungkan.
-        \r\n\r\nAda ruang generator di basement untuk menyuplai listrik cadangan
-        apabila sumber listrik utama mati. Lokasinya ada di ujung basement. Akan
-        memakan sedikit waktu menuju ke sana. Walau listrik utama mati, listrik di
-        basement tidak akan padam, jadi lampu di basement akan tetap menyala, tetapi
-        arus listrik tidak sanggup untuk menyalakan lift. Jadi, alternatif bisa menggunakan
-        tangga darurat untuk keluar dari basement.\r\n\r\n..."
+      value: 'Kode: DMYY'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}

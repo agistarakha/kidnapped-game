@@ -1,7 +1,7 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -370,19 +370,25 @@ public class PlayerMovement : MonoBehaviour
     public void AnimUp()
     {
         Vector3 targetPos = new Vector3(playerRb.transform.position.x, playerRb.transform.position.y + upTo, 0);
+        //StopAllCoroutines();
+        //StartCoroutine(SmoothLerp(0.05f, transform.position, targetPos));
         playerRb.MovePosition(targetPos);
     }
     public void AnimSide()
     {
         if (lastInput < 0)
         {
-            Vector3 targetPos = new Vector3(playerRb.transform.position.x - 2, playerRb.transform.position.y, 0);
+            Vector3 targetPos = new Vector3(playerRb.transform.position.x - 1.75f, playerRb.transform.position.y, 0);
+            //StopAllCoroutines();
+            //StartCoroutine(SmoothLerp(0.2f, transform.position, targetPos));
             // playerRb.MovePosition(targetPos);
             transform.position = targetPos;
         }
         else if (lastInput > 0)
         {
-            Vector3 targetPos = new Vector3(playerRb.transform.position.x + 2, playerRb.transform.position.y, 0);
+            Vector3 targetPos = new Vector3(playerRb.transform.position.x + 1.75f, playerRb.transform.position.y, 0);
+            //StopAllCoroutines();
+            //StartCoroutine(SmoothLerp(0.2f, transform.position, targetPos));
             // playerRb.MovePosition(targetPos);
             transform.position = targetPos;
 
@@ -413,6 +419,21 @@ public class PlayerMovement : MonoBehaviour
         if (waktu >= 1) { waktu = 0f; }
             
     }
+    /*
+    private IEnumerator SmoothLerp(float time, Vector3 startingPos, Vector3 finalPos )
+    {
+        //Vector3 startingPos = transform.position;
+        //Vector3 finalPos = transform.position + (transform.forward * 5);
+        float elapsedTime = 0;
+
+        while (elapsedTime < time)
+        {
+            transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+    */
     bool IsGrounded()
     {
         RaycastHit2D hit = Physics2D.Raycast(playerCollider.bounds.center, Vector2.down, playerCollider.bounds.extents.y + 0.1f, LayerMask.GetMask("Floor"));
