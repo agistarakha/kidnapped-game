@@ -69,7 +69,7 @@ public class MainMenuManager : MonoBehaviour
         GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
         GameDataManager.ResetData();
         blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
-        StartCoroutine(LoadYourAsyncScene("Room-1_3"));
+        StartCoroutine(LoadYourAsyncScene("Intro"));
 
     }
 
