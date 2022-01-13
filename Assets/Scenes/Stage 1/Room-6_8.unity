@@ -3248,11 +3248,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e0e9b9309669a46b1a5bdf0e0109e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Kode
-  description: 'Kode: DMYY'
-  dialogText: 'Kode?
-
-    Apa maksudnya itu?'
+  title: Basement
+  description: "Basement dibangun untuk menyimpan beberapa barang yang tidak lagi
+    digunakan. Pada akhirnya basement dijadikan sebagai tempat produksi wine. Walau
+    tidak banyak wine yang diproduksi karena produksi rumahan, tetapi cukup menguntungkan.
+    \r\n\r\nAda ruang generator di basement untuk menyuplai listrik cadangan apabila
+    sumber listrik utama mati. Lokasinya ada di ujung basement. Akan memakan sedikit
+    waktu menuju ke sana. Walau listrik utama mati, listrik di basement tidak akan
+    padam, jadi lampu di basement akan tetap menyala, tetapi arus listrik tidak sanggup
+    untuk menyalakan lift. Jadi, alternatif bisa menggunakan tangga darurat untuk
+    keluar dari basement.\r\n\r\n..."
+  dialogText: 
 --- !u!61 &1851491964
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3342,7 +3348,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1869837226
 GameObject:

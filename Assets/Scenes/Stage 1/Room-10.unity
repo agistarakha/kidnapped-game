@@ -2995,7 +2995,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.45374775, y: -0.6905538}
+  m_Offset: {x: 0.14849472, y: -0.6905538}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3006,7 +3006,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24991798, y: 2.3211076}
+  m_Size: {x: 1.2393589, y: 2.3211076}
   m_EdgeRadius: 0
 --- !u!114 &1432616232
 MonoBehaviour:
@@ -3020,7 +3020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e0e9b9309669a46b1a5bdf0e0109e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: '1983-11-03 '
+  title: Catatan Wine
   description: "1983-11-03\r\nProduksi wine kali ini hanya sekitar 500 botol. \r\nHal
     seperti ini sebelumnya tidak pernah terjadi. \r\nSejak kejadian saat itu, produksi
     mengalami penurunan. \r\nKami pun tidak tahu kapan akan bertahan di sini. \r\nBeberapa

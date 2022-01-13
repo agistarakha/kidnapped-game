@@ -112,10 +112,10 @@ TextureImporter:
       name: sprite_climbobjek_new (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 5
+        y: 63
         width: 928
-        height: 3196
+        height: 3133
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,9 +134,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 928
-        y: 0
+        y: 57
         width: 928
-        height: 3196
+        height: 3139
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +154,10 @@ TextureImporter:
       name: sprite_climbobjek_new (1)_2
       rect:
         serializedVersion: 2
-        x: 1856
-        y: 0
+        x: 1861
+        y: 423
         width: 928
-        height: 3196
+        height: 2773
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,9 +176,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2784
-        y: 0
+        y: 872
         width: 928
-        height: 3196
+        height: 2324
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,11 +197,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3712
-        y: 0
+        y: 1525
         width: 928
-        height: 3196
-      alignment: 9
-      pivot: {x: 0.4937881, y: 0.06673882}
+        height: 1671
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,11 +218,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4640
-        y: 0
+        y: 1529
         width: 928
-        height: 3196
-      alignment: 9
-      pivot: {x: 0.40771747, y: 0.4769561}
+        height: 1667
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
