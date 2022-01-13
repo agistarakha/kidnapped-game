@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool pullGrab;
     [SerializeField] bool ledgeGrab;
 
+    public float upTo = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -107,8 +108,10 @@ public class PlayerMovement : MonoBehaviour
             // playerRb.velocity = new Vector2(playerRb.velocity.x,0);
             playerAnimator.SetBool("IsClimbing", false);
             playerAnimator.SetBool("IsStanding", true);
-
+            if(!ledgeGrab)
+            {
             playerRb.gravityScale = 1;
+            }
             if (IsGrounded())
             {
                 horizontalInput = 0;
@@ -367,20 +370,23 @@ public class PlayerMovement : MonoBehaviour
 
     public void AnimUp()
     {
-        Vector3 targetPos = new Vector3(playerRb.transform.position.x, playerRb.transform.position.y + 1, 0);
+        Vector3 targetPos = new Vector3(playerRb.transform.position.x, playerRb.transform.position.y + upTo, 0);
         playerRb.MovePosition(targetPos);
     }
     public void AnimSide()
     {
         if (lastInput < 0)
         {
-            Vector3 targetPos = new Vector3(playerRb.transform.position.x - 1, playerRb.transform.position.y, 0);
-            playerRb.MovePosition(targetPos);
+            Vector3 targetPos = new Vector3(playerRb.transform.position.x - 3, playerRb.transform.position.y, 0);
+            // playerRb.MovePosition(targetPos);
+            transform.position = targetPos;
         }
         else if (lastInput > 0)
         {
-            Vector3 targetPos = new Vector3(playerRb.transform.position.x + 1, playerRb.transform.position.y, 0);
-            playerRb.MovePosition(targetPos);
+            Vector3 targetPos = new Vector3(playerRb.transform.position.x + 3, playerRb.transform.position.y, 0);
+            // playerRb.MovePosition(targetPos);
+            transform.position = targetPos;
+
         }
     }
 
@@ -424,4 +430,5 @@ public class PlayerMovement : MonoBehaviour
         return false;
 
     }
+    //5 to 4.17 to 2.96 to 1.307
 }
