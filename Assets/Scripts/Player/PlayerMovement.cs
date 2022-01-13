@@ -48,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool ledgeGrab;
 
     public float upTo = 0f;
+    public bool fall = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,16 +104,13 @@ public class PlayerMovement : MonoBehaviour
             playerRb.gravityScale = 0;
             verticalInput = Input.GetAxis("Vertical");
         }
-        else if (Player.currentState == Player.PlayerState.WANDER)
+        else if (Player.currentState == Player.PlayerState.WANDER && fall)
         {
             // playerRb.velocity = new Vector2(playerRb.velocity.x, 0);
             // playerRb.velocity = new Vector2(playerRb.velocity.x,0);
             playerAnimator.SetBool("IsClimbing", false);
             playerAnimator.SetBool("IsStanding", true);
-            if(!ledgeGrab)
-            {
             playerRb.gravityScale = 1;
-            }
             if (IsGrounded())
             {
                 horizontalInput = 0;
@@ -377,13 +376,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (lastInput < 0)
         {
-            Vector3 targetPos = new Vector3(playerRb.transform.position.x - 3, playerRb.transform.position.y, 0);
+            Vector3 targetPos = new Vector3(playerRb.transform.position.x - 2, playerRb.transform.position.y, 0);
             // playerRb.MovePosition(targetPos);
             transform.position = targetPos;
         }
         else if (lastInput > 0)
         {
-            Vector3 targetPos = new Vector3(playerRb.transform.position.x + 3, playerRb.transform.position.y, 0);
+            Vector3 targetPos = new Vector3(playerRb.transform.position.x + 2, playerRb.transform.position.y, 0);
             // playerRb.MovePosition(targetPos);
             transform.position = targetPos;
 
