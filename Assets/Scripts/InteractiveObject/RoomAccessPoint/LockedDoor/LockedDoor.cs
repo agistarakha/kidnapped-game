@@ -21,7 +21,7 @@ public class LockedDoor : RoomAccessPoint
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E) && keyIsObtained && playerInRange && (Player.gameState == Player.GameState.GAMEPLAY) && !doorIsOpened)
+        if (Input.GetKeyDown(KeyCode.E) && keyIsObtained && playerInRange && (Player.gameState == Player.GameState.GAMEPLAY) && !doorIsOpened && Player.currentState != Player.PlayerState.JUMPING)
         {
             if (doorIsUnlocked)
             {
@@ -39,10 +39,8 @@ public class LockedDoor : RoomAccessPoint
                 // promptManager.HidePrompt();
                 // promptManager.ShowPromt("Open");
             }
-
-
         }
-        else if (Input.GetKeyDown(KeyCode.E) && !keyIsObtained && playerInRange && (Player.gameState == Player.GameState.GAMEPLAY))
+        else if (Input.GetKeyDown(KeyCode.E) && !keyIsObtained && playerInRange && (Player.gameState == Player.GameState.GAMEPLAY) && Player.currentState != Player.PlayerState.JUMPING)
         {
             //Disini Audio Ketika Pintu terkunci
             AudioManager.instance.PlaySFX("Terkunci");

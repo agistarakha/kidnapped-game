@@ -10,6 +10,7 @@ public static class Player
         EXAMINE,
         WANDER,
         CLIMBING,
+        JUMPING
     }
 
     public enum GameState

@@ -17,6 +17,7 @@ public class IntroPlayer : MonoBehaviour
         videoInitiated = false;
         videoPlayer = GetComponent<VideoPlayer>();
         videoPlayer.loopPointReached += EndReached;
+        videoPlayer.SetDirectAudioVolume(0, BGMManager.instance.GetAudioSource().volume);
         StartCoroutine(DelayPlay());
         // videoPlayer.Play();
     }
