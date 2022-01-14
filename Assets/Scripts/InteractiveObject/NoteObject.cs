@@ -14,7 +14,7 @@ public class NoteObject : InteractiveObject
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange && Player.gameState == Player.GameState.GAMEPLAY)
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && Player.gameState == Player.GameState.GAMEPLAY && Player.currentState!= Player.PlayerState.JUMPING)
         {
             if (!Player.obtainedNotes.ContainsKey(title))
             {

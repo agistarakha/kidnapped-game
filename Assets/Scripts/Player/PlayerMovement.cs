@@ -100,6 +100,8 @@ public class PlayerMovement : MonoBehaviour
             playerRb.velocity = Vector2.zero;
             playerAnimator.SetBool("IsClimbing", true);
             playerAnimator.SetBool("IsStanding", false);
+            playerAnimator.SetBool("IsJumping", false);
+            playerAnimator.SetFloat("horizontalInput", 0f);
 
             playerRb.gravityScale = 0;
             verticalInput = Input.GetAxis("Vertical");
@@ -236,7 +238,10 @@ public class PlayerMovement : MonoBehaviour
     void Climb()
     {
         // playerRb.MovePosition((Vector2)transform.position + (direction * currentSpeed) * Time.deltaTime);
-        playerRb.velocity = Vector2.up * direction * 2.0f;
+        if (Player.currentState != Player.PlayerState.JUMPING)
+        {
+            playerRb.velocity = Vector2.up * direction * 2.0f;
+        }
     }
     void Jump()
     {
@@ -244,7 +249,15 @@ public class PlayerMovement : MonoBehaviour
         //playerAnimator.SetTrigger("Jump");
         // playerRb.velocity = Vector2.up * jumpVelocity;
         playerRb.AddForce(new Vector2(0, jumpVelocity));
+        StartCoroutine(JumpStateDelay());
     }
+
+    private IEnumerator JumpStateDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Player.currentState = Player.PlayerState.JUMPING;
+    }
+
     void Crouch()
     {
         RaycastHit2D hitr = Physics2D.Raycast(transform.position + Vector3.right, Vector2.up, 3f, LayerMask.GetMask("Crouch"));
@@ -273,7 +286,7 @@ public class PlayerMovement : MonoBehaviour
         isTouchWall = Physics2D.Raycast(wallCheck.position, transform.right * lastInput, distance, objectMask);
         if (isTouchWall && !isTouchLedge)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if ((Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow)) && Player.currentState != Player.PlayerState.JUMPING)
             {
                 //Debug.Log("tembok");
                 ledgeGrab = true;

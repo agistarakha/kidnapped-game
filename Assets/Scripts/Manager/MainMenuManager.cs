@@ -53,23 +53,24 @@ public class MainMenuManager : MonoBehaviour
     {
         if (GameDataManager.LoadFile())
         {
-            BGMManager.instance.Stop();
             GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
             blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
             //StartCoroutine(Fade());
             StartCoroutine(LoadYourAsyncScene(DoorData.lastVisitedScene));
             // SceneManager.LoadScene(DoorData.lastVisitedScene);
-
+            
         }
     }
 
     public void NewGame()
     {
+        BGMManager.instance.bgmIsolation = true;
+        BGMManager.instance.Stop();
         //StartCoroutine(Fade());
         GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
         GameDataManager.ResetData();
         blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
-        StartCoroutine(LoadYourAsyncScene("Room-1_3"));
+        StartCoroutine(LoadYourAsyncScene("Intro"));
 
     }
 
@@ -123,6 +124,7 @@ public class MainMenuManager : MonoBehaviour
 
     IEnumerator LoadYourAsyncScene(string sceneName)
     {
+        yield return new WaitForSeconds(5f);
         Player.gameState = Player.GameState.GAMEPLAY;
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.
@@ -130,7 +132,7 @@ public class MainMenuManager : MonoBehaviour
         // a sceneBuildIndex of 1 as shown in Build Settings.
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-
+        BGMManager.instance.Stop();
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {

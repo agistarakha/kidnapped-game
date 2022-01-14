@@ -29,7 +29,7 @@ public class PopUpUIManager : MonoBehaviour
     public GameObject currentActiveObject;
     private List<GameObject> generatedObjects;
     private Sprite photoSprite;
-    private bool isPopUpActive = false;
+    public bool isPopUpActive = false;
     private Vector3 oriPos;
     public Vector3 OriPos()
     {

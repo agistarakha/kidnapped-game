@@ -1433,7 +1433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -95.53816, y: 20.42111, z: -10}
+  m_LocalPosition: {x: -95.53776, y: 20.42111, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2956,6 +2956,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Catatan Basement
       objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146129, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Radius
+      value: 1.3245163
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102418307146146129, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.6046448
+      objectReference: {fileID: 0}
     - target: {fileID: 2102418307146146130, guid: 380ba4c14c4650e468fca21189d16a62, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4204,8 +4212,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115224045}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.1679, y: -14.8754, z: 48.85194}
-  m_LocalScale: {x: 6.929057, y: 5.9762554, z: 1}
+  m_LocalPosition: {x: 51.4575, y: -14.8754, z: 48.85194}
+  m_LocalScale: {x: 2.6938546, y: 5.9762554, z: 1}
   m_Children: []
   m_Father: {fileID: 1986790612}
   m_RootOrder: 5

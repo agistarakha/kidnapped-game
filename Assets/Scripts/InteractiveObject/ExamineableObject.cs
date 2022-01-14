@@ -18,7 +18,7 @@ public class ExamineableObject : InteractiveObject
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange && Player.gameState == Player.GameState.GAMEPLAY)
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && Player.gameState == Player.GameState.GAMEPLAY && Player.currentState != Player.PlayerState.JUMPING)
         {
             if (objectTypes == ObjectTypes.FIGURA)
             {
