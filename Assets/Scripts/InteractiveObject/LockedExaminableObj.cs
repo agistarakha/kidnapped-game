@@ -38,7 +38,7 @@ public class LockedExaminableObj : InteractiveObject
         else
         {
 
-            if (Input.GetKeyDown(KeyCode.E) && playerInRange && Player.gameState == Player.GameState.GAMEPLAY)
+            if (Input.GetKeyDown(KeyCode.E) && playerInRange && Player.gameState == Player.GameState.GAMEPLAY && Player.currentState != Player.PlayerState.JUMPING)
             {
                 GameObject popUpObj = PopUpUIManager.Instance.ActivateUI("NumLock");
                 NumLockChecker numLockChecker = popUpObj.transform.GetChild(0).GetChild(0).GetComponent<NumLockChecker>();

@@ -13,7 +13,7 @@ public class LadderObject : InteractiveObject
             GetComponent<BoxCollider2D>().enabled = true;
             return;
         }
-        if (Mathf.Abs(Input.GetAxis("Vertical")) == 1 && playerInRange && Player.currentState != Player.PlayerState.CLIMBING)
+        if (Mathf.Abs(Input.GetAxis("Vertical")) == 1 && playerInRange && Player.currentState != Player.PlayerState.CLIMBING && Player.currentState != Player.PlayerState.JUMPING)
         {
             // promptManager.HidePrompt();
             objImg.color = oriColor;

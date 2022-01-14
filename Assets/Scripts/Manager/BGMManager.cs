@@ -26,6 +26,8 @@ public class BGMManager : MonoBehaviour
     private AudioSource bgms;
     [SerializeField] private List<AudioClip> _bgmClips;
     private bool isStop = false;
+    [HideInInspector]
+    public bool bgmIsolation = false;
     public AudioSource GetAudioSource()
     {
         return bgms;
@@ -52,7 +54,7 @@ public class BGMManager : MonoBehaviour
     public void Play(string name)
     {
         //Play some audio!
-        if (bgms.isPlaying)
+        if (bgms.isPlaying || bgmIsolation)
         {
             return;
         }

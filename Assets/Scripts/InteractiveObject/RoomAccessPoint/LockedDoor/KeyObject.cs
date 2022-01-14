@@ -35,7 +35,7 @@ public class KeyObject : InteractiveObject
             GetComponent<Collider2D>().enabled = false;
             this.enabled = false;
         }
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && Player.currentState != Player.PlayerState.JUMPING)
         {
             // PopUpUIManager.Instance.backdrop.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => DialogManager.Instance.ShowDialogUI(dialogText));
             //DialogManager.Instance.ShowDialogUI(dialogText);
