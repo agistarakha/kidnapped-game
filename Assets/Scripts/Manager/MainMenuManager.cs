@@ -53,13 +53,12 @@ public class MainMenuManager : MonoBehaviour
     {
         if (GameDataManager.LoadFile())
         {
-            BGMManager.instance.Stop();
             GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
             blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
             //StartCoroutine(Fade());
             StartCoroutine(LoadYourAsyncScene(DoorData.lastVisitedScene));
             // SceneManager.LoadScene(DoorData.lastVisitedScene);
-
+            
         }
     }
 
@@ -133,7 +132,7 @@ public class MainMenuManager : MonoBehaviour
         // a sceneBuildIndex of 1 as shown in Build Settings.
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-
+        BGMManager.instance.Stop();
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {
