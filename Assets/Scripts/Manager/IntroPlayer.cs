@@ -7,26 +7,40 @@ using UnityEngine.SceneManagement;
 public class IntroPlayer : MonoBehaviour
 {
     private VideoPlayer videoPlayer;
+    private bool videoEnd;
+    private bool videoInitiated;
 
     // Start is called before the first frame update
     void Start()
     {
+        videoEnd = false;
+        videoInitiated = false;
         videoPlayer = GetComponent<VideoPlayer>();
         videoPlayer.loopPointReached += EndReached;
-        videoPlayer.Play();
+        StartCoroutine(DelayPlay());
+        // videoPlayer.Play();
     }
 
+    private IEnumerator DelayPlay()
+    {
+        yield return new WaitForSeconds(1.2f);
+        videoPlayer.Play();
+        videoInitiated = true;
+    }
     // Update is called once per frame
     void Update()
     {
-        
-        if (!videoPlayer.isPlaying)
+
+        if (!videoPlayer.isPlaying && !videoEnd && videoInitiated)
         {
+            BGMManager.instance.bgmIsolation = false;
             GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
             blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
             StartCoroutine(LoadYourAsyncScene("Room-1_3"));
+            videoEnd = true;
+
         }
-        
+
     }
 
     void EndReached(UnityEngine.Video.VideoPlayer vp)
@@ -34,9 +48,10 @@ public class IntroPlayer : MonoBehaviour
         vp.playbackSpeed = vp.playbackSpeed / 1f;
     }
 
+
     IEnumerator LoadYourAsyncScene(string sceneName)
     {
-        //yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f);
         Player.gameState = Player.GameState.GAMEPLAY;
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.

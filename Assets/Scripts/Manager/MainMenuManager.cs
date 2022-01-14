@@ -65,6 +65,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void NewGame()
     {
+        BGMManager.instance.bgmIsolation = true;
+        BGMManager.instance.Stop();
         //StartCoroutine(Fade());
         GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
         GameDataManager.ResetData();
@@ -123,6 +125,7 @@ public class MainMenuManager : MonoBehaviour
 
     IEnumerator LoadYourAsyncScene(string sceneName)
     {
+        yield return new WaitForSeconds(5f);
         Player.gameState = Player.GameState.GAMEPLAY;
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.

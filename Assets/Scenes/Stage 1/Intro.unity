@@ -519,7 +519,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261714660}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 2c538a2dd8483274888c68b2ae959da5, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: c1769929e4221e14cb2fe94d6910ec98, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1091170493}
@@ -685,6 +685,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 834361575823714554, guid: 3cc3a1274ddefe94784647330af8b651, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5964913613896153243, guid: 3cc3a1274ddefe94784647330af8b651, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -753,7 +757,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 5964913615638702119, guid: 3cc3a1274ddefe94784647330af8b651, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7192508622900217236, guid: 3cc3a1274ddefe94784647330af8b651, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233877733240412086, guid: 3cc3a1274ddefe94784647330af8b651, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531967271215973469, guid: 3cc3a1274ddefe94784647330af8b651, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
