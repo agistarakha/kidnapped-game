@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Class yang mengatur UI pada Inventory untuk Note(Catatan)
+/// </summary>
 public class NoteInventoryUI : MonoBehaviour
 {
     public GameObject noteItem;
@@ -13,17 +17,9 @@ public class NoteInventoryUI : MonoBehaviour
     private Color originalColor;
     [SerializeField]
     private Color selectedColor;
-    // Start is called before the first frame update
-    void Start()
-    {
+    
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 
     void OnEnable()
     {
@@ -46,12 +42,19 @@ public class NoteInventoryUI : MonoBehaviour
         // GetComponentInChildren<Text>().text = title;
     }
 
-
+    /// <summary>
+    /// Mengubah warna object UI ketika di click
+    /// </summary>
+    /// <param name="obj">objek UI yang akan diubah warnanya</param>
     private void ClickColor(GameObject obj)
     {
         obj.GetComponent<Image>().color = selectedColor;
         obj.transform.GetChild(0).GetComponent<Text>().color = originalColor;
     }
+
+    /// <summary>
+    /// Mengubah warna menjadi warna default apabila terdapat object tidak memiliki warna default
+    /// </summary>
     private void ResetColor()
     {
         for (int i = 0; i < noteItemParent.transform.childCount; i++)
@@ -66,6 +69,11 @@ public class NoteInventoryUI : MonoBehaviour
 
         }
     }
+
+    /// <summary>
+    /// Menampilkan detail text dari sebuah note
+    /// </summary>
+    /// <param name="title"></param>
     private void ShowDetail(string title)
     {
         noteDetails.transform.GetChild(0).GetComponent<Text>().text = title;

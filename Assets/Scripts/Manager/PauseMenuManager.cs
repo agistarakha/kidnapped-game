@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Mengatur fungsi-fungsi untuk pause menu
+/// </summary>
 public class PauseMenuManager : MonoBehaviour
 {
     public GameObject optionUIPrefab;
     private Button[] pauseMenuBtns;
-    // Start is called before the first frame update
+
     void OnEnable()
     {
         pauseMenuBtns = transform.GetComponentsInChildren<Button>();
@@ -27,27 +30,23 @@ public class PauseMenuManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    // void Update()
-    // {
-
-    // }
-
+    
+    /// <summary>
+    /// Menampilkan Option panel dari pause menu
+    /// </summary>
     private void ShowOption()
     {
-        // foreach (Button menuBtn in pauseMenuBtns)
-        // {
-        //     menuBtn.interactable = false;
-        // }
+        
         GameObject obj = Instantiate(optionUIPrefab, optionUIPrefab.transform.position, Quaternion.identity, transform.parent.parent);
         obj.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
         obj.transform.SetParent(transform.parent);
 
-        // transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
-        // PopUpUIManager.Instance.ActivateUI("Option");
-        //transform.parent.gameObject.SetActive(false);
+       
     }
 
+    /// <summary>
+    /// Berpinah ke MainMenu Scene dari pause meu
+    /// </summary>
     private void MainMenu()
     {
         BGMManager.instance.Stop();

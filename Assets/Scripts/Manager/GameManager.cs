@@ -6,6 +6,10 @@ using Cinemachine;
 using UnityEngine.SceneManagement;
 
 
+/// <summary>
+/// Class ini digunakan untuk melakukan konfigurasi awal ketika sebuah Scene dimuat.
+/// Konfigurasi yang dilakukan yaitu: Mengatur kamera, Mengatur posisi dan state player, Mengatur posisi object interactive yang dinamis.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     // public static GameManager _instance = null;
@@ -95,6 +99,11 @@ public class GameManager : MonoBehaviour
     //     yield return new WaitForSeconds(2f);
     //     Player.gameState = Player.GameState.MENU;
     // }
+
+    /// <summary>
+    /// Digunakan untuk menampilkan tutorial awal ketika player melakukan new game
+    /// </summary>
+    /// <returns>Tutorial dtiampilkan dengan delay 4 detik</returns>
     private IEnumerator DispayFirstTutorial()
     {
         yield return new WaitForSeconds(4f);

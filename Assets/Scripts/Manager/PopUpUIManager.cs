@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
 using UnityEngine.UI;
+
+/// <summary>
+/// Class yang berisi fungsi-fungsi untuk PopUpUI seperti: Puzzle UI, Note UI, Foto UI.
+/// </summary>
 public class PopUpUIManager : MonoBehaviour
 {
     public static PopUpUIManager _instance = null;
@@ -24,12 +27,21 @@ public class PopUpUIManager : MonoBehaviour
     - Membuat fungsi yang dapat melakukan aktivasi PopUp UI
         - Fungsi tersebut dipanggil pada object masing-masing.
     */
+
+    /// <summary>
+    /// Background hitam transparan
+    /// </summary>
     public GameObject backdrop;
+
     public List<GameObject> popUpObjects;
     public GameObject currentActiveObject;
     private List<GameObject> generatedObjects;
     private Sprite photoSprite;
     public bool isPopUpActive = false;
+
+    /// <summary>
+    /// Menyimpan posisi awal UI
+    /// </summary>
     private Vector3 oriPos;
     public Vector3 OriPos()
     {
@@ -109,6 +121,10 @@ public class PopUpUIManager : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Melakukan Instantiate UI dalam kondisi tidak aktif agar bisa diguankan dengan mengaktifkan UI objek.
+    /// </summary>
     private void GenerateUI()
     {
         foreach (GameObject obj in popUpObjects)
@@ -121,7 +137,11 @@ public class PopUpUIManager : MonoBehaviour
 
 
 
-
+    /// <summary>
+    /// Mengaktifkan UI sesuai dengan nama UI
+    /// </summary>
+    /// <param name="name">Nama UI yang diambil dari anma objek UI</param>
+    /// <returns>OBjek yang di return diguankan sebagai representasi objek yang sedang aktif sekarnag</returns>
     public GameObject ActivateUI(string name)
     {
         //Debug.Log(name);
@@ -158,6 +178,12 @@ public class PopUpUIManager : MonoBehaviour
         return null;
     }
 
+
+    /// <summary>
+    /// Mengaktifkan UI foto
+    /// </summary>
+    /// <param name="img">Sprite gambar untuk pop up UI foto</param>
+    /// <returns>OBjek yang di return diguankan sebagai representasi objek yang sedang aktif sekarnag</returns>
     public GameObject ActivateUI(Sprite img)
     {
         isAnimEnd = false;
@@ -190,6 +216,9 @@ public class PopUpUIManager : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Menonaktifkan UI
+    /// </summary>
     public void DeactivateUI()
     {
         if (Player.gameState == Player.GameState.MENU)
@@ -212,6 +241,11 @@ public class PopUpUIManager : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// Menjalankan animasi pergerakan UI dari bawah ke atas, ketika UI diaktifkan.
+    /// </summary>
+    /// <param name="rect">Rect untuk mendapatkan posisi awal objek</param>
+    /// <returns></returns>
     private IEnumerator PopUpAnim(RectTransform rect)
     {
         oriPos = rect.position;

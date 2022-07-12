@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Class yang berfungsi sebagai component dari object yang menampilkan dialog apabila Player berada pada area object
+/// </summary>
 public class DialogTrigger : InteractiveObject
 {
     [TextArea(5, 100)]

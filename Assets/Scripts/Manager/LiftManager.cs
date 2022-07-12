@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Class yang berisi fungsi untuk mengatur pergerakan lift
+/// </summary>
 public class LiftManager : MonoBehaviour
 {
 

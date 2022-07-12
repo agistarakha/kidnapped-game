@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 
+
+/// <summary>
+/// Class yang digunakan untuk menampilkan video intro saat new game
+/// </summary>
 public class IntroPlayer : MonoBehaviour
 {
     private VideoPlayer videoPlayer;
@@ -22,6 +26,10 @@ public class IntroPlayer : MonoBehaviour
         // videoPlayer.Play();
     }
 
+    /// <summary>
+    /// Memberikan delay sebelum video diputar
+    /// </summary>
+    /// <returns>berupa courutine yang berisi waktu delay</returns>
     private IEnumerator DelayPlay()
     {
         yield return new WaitForSeconds(1.2f);
@@ -44,12 +52,21 @@ public class IntroPlayer : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Ketika video berakhir
+    /// </summary>
+    /// <param name="vp"></param>
     void EndReached(UnityEngine.Video.VideoPlayer vp)
     {
         vp.playbackSpeed = vp.playbackSpeed / 1f;
     }
 
 
+    /// <summary>
+    /// Load scene dengan delay dan async
+    /// </summary>
+    /// <param name="sceneName">Nama Scene</param>
+    /// <returns>Waktu delay</returns>
     IEnumerator LoadYourAsyncScene(string sceneName)
     {
         yield return new WaitForSeconds(2f);

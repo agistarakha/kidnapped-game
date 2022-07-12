@@ -2,6 +2,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Class <c>DialogManager</c> digunakan untuk mengatur Dialog Box.
+/// </summary>
 public class DialogManager : MonoBehaviour
 {
     public static DialogManager _instance = null;
@@ -17,11 +21,24 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Property yang diisi dengan prefab Object Dialog Box yang digunakan sebagai UI
+    /// </summary>
     public GameObject dialogUIObject;
 
-
+    /// <summary>
+    /// Property yang digunakan untuk menggunakan komponen Text dari <c>dialogUIObject</c>
+    /// </summary>
     private Text dialogText;
+
+    /// <value>
+    /// Property yang merepresentasikan apakah dialog box sedang aktif atau tidak
+    /// </value>
     private bool isDialogActive = false;
+
+    /// <summary>
+    /// Property yang digunakan untuk menyimpan text yang akan ditampilkan pada dilaogBox
+    /// </summary>
     private string fullText;
 
     // Start is called before the first frame update
@@ -49,6 +66,11 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Method <c>ShowDialogUI</c> digunakan untuk menampilkan UI dialog box
+    /// </summary>
+    /// <param name="text">text yang ditampilkan pada dialog box</param>
     public void ShowDialogUI(string text)
     {
         isDialogActive = true;
@@ -59,6 +81,11 @@ public class DialogManager : MonoBehaviour
         dialogUIObject.SetActive(true);
         StartCoroutine(GenerateDialogText(text));
     }
+
+
+    /// <summary>
+    /// Digunakan untuk menyembunyikan Dialog box UI
+    /// </summary>
     public void HideDialogUI()
     {
         StopAllCoroutines();
@@ -67,6 +94,12 @@ public class DialogManager : MonoBehaviour
         dialogUIObject.SetActive(false);
     }
 
+
+    /// <summary>
+    /// Digunakan untuk menampilkan efek text yang ditampilkan karakter per karakter pada dialog box UI
+    /// </summary>
+    /// <param name="text">Text yang ditampilkan pada dialog box UI</param>
+    /// <returns>Memberikan delay selama 0.001f tiap kali karakter ditampilkan</returns>
     private IEnumerator GenerateDialogText(string text)
     {
         fullText = text;

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Class yang memiliki fungsi untuk menampilkan UI tutorial
+/// </summary>
 public class TutorialManager : MonoBehaviour
 {
     public static TutorialManager _instance = null;

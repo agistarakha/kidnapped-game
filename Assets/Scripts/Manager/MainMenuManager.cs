@@ -4,19 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
+/// <summary>
+/// Class yang berisi fungsi-fungsi untuk main menu
+/// </summary>
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject optionUIPrefab;
-    // public delegate void Delegate();
-    // public Delegate LoadGameCall;
-    // public Delegate NewGameCall;
+ 
 
     void Start()
     {
-        //LoadGameCall = LoadGame;
-        //NewGameCall = NewGame;
-        //GetComponentsInChildren<Button>()[1].onClick.AddListener(() => GetComponentsInChildren<Button>()[1].Select());
+        
         if (SceneManager.GetActiveScene().name != "MainMenu")
         {
             return;
@@ -29,8 +29,7 @@ public class MainMenuManager : MonoBehaviour
         if (!GameDataManager.LoadFile())
         {
             GetComponentInChildren<Button>().interactable = false;
-            // GetComponent<Button>()
-            //GetComponentInChildren<Image>().color = Color.gray;
+            
         }
         GetComponentsInChildren<Button>()[0].onClick.AddListener(() => LoadGame());
         GetComponentsInChildren<Button>()[1].onClick.AddListener(() => NewGame());
@@ -43,30 +42,28 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    // void Update()
-    // {
-
-    // }
-
+    
+    /// <summary>
+    /// Fungsi yang dipanggil ketika tombol Continue ditekan
+    /// </summary>
     public void LoadGame()
     {
         if (GameDataManager.LoadFile())
         {
             GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
             blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
-            //StartCoroutine(Fade());
             StartCoroutine(LoadYourAsyncScene(DoorData.lastVisitedScene));
-            // SceneManager.LoadScene(DoorData.lastVisitedScene);
             
         }
     }
 
+    /// <summary>
+    /// Fungsi yang dipanggil ketika new game
+    /// </summary>
     public void NewGame()
     {
         BGMManager.instance.bgmIsolation = true;
         BGMManager.instance.Stop();
-        //StartCoroutine(Fade());
         GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
         GameDataManager.ResetData();
         blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
@@ -74,6 +71,9 @@ public class MainMenuManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Method untuk menampilkan credit scene
+    /// </summary>
     public void ShowCredits()
     {
         GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
@@ -81,6 +81,9 @@ public class MainMenuManager : MonoBehaviour
         StartCoroutine(LoadYourAsyncScene("Credits"));
     }
 
+    /// <summary>
+    /// Exit game
+    /// </summary>
     public void ExitGame()
     {
         Application.Quit();
@@ -94,33 +97,19 @@ public class MainMenuManager : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Menampilkan option panel
+    /// </summary>
     private void ShowOption()
     {
-        // foreach (Button menuBtn in pauseMenuBtns)
-        // {
-        //     menuBtn.interactable = false;
-        // }
+        
         GameObject obj = Instantiate(optionUIPrefab, optionUIPrefab.transform.position, Quaternion.identity, transform.parent.parent);
         obj.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
-        // obj.transform.SetParent(transform.parent);
-
-        // transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
-        // PopUpUIManager.Instance.ActivateUI("Option");
-        //transform.parent.gameObject.SetActive(false);
+        
     }
 
-    // private IEnumerator FadeScene(Delegate methodCall)
-    // {
-    //     GameObject blackScreen = GameObject.FindGameObjectWithTag("Fade");
-    //     blackScreen.GetComponent<Animator>().SetTrigger("FadeIn");
-    //     while (blackScreen.GetComponent<Image>().color.a >= 255)
-    //     {
-    //         yield return null;
-    //     }
+    
 
-    //     methodCall();
-
-    // }
 
     IEnumerator LoadYourAsyncScene(string sceneName)
     {

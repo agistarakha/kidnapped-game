@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Menampilkan menu inventory ketika tombol TAB ditekan
+/// </summary>
 public class NoteInventoryManager : MonoBehaviour
 {
     public static NoteInventoryManager _instance = null;

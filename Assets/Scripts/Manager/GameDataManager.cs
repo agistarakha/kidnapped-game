@@ -4,14 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+
+/// <summary>
+/// Class <c>GameDataManager</c> berisi fungsi-fungsi yang dapat digunakan untuk melakukan save, looad, dan reset data.
+/// </summary>
 public static class GameDataManager
 {
-    // Create a field for the save file.
-
-    // Create a GameData field.
+    
 
 
-
+    /// <summary>
+    /// Digunakan untuk load file yang berisi save data dengan cara mengubah file JSON ke object.
+    /// </summary>
+    /// <returns><code>true</code> apabila terdapat save file</returns>
     public static bool LoadFile()
     {
         GameData gameData = new GameData();
@@ -49,6 +54,10 @@ public static class GameDataManager
         return false;
     }
 
+    /// <summary>
+    /// Digunakan untuk menyimpan data game ke sebuah file JSON.
+    /// </summary>
+    /// <param name="playerGameObject">Parameter ini merupakan parameter Gameobject player. Paramter ini digunakan untuk mendapatkan data posisi player terakhir</param>
     public static void SaveFile(GameObject playerGameObject)
     {
         // GameData gameData = new GameData();
@@ -75,6 +84,9 @@ public static class GameDataManager
         File.WriteAllText(saveFile, jsonString);
     }
 
+    /// <summary>
+    /// Digunakan untuk mereset save data dengan melakukan inisialisasi ulang data pada data video game dan menghapus file save. Contohnya digunakan saat New Game
+    /// </summary>
     public static void ResetData()
     {
         // GameData gameData = new GameData();

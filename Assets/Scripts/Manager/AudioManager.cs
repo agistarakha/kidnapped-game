@@ -29,6 +29,12 @@ public class AudioManager : MonoBehaviour
 
     //     _audioSource.volume = OptionDataManager.Option.sfxVolume;
     // }
+
+
+    /// <summary>
+    /// Metode <c>PlaySFX</c> digunakan untuk play SFX satu kali ketika fungsi dipanggil.
+    /// </summary>
+    /// <param name="name">Nama dari file SFX</param>
     public void PlaySFX(string name)
     {
         AudioClip sfx = _audioClips.Find(s => s.name == name);
